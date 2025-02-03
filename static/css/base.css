@@ -1,0 +1,10 @@
+html {
+    height: 100%;
+}
+
+#jumbotron-bread {
+    background-image: url("/static/media/hero-image.webp");
+    background-size: cover; /* Ensures the image covers the whole div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image tiling */
+}
