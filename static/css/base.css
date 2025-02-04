@@ -23,3 +23,7 @@ body {
 #spacer-header {
     height: 4rem;
 }
+
+#homepage-title {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+}
