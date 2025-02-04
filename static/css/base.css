@@ -1,3 +1,25 @@
+/* =======================
+   Root Variables
+   ======================= */
+:root {
+--white: #FEFDFB;
+--lightgrey: #E8E2D9;
+--hessian: #685B4B;
+--black: #1F1E1E;
+--orange: #C7500D;
+}
+
 html {
     height: 100%;
+}
+
+body {
+    background: url('/media/hero-image.webp') no-repeat center center fixed ;
+    background-size: cover;
+    color: var(--black);
+    font-family:'Merriweather', Verdana, sans-serif ;
+}
+
+#spacer-header {
+    height: 4rem;
 }
