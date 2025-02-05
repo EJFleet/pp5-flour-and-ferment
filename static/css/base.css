@@ -24,6 +24,56 @@ body {
     height: 4rem;
 }
 
-#homepage-title {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
+
+.logo-font {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    color: var(--black);
+}
+
+.shop-now-button {
+    background: var(--orange);
+    color: white;
+    min-width: 260px;
+}
+
+
+.btn-orange {
+    background: var(--orange);
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:focus {
+    background: var(--hessian);
+    color: white;
+}
+
+.text-black {
+    color: var(--black) !important;
+}
+
+
+
+/* -------------------------------- Media Queries */
+
+/* From Boutique Ado */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
