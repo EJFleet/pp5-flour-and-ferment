@@ -18,13 +18,15 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  
+
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
   {% endblock %}
 
   {% block extra_css %}
@@ -57,16 +59,13 @@
       <div class="container fluid"> <!-- d-flex align-items-center justify-content-between -->
         <a class="navbar-brand logo-font" href="#">Flour & Ferment</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav nav-fill w-100">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Shop</a>
               <ul class="dropdown-menu">
@@ -85,24 +84,21 @@
                 <li><a href="" class="dropdown-item">Sweet Treats</a></li>
               </ul>
             </li>
-             <!-- From Lewis Dillon Web Piano Academy -->
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <!-- From Lewis Dillon Web Piano Academy -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">About Us</a></li>
                 <li><a class="dropdown-item" href="">FAQs</a></li>
+                <li><a class="dropdown-item" href="">Contact</a></li>
               </ul>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+            <!-- Search bar -->
             <li>
               <!-- From Boutique Ado -->
               <form method="GET" action="">
                 <div class="input-group w-100">
-                  <input class="form-control border rounded-1" type="text" name="q"
-                    placeholder="Search...">
+                  <input class="form-control border rounded-1" type="text" name="q" placeholder="Search products...">
                   <div class="input-group-append">
                     <button class="form-control btn btn-orange border rounded-1" type="submit">
                       <span class="icon">
@@ -113,14 +109,42 @@
                 </div>
               </form>
             </li>
+            <!-- Logged-in user links -->
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Account</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">My Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+              </ul>
+            </li>
+            <!-- Non logged-in user links -->
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li>
+              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+            <!-- Superuser links -->
+            {% if user.is_superuser %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Product
+                Admin</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">Add New Product</a></li>
+                <li><a class="dropdown-item" href="">Edit A Product</a></li>
+                <li><a class="dropdown-item" href="">Delete A Product</a></li>
+              </ul>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a href="#" class="nav-link shopping-cart-icon ml-3">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
           </ul>
-            
-        </div>
-
-        <div>
-          <a href="#" class="shopping-cart-icon text-dark ml-3">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
         </div>
       </div>
     </nav>

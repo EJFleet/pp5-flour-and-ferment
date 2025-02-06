@@ -33,6 +33,10 @@ body {
     width: 1.5rem;
 }
 
+a.shopping-cart-icon {
+    color: var(--black);
+}
+
 .logo-font {
     font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
     color: var(--black);
@@ -41,7 +45,7 @@ body {
 .shop-now-button {
     background: var(--orange);
     color: white;
-    min-width: 260px;
+    min-width: 10rem;
 }
 
 
@@ -63,6 +67,14 @@ body {
 .text-black {
     color: var(--black) !important;
 }
+
+/* Navbar text slightly smaller */
+.navbar-nav .nav-link,
+.input-group>.form-control {
+    font-size: 0.9rem; 
+}
+
+
 
 
 
