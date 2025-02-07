@@ -1,0 +1,158 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "SD001",
+            "name": "Organic Sourdough Starter",
+            "description": "Our Organic Sourdough Starter is a live culture, carefully cultivated to help you bake delicious, tangy, and airy sourdough bread. This starter is made from high-quality organic flour and naturally fermented for a robust and complex flavor. Perfect for beginners and experienced bakers alike, it will give your bread the ideal rise and texture. Just feed it regularly, and it will last for years, becoming a staple in your kitchen.",
+            "price": 12.99,
+            "category": 1,
+            "image_url": "",
+            "image": "/media/products/sourdough-starter.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "SD002",
+            "name": "Whole Wheat Flour 1kg",
+            "description": "Our stone-ground Whole Wheat Flour is perfect for hearty sourdough loaves, rich in fiber and nutrients. Milled from premium wheat, it retains the wheat germ and bran for enhanced flavor and nutrition. This flour gives a rustic texture and a deep, nutty taste to your bread. Ideal for blending with white flour to create a balanced dough or for making fully whole-grain sourdough loaves.",
+            "price": 5.99,
+            "category": 1,
+            "image_url": "",
+            "image": "/media/products/whole-wheat-flour.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "SD003",
+            "name": "Rye Flour 1kg",
+            "description": "This premium Rye Flour is perfect for adding depth and character to your sourdough baking. Milled from high-quality rye grains, it produces a dense, flavorful crumb with a slightly tangy aftertaste. Rye flour works beautifully in combination with other flours to enhance the complexity of your loaves. It's ideal for classic rye bread, European-style sourdough, or creating a rich and aromatic starter.",
+            "price": 6.99,
+            "category": 1,
+            "image_url": "",
+            "image": "/media/products/rye-flour.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "SD004",
+            "name": "Unbleached Bread Flour 1kg",
+            "description": "Our Unbleached Bread Flour is a high-protein flour ideal for strong gluten development, resulting in perfectly chewy and airy sourdough loaves. It’s milled from premium wheat, without any additives or bleaching agents, to preserve its natural goodness. This flour creates a reliable dough structure, making it perfect for everything from rustic sourdough to baguettes and artisan-style bread.",
+            "price": 7.99,
+            "category": 1,
+            "image_url": "",
+            "image": "/media/products/bread-flour.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "SD005",
+            "name": "Dark Rye Flour 1kg",
+            "description": "Dark Rye Flour is essential for creating deeply flavorful, traditional sourdough rye bread. Milled from whole rye kernels, it adds an earthy, slightly sweet taste to your dough and enhances fermentation for a rich, complex flavor. It works well in dense European-style loaves or blended with bread flour for a lighter crumb.",
+            "price": 6.49,
+            "category": 1,
+            "image_url": "",
+            "image": "/media/products/dark-rye-flour.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "BE001",
+            "name": "Round Banneton Proofing Basket",
+            "description": "This Round Banneton Proofing Basket is essential for shaping and proofing perfect sourdough loaves. Made from high-quality natural rattan, it helps create beautiful circular loaves with the classic spiral texture. The basket supports the dough as it ferments, giving it structure and an even rise. Ideal for both home bakers and professionals, it ensures your bread turns out with a perfect crust and crumb.",
+            "price": 14.99,
+            "category": 2,
+            "image_url": "",
+            "image": "/media/products/banneton-proofing-basket.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "BE002",
+            "name": "Oval Banneton Proofing Basket",
+            "description": "Our Oval Banneton Proofing Basket is perfect for crafting beautifully shaped sourdough batards. Made from breathable natural rattan, it supports dough during fermentation while creating the signature spiral pattern. This basket promotes excellent dough hydration and an even rise, resulting in well-structured loaves with a crispy crust and tender crumb.",
+            "price": 16.99,
+            "category": 2,
+            "image_url": "",
+            "image": "/media/products/oval-banneton-proofing-basket.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "BE003",
+            "name": "Dough Scraper",
+            "description": "A must-have tool for handling and shaping sourdough, this Stainless Steel Dough Scraper is perfect for dividing, lifting, and cleaning up sticky dough. The sturdy, ergonomic design allows for precise cuts while keeping your hands clean. It’s an essential tool for bakers looking to work with wet dough, ensuring a smooth and efficient baking process.",
+            "price": 9.99,
+            "category": 2,
+            "image_url": "",
+            "image": "/media/products/dough-scraper.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "BE004",
+            "name": "Lame Bread Scoring Tool",
+            "description": "A professional Lame Bread Scoring Tool with a razor-sharp blade for precise scoring of your sourdough loaves. This tool helps create beautiful patterns while allowing the dough to expand properly during baking, leading to perfect oven spring. The ergonomic wooden handle provides a comfortable grip for controlled scoring.",
+            "price": 12.99,
+            "category": 2,
+            "image_url": "",
+            "image": "/media/products/bread-scoring-tool.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "BE005",
+            "name": "Cast Iron Dutch Oven",
+            "description": "A heavy-duty Cast Iron Dutch Oven designed for baking artisan sourdough loaves. The thick walls ensure even heat distribution, while the tight-fitting lid traps steam, creating a crisp, golden crust. Ideal for home bakers looking to achieve bakery-quality results. Works with all heat sources, including ovens, stovetops, and campfires.",
+            "price": 59.99,
+            "category": 2,
+            "image_url": "",
+            "image": "/media/products/dutch-oven.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "CB001",
+            "name": "Tartine Bread",
+            "description": "Written by Chad Robertson, *Tartine Bread* is one of the most influential sourdough baking books of all time. It covers the secrets of slow fermentation and perfect crust development, with step-by-step techniques for mastering artisan loaves at home. A must-have for passionate bakers looking to refine their craft.",
+            "price": 127.99,
+            "category": 3,
+            "image_url": "",
+            "image": "/media/products/tartine-bread.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "CB002",
+            "name": "Flour Water Salt Yeast",
+            "description": "Ken Forkish’s *Flour Water Salt Yeast* is a detailed guide to artisanal bread baking. This book provides an in-depth look at fermentation, hydration levels, and the science behind successful sourdough loaves. With easy-to-follow recipes and stunning photography, it’s an excellent resource for both beginners and experienced bakers.",
+            "price": 29.99,
+            "category": 3,
+            "image_url": "",
+            "image": "/media/products/flour-water-salt-yeast.jpg"
+        }
+    }
+]

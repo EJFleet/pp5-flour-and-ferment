@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1,
+        "model": "products.productcategory",
+        "fields": {
+            "name": "starters_flours",
+            "friendly_name": "Sourdough Starters & Flours"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.productcategory",
+        "fields": {
+            "name": "baking_equipment",
+            "friendly_name": "Baking Equipment"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.productcategory",
+        "fields": {
+            "name": "cookbooks",
+            "friendly_name": "Cookbooks"
+        }
+    }
+]
