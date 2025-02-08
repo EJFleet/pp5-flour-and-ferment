@@ -70,9 +70,9 @@
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Shop</a>
               <ul class="dropdown-menu">
                 <li><a href="{% url 'products' %}" class="dropdown-item">All Items</a></li>
-                <li><a href="" class="dropdown-item">Sourdough Starters & Flours</a></li>
-                <li><a href="" class="dropdown-item">Baking Equipment</a></li>
-                <li><a href="" class="dropdown-item">Cookbooks</a></li>
+                <li><a href="{% url 'products' %}?category=starters_flours" class="dropdown-item">Sourdough Starters & Flours</a></li>
+                <li><a href="{% url 'products' %}?category=baking_equipment" class="dropdown-item">Baking Equipment</a></li>
+                <li><a href="{% url 'products' %}?category=cookbooks" class="dropdown-item">Cookbooks</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
