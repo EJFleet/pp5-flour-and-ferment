@@ -4,6 +4,7 @@
 :root {
 --white: #FEFDFB;
 --lightgrey: #E8E2D9;
+--darkgrey: #3B342B;
 --hessian: #685B4B;
 --black: #1F1E1E;
 --orange: #C7500D;
@@ -16,7 +17,7 @@ html {
 body {
     background: url('/media/hero-image.webp') no-repeat center center fixed ;
     background-size: cover;
-    color: var(--black);
+    color: var(--darkgrey);
     font-family:'Merriweather', Verdana, sans-serif ;
 }
 
@@ -72,6 +73,16 @@ a.shopping-cart-icon {
 .navbar-nav .nav-link,
 .input-group>.form-control {
     font-size: 0.9rem; 
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: var(--white);
+    z-index: -1;
 }
 
 
