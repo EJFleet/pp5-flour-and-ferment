@@ -40,7 +40,16 @@ a.shopping-cart-icon {
 
 .logo-font {
     font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
-    color: var(--black);
+    color: var(--black) !important;
+}
+
+a:hover {
+    text-decoration: underline var(--black);
+}
+
+a.category-badge > span.badge:hover {
+    background: var(--darkgrey) !important;
+    color: var(--white) !important;
 }
 
 .shop-now-button {
