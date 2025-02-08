@@ -57,7 +57,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container fluid"> <!-- d-flex align-items-center justify-content-between -->
-        <a class="navbar-brand logo-font" href="#">Flour & Ferment</a>
+        <a class="navbar-brand logo-font" href="{% url 'home' %}">Flour & Ferment</a>
 
         <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Shop</a>
               <ul class="dropdown-menu">
-                <li><a href="" class="dropdown-item">All Items</a></li>
+                <li><a href="{% url 'products' %}" class="dropdown-item">All Items</a></li>
                 <li><a href="" class="dropdown-item">Sourdough Starters & Flours</a></li>
                 <li><a href="" class="dropdown-item">Baking Equipment</a></li>
                 <li><a href="" class="dropdown-item">Cookbooks</a></li>
