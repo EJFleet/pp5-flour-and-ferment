@@ -9,7 +9,7 @@
             "price": 12.99,
             "category": 1,
             "image_url": "",
-            "image": "/media/products/sourdough-starter.jpg"
+            "image": "/products/classic-sourdough-starter.webp"
         }
     },
     {
@@ -22,7 +22,7 @@
             "price": 5.99,
             "category": 1,
             "image_url": "",
-            "image": "/media/products/whole-wheat-flour.jpg"
+            "image": "/products/wholewheat-flour.webp"
         }
     },
     {
@@ -35,7 +35,7 @@
             "price": 6.99,
             "category": 1,
             "image_url": "",
-            "image": "/media/products/rye-flour.jpg"
+            "image": "/products/rye-flour.webp"
         }
     },
     {
@@ -48,7 +48,7 @@
             "price": 7.99,
             "category": 1,
             "image_url": "",
-            "image": "/media/products/bread-flour.jpg"
+            "image": "/products/unbleached-bread-flour.webp"
         }
     },
     {
@@ -61,7 +61,7 @@
             "price": 6.49,
             "category": 1,
             "image_url": "",
-            "image": "/media/products/dark-rye-flour.jpg"
+            "image": "/products/dark-rye-flour.webp"
         }
     },
     {
@@ -74,7 +74,7 @@
             "price": 14.99,
             "category": 2,
             "image_url": "",
-            "image": "/media/products/banneton-proofing-basket.jpg"
+            "image": "/products/banneton-round-1kg.webp"
         }
     },
     {
@@ -87,7 +87,7 @@
             "price": 16.99,
             "category": 2,
             "image_url": "",
-            "image": "/media/products/oval-banneton-proofing-basket.jpg"
+            "image": "/products/banneton-oval-750g.webp"
         }
     },
     {
@@ -100,7 +100,7 @@
             "price": 9.99,
             "category": 2,
             "image_url": "",
-            "image": "/media/products/dough-scraper.jpg"
+            "image": "/products/metal-dough-scraper.webp"
         }
     },
     {
@@ -113,7 +113,7 @@
             "price": 12.99,
             "category": 2,
             "image_url": "",
-            "image": "/media/products/bread-scoring-tool.jpg"
+            "image": "/products/lame-tool.webp"
         }
     },
     {
@@ -126,7 +126,7 @@
             "price": 59.99,
             "category": 2,
             "image_url": "",
-            "image": "/media/products/dutch-oven.jpg"
+            "image": "/products/blue-dutch-oven.webp"
         }
     },
     {
@@ -139,7 +139,7 @@
             "price": 127.99,
             "category": 3,
             "image_url": "",
-            "image": "/media/products/tartine-bread.jpg"
+            "image": "/products/tartine-bread-book.webp"
         }
     },
     {
@@ -152,7 +152,7 @@
             "price": 29.99,
             "category": 3,
             "image_url": "",
-            "image": "/media/products/flour-water-salt-yeast.jpg"
+            "image": "/products/flour-water-salt-yeast.webp"
         }
     }
 ]
