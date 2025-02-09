@@ -162,11 +162,11 @@
     {% endblock %}
   </main>  
 
-  <footer class="py-5">
-    <div class="row offset-1">
+  <footer>
+    <div class="row offset-md-1">
       <div class="col-6 col-md-2 mb-3">
         <h5>Site Pages</h5>
-        <ul class="nav flex-column">
+        <ul class="nav flex-column footer-column">
           <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Home</a></li>
           <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Shop</a></li>
           <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Recipes</a></li>
@@ -180,14 +180,14 @@
         <!-- Logged-in user links -->
         {% if user.is_authenticated %}
           <h5>Account</h5>
-          <ul class="nav flex-column">
+          <ul class="nav flex-column footer-column">
             <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">My Profile</a></li>
             <li class="nav-item mb-2"><a href="{% url 'account_logout' %}" class="nav-link p-0 text-body-secondary">Logout</a></li>
           </ul>
         <!-- Non logged-in user links -->
         {% else %}
           <h5>Account</h5>
-          <ul class="nav flex-column">
+          <ul class="nav flex-column footer-column">
             <li class="nav-item mb-2"><a href="{% url 'account_signup' %}" class="nav-link p-0 text-body-secondary">Register</a></li>
             <li class="nav-item mb-2"><a href="{% url 'account_login' %}" class="nav-link p-0 text-body-secondary">Login</a></li>
           </ul>
@@ -197,7 +197,7 @@
       <div class="col-6 col-md-2 mb-3">
         <h5>
           Follow:
-          <p>
+          <p id="social-icons">
           <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
             <a href="https://x.com/home" target="_blank"><i class="fab fa-x-twitter ms-3"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a>
@@ -213,24 +213,14 @@
         <form>
           <h5>Subscribe to our newsletter</h5>
           <p>Exciting news and exclusive deals!</p>
-          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-            <a class="btn black-button" id="mailing-list-button" href="">Subscribe to our mailing list</a>
-          </div>
         </form>
       </div>
     </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-between p-4 my-4 border-top">
-      <p class="footer-credit-text">&copy; 2024 Flour & Ferment, All rights reserved.</p>
+      <p class="footer-credit-text">&copy; 2024 Flour & Ferment</p>
       <p class="footer-link"><a href="">Privacy Policy </a></p>
       <p class="footer-link"><a href="">Site Map</a></p>
-      <ul class="list-unstyled d-flex">
-        <li>
-          <p class="footer-credit-text">Site designed & developed by Emma Fleetwood | </p>
-        </li>
-        <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href=""><i class="fa-brands fa-github"></i></a></li>
-        <li class="ms-3"><a class="link-body-emphasis footer-credit-icon" rel="author" href=""><i class="fa-brands fa-linkedin"></i></a></li>
-      </ul>
     </div>
   </footer>
 

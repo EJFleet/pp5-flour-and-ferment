@@ -88,10 +88,10 @@
                                         </p>
                                         {% endif %}
                                         {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="">Edit</a> |
-                                            <a class="text-danger" href="">Delete</a>
-                                        </small>
+                                        <div class="edit-delete-links mt-3">
+                                            <a href="" class="btn btn-sm btn-primary mr-3" id="btn-edit">Edit</a>
+                                            <a href="" class="btn btn-sm btn-danger" id="btn-delete">Delete</a>
+                                        </div>
                                         {% endif %}
                                     </div>
                                 </div>
