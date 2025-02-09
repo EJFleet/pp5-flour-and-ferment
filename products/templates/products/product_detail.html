@@ -1,19 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container" id="spacer-header">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-
 {% block content %}
-<div class="overlay">
-</div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mb-3 mt-2 mt-lg-5">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
@@ -98,13 +88,13 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
-    <div class="row">
+    <div class="row pt-3 pb-5">
         <div class="product-list-container col-10 offset-lg-2">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
                 {% for product in random_products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
+                    <div class="card h-100 border-0 py-5">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
