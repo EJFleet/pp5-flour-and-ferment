@@ -3,9 +3,9 @@
    ======================= */
 :root {
 --white: #FEFDFB;
---lightgrey: #E8E2D9;
+--lightgrey: #a7a9a5;
 --darkgrey: #3B342B;
---hessian: #685B4B;
+--hessian: #988671;
 --black: #1F1E1E;
 --orange: #C7500D;
 }
@@ -15,9 +15,12 @@ html {
 }
 
 body {    
-    background-color: var(--hessian);
-    color: var(--darkgrey);
+    color: var(--black);
     font-family:'Merriweather', Verdana, sans-serif ;
+}
+
+main {
+    background-color: var(--white);
 }
 
 #hero-container {
@@ -58,6 +61,19 @@ a:hover {
 a.category-badge > span.badge:hover {
     background: var(--darkgrey) !important;
     color: var(--white) !important;
+}
+
+footer {
+    background-color: var(--lightgrey);
+    width: 100%;
+}
+
+footer a {
+    color: var(--black) !important;
+}
+
+footer a:hover {
+    color: var(--darkgrey) !important; /* Optional: Change color on hover */
 }
 
 .shop-now-button {
@@ -103,20 +119,6 @@ a.category-badge > span.badge:hover {
 .input-group>.form-control {
     font-size: 0.9rem; 
 }
-
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: var(--white);
-    z-index: -1;
-}
-
-
-
-
 
 /* -------------------------------- Media Queries */
 
