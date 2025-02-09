@@ -1,61 +1,72 @@
 /* =======================
    Root Variables
-   ======================= */
+======================= */
 :root {
---white: #FEFDFB;
---lightgrey: #a7a9a5;
---darkgrey: #3B342B;
---hessian: #988671;
---black: #1F1E1E;
---orange: #C7500D;
+    --white: #FEFDFB;
+    --lightgrey: #a7a9a5;
+    --darkgrey: #3B342B;
+    --hessian: #988671;
+    --black: #1F1E1E;
+    --orange: #C7500D;
 }
 
+/* =======================
+   Global Styles
+======================= */
 html {
     height: 100%;
 }
 
 body {    
     color: var(--black);
-    font-family:'Merriweather', Verdana, sans-serif ;
+    font-family: 'Merriweather', Verdana, sans-serif;
 }
 
 main {
     background-color: var(--white);
 }
 
+/* =======================
+   Hero Section
+======================= */
 #hero-container {
     background: url('/media/hero-image.webp') no-repeat center center;
     background-size: cover;
     height: 100vh;
-    background-position: center calc(50% - 3rem); /* Shift the image up by 4rem */
+    background-position: center calc(50% - 3rem); /* Shift the image up slightly */
 }
-
 
 #title-container {
     position: relative;
-    top: -8rem; /* Adjust the value as needed */
+    top: -8rem; /* Adjust as needed */
 }
 
-/* from Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-a.shopping-cart-icon {
-    color: var(--black);
-}
-
+/* =======================
+   Typography
+======================= */
 .logo-font {
     font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
     color: var(--black) !important;
 }
 
+.text-black {
+    color: var(--black) !important;
+}
+
+/* =======================
+   Navbar & Links
+======================= */
+.navbar-nav .nav-link,
+.input-group > .form-control {
+    font-size: 0.9rem; 
+}
+
 a:hover {
     text-decoration: underline var(--black);
+}
+
+a.shopping-cart-icon {
+    color: var(--black);
 }
 
 a.category-badge > span.badge:hover {
@@ -63,9 +74,14 @@ a.category-badge > span.badge:hover {
     color: var(--white) !important;
 }
 
+/* =======================
+   Footer
+======================= */
 footer {
     background-color: var(--lightgrey);
     width: 100%;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 footer a {
@@ -73,19 +89,20 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--darkgrey) !important; /* Optional: Change color on hover */
+    color: var(--darkgrey) !important;
 }
 
-.shop-now-button {
-    background: var(--orange);
-    color: white;
-    min-width: 10rem;
-}
-
-
+/* =======================
+   Buttons
+======================= */
+.shop-now-button,
 .btn-orange {
     background: var(--orange);
     color: white;
+}
+
+.shop-now-button {
+    min-width: 10rem;
 }
 
 .shop-now-button:hover,
@@ -96,6 +113,17 @@ footer a:hover {
 .btn-orange:focus {
     background: var(--hessian);
     color: white;
+}
+
+/* =======================
+   Icons & Buttons
+======================= */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .btt-button {
@@ -110,26 +138,16 @@ footer a:hover {
     cursor: pointer;
 }
 
-.text-black {
-    color: var(--black) !important;
-}
+/* =======================
+   Responsive Design
+======================= */
 
-/* Navbar text slightly smaller */
-.navbar-nav .nav-link,
-.input-group>.form-control {
-    font-size: 0.9rem; 
-}
-
-/* -------------------------------- Media Queries */
-
-/* From Boutique Ado */
-
-/* Slightly larger container on xl screens */
+/* Larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-      max-width: 80%;
+        max-width: 80%;
     }
-  }
+}
 
 /* Adjust for mobile devices */
 @media (max-width: 1024px) {
@@ -137,4 +155,3 @@ footer a:hover {
         background-position: center center; /* Reset the background position for mobile */
     }
 }
-  
