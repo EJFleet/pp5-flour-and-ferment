@@ -14,15 +14,23 @@ html {
     height: 100%;
 }
 
-body {
-    background: url('/media/hero-image.webp') no-repeat center center fixed ;
-    background-size: cover;
+body {    
+    background-color: var(--hessian);
     color: var(--darkgrey);
     font-family:'Merriweather', Verdana, sans-serif ;
 }
 
-#spacer-header {
-    height: 4rem;
+#hero-container {
+    background: url('/media/hero-image.webp') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    background-position: center calc(50% - 3rem); /* Shift the image up by 4rem */
+}
+
+
+#title-container {
+    position: relative;
+    top: -8rem; /* Adjust the value as needed */
 }
 
 /* from Bulma */
@@ -120,4 +128,11 @@ a.category-badge > span.badge:hover {
       max-width: 80%;
     }
   }
+
+/* Adjust for mobile devices */
+@media (max-width: 1024px) {
+    #hero-container {
+        background-position: center center; /* Reset the background position for mobile */
+    }
+}
   

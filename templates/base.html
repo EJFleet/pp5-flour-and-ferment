@@ -52,7 +52,6 @@
 
 <body>
 
-
   <header>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -151,15 +150,21 @@
 
   </header>
 
-  {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
+  <main>
+    {% if messages %}
+      <div class="message-container"></div>
+    {% endif %}
 
-  {% block page_header %}
-  {% endblock %}
+    {% block page_header %}
+    {% endblock %}
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
+  </main>  
+
+  <footer>
+    <h1>footer</h1>
+  </footer>
 
   {% block postloadjs %}
   {% endblock %}
