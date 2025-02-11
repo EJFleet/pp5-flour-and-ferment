@@ -6,7 +6,7 @@
     <div class="row mb-3">
         <div class="col text-center mt-5">
             <div class="d-flex justify-content-center mt-4">
-                    <h2 class="logo-font">Shopping Bag</h2>
+                    <h2 class="logo-font">Shopping Basket</h2>
             </div>
             <hr class="w-50 mb-1">
         </div>
@@ -15,6 +15,22 @@
 {% endblock %}
 
 {% block content %}
-
-
+<div class="container mb-2">
+     <div class="row">
+        <div class="col">
+            {% if basket_items %}
+                <div class="table-responsive rounded"></div>   
+                    
+            {% else %}
+                <p class="lead my-5">Your basket is empty.</p>
+                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg mb-5">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
