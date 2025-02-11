@@ -134,6 +134,21 @@ footer a:hover {
     color: white;
 }
 
+
+.btn-outline-black {
+    background: var(--white);
+    color: var(--black) !important; /* use important to override link colors for <a> elements */
+    border: 1px solid var(--black);
+}
+
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: var(--black);
+    color: var(--white) !important;
+}
+
 /* =======================
    Icons & Buttons
 ======================= */
