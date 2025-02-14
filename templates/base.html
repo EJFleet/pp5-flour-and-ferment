@@ -81,15 +81,6 @@
                 <li><a href="" class="dropdown-item">Sweet Treats</a></li>
               </ul>
             </li>
-            <!-- From Lewis Dillon Web Piano Academy -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">About Us</a></li>
-                <li><a class="dropdown-item" href="">FAQs</a></li>
-                <li><a class="dropdown-item" href="">Contact</a></li>
-              </ul>
-            </li>
             <!-- Search bar -->
             <li>
               <!-- From Boutique Ado -->
@@ -105,6 +96,15 @@
                   </div>
                 </div>
               </form>
+            </li>
+            <!-- From Lewis Dillon Web Piano Academy -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="">About Us</a></li>
+                <li><a class="dropdown-item" href="">FAQs</a></li>
+                <li><a class="dropdown-item" href="">Contact</a></li>
+              </ul>
             </li>
             <!-- Logged-in user links -->
             {% if user.is_authenticated %}
@@ -136,12 +136,21 @@
               </ul>
             </li>
             {% endif %}
-            <li class="nav-item">
-              <a href="{% url 'view_basket' %}" class="nav-link shopping-cart-icon ml-3">
-                <i class="fas fa-shopping-cart"></i>
-              </a>
-            </li>
+            
           </ul>
+          <div class="basket-container">
+            <a class="d-flex flex-column align-items-center {% if grand_total %}text-info font-weight-bolder{% else %}text-black{% endif %} nav-link"
+              href="{% url 'view_basket' %}" id="navbar-basket-link">
+              <div class="text-center">
+                <div><i class="fa-solid fa-basket-shopping"></i></div>
+                <p class="my-0" id="basket-total-text">
+                  {% if grand_total %}
+                  €{{ grand_total|floatformat:2 }}
+                  {% else %}
+                  €0.00
+                  {% endif %}
+                </p>
+              </div>
         </div>
       </div>
     </nav>

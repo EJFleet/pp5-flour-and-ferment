@@ -44,7 +44,7 @@ main {
     background: url('/media/hero-image.webp') no-repeat center center;
     background-size: cover;
     height: 100vh;
-    background-position: center calc(50% - 3rem); /* Shift the image up slightly */
+    background-position: center calc(50% - 1rem); /* Shift the image up slightly */
 }
 
 #title-container {
@@ -243,6 +243,28 @@ footer a:hover {
     cursor: pointer;
 }
 
+.basket-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to right in navbar */
+    text-align: right;
+}
+
+#navbar-basket-link i {
+    font-size: 1.2rem;
+}
+
+#navbar-basket-link {
+    padding: 0;
+}
+#basket-total-text {
+    font-size: 0.9rem; /* Adjust to make smaller */
+    line-height: 1; /* Reduce spacing between lines */
+    margin-top: 2px; /* Reduce spacing above text */
+}
+
+
+
 /* =======================
    Responsive Design
 ======================= */
@@ -258,5 +280,22 @@ footer a:hover {
 @media (max-width: 1024px) {
     #hero-container {
         background-position: center center; /* Reset the background position for mobile */
+    }
+}
+
+/* Center shopping basket icon in the dropdown for smaller screens */
+@media (max-width: 991px) { /* Bootstrap's lg breakpoint */
+    .basket-container {
+        justify-content: center;
+        width: 100%;
+        margin: 10px 0; /* Space between other menu items */
+    }
+
+    #navbar-basket-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
