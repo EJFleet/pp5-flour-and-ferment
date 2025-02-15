@@ -1,0 +1,44 @@
+{% load static %}
+{% load basket_tools %}
+
+<table class="table table-borderless text-muted">
+    <thead>
+        <tr>
+            <th scope="col" class="text-left">Item</th>
+            <th scope="col" class="text-center">Quantity</th>
+            <th scope="col" class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in basket_items %}
+        <tr>
+            <td>
+                <a href="{% url 'product_detail' item.product.id %}">
+                    {% if item.product.image %}
+                        <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="50">
+                    {% else %}
+                        <img class="img-fluid" src="{{ MEDIA_URL }}default-image.png" alt="No Image Available" width="50">
+                    {% endif %}
+                    <strong>{{ item.product.name }}</strong>
+                </a>
+            </td>
+            <td class="text-center">{{ item.quantity }}</td>
+            <td class="text-right">€{{ item.product.price | calc_subtotal:item.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="text-black">
+        <tr>
+            <td colspan="2" class="text-right">Order Total:</td>
+            <td class="text-right">€{{ total | floatformat:2 }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-right">Delivery:</td>
+            <td class="text-right">€{{ delivery | floatformat:2 }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-right font-weight-bold">Grand Total:</td>
+            <td class="text-right font-weight-bold">€{{ grand_total | floatformat:2 }}</td>
+        </tr>
+    </tfoot>
+</table>
