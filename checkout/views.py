@@ -1,13 +1,33 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from products.models import Product
 from .models import Order, OrderLineItem
+
+from products.models import Product
 from basket.contexts import basket_contents
 
 import stripe
+import json
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -34,12 +54,15 @@ def checkout(request):
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    order_line_item = OrderLineItem(
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
                         order=order,
                         product=product,
                         quantity=item_data,
                     )
+
                     order_line_item.save()
+                    
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your basket wasn't found in our database. "
@@ -60,7 +83,7 @@ def checkout(request):
         if not basket:
             messages.error(request, "There's nothing in your basket at the moment")
             return redirect(reverse('products'))
-        
+
         current_basket = basket_contents(request)
         total = current_basket['grand_total']
         stripe_total = round(total * 100)
@@ -72,19 +95,19 @@ def checkout(request):
 
         order_form = OrderForm()
 
-    if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
-    
-    template = 'checkout/checkout.html'
-    context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-    }
-    
-    return render(request, template, context)
-    
+        if not stripe_public_key:
+            messages.warning(request, 'Stripe public key is missing. \
+                Did you forget to set it in your environment?')
+        
+        template = 'checkout/checkout.html'
+        context = {
+            'order_form': order_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': intent.client_secret,
+        }
+        
+        return render(request, template, context)
+
 
 def checkout_success(request, order_number):
     """

@@ -29,6 +29,7 @@ SECRET_KEY = 'django-insecure-qte_c_sc(o13i_l0_(f1o$r%%(zz4v@nt=s_32dy(1)!*m96%j
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '.devtunnels.ms',
     '127.0.0.1',
     'localhost'
     ]
