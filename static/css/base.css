@@ -26,6 +26,15 @@ main {
     background-color: var(--white);
 }
 
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
 .card-img-top {
     object-fit: cover;  /* Ensures images fill the container without distortion */
     height: 18rem;      /* Set a fixed height for all images */
