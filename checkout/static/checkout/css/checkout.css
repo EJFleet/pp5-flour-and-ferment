@@ -64,3 +64,25 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+.country-select-flag {
+    display: none;
+}
+
+#payment-form .form-control {
+    color: #000;
+}
+
+#payment-form input::placeholder {
+    color: #aab7c4;
+}
+
+/* Default greyed-out country select */
+#id_country,
+#id_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_country option:first-child {
+    color: #aab7c4;
+}

@@ -5,7 +5,7 @@ from .models import Order
 
 class OrderForm(forms.ModelForm):
     country = forms.ChoiceField(
-        choices=CountryField().choices,
+        choices=[("", "Select a Country")] + list(CountryField().choices),
         widget=CountrySelectWidget(),
         required=True
     )
