@@ -50,8 +50,7 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
-                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term
-                                }}"</strong>{% endif %}
+                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                         </p>
                     </div>
                 </div>
@@ -66,7 +65,7 @@
                             {% else %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}default-image.png"
-                                    alt="{{ product.name }}">
+                                    alt="No image available for {{ product.name }}">
                             </a>
                             {% endif %}
                             <div class="card-body pb-0">
