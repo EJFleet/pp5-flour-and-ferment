@@ -24,6 +24,7 @@ body {
 
 main {
     background-color: var(--white);
+    min-height: 80vh;
 }
 
 /* from Bulma */
@@ -53,7 +54,7 @@ main {
     background: url('/media/hero-image.webp') no-repeat center center;
     background-size: cover;
     height: 100vh;
-    background-position: center calc(50% - 1rem); /* Shift the image up slightly */
+    background-position: center;
 }
 
 #title-container {
@@ -235,7 +236,7 @@ a.category-badge > span.badge:hover {
 footer {
     background-color: var(--lightgrey);
     width: 100%;
-    padding: 1rem;
+    padding-top: 2rem;
     text-align: center;
 }
 
