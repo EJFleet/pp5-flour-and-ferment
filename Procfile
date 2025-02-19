@@ -1,1 +1,1 @@
-web: gunicorn pp5-flour-and-ferment:wsgi:application
+web: gunicorn config.wsgi:application
