@@ -115,6 +115,7 @@
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Account</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'wishlist' %}">My Wishlist</a></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
               </ul>
             </li>
@@ -206,7 +207,8 @@
         {% if user.is_authenticated %}
           <h5>Account</h5>
           <ul class="nav flex-column footer-column">
-            <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-body-secondary">My Profile</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-body-secondary">Profile</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'wishlist' %}" class="nav-link p-0 text-body-secondary">Wishlist</a></li>
             <li class="nav-item mb-2"><a href="{% url 'account_logout' %}" class="nav-link p-0 text-body-secondary">Logout</a></li>
           </ul>
         <!-- Non logged-in user links -->

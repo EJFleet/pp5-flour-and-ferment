@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% include "basket/product_image.html" %}
+{% include "basket/quantity_form.html" %}
+
+{% block title %}My Wishlist{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'wishlist/css/wishlist.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col text-center mt-5">
+            <div class="d-flex justify-content-center mt-4">
+                <h2 class="logo-font">My Wishlist</h2>
+            </div>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
