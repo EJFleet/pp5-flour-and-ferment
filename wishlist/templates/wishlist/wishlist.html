@@ -6,7 +6,7 @@
 {% block title %}My Wishlist{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'wishlist/css/wishlist.css' %}">
+<link rel="stylesheet" href="{% static 'css/wishlist.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -83,12 +83,14 @@
                                     {% csrf_token %}
                                     <input type="hidden" name="quantity" value="1">
                                     <input type="hidden" name="redirect_url" value="{% url 'wishlist' %}">
-                                    <button type="submit" class="btn btn-success btn-sm">Add to Basket</button>
+                                    <button type="submit" class="btn btn-sm btn-add-to-basket">Add to Basket</button>
                                 </form>
+                                
                                 <form action="{% url 'remove_from_wishlist' item.product.id %}" method="post" class="d-inline">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    <button type="submit" class="btn btn-sm btn-remove-wishlist">Remove</button>
                                 </form>
+                                
                                </td>
                            </tr>
                        {% endfor %}

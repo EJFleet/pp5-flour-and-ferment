@@ -1,0 +1,29 @@
+/* Wishlist Buttons */
+
+/* Add to Basket */
+.btn-add-to-basket {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-to-basket:hover,
+.btn-add-to-basket:focus {
+    background-color: var(--hessian); /* Slightly muted on hover */
+    color: var(--white);
+}
+
+/* Remove from Wishlist */
+.btn-remove-wishlist {
+    background-color: var(--darkgrey);
+    color: var(--white);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-remove-wishlist:hover,
+.btn-remove-wishlist:focus {
+    background-color: var(--black);
+    color: var(--white);
+}
