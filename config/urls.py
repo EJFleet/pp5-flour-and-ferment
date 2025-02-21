@@ -28,3 +28,8 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('wishlist/', include('wishlist.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'config.views.handler404'
+handler500 = 'config.views.handler500'
+handler403 = 'config.views.handler403'
+handler405 = 'config.views.handler405'
