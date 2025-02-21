@@ -49,4 +49,4 @@ def remove_from_wishlist(request, item_id):
     else:
         messages.warning(request, 'The item was not found in your wishlist.')
 
-    return redirect(reverse('view_wishlist'))
+    return redirect(reverse('wishlist'))
