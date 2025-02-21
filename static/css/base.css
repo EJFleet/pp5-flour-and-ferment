@@ -74,6 +74,10 @@ main {
     color: var(--black) !important;
 }
 
+.text-orange {
+    color: var(--orange) !important;
+}
+
 /* =======================
    Navbar & Links
 ======================= */
@@ -303,7 +307,7 @@ footer a:hover {
 
 .btn-black {
     background: var(--black);
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 .btn-outline-black {
