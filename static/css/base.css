@@ -87,7 +87,7 @@ main {
 }
 
 a {
-    color: var(--black) !important;
+    color: var(--black);
 }
 
 a:hover {
@@ -101,6 +101,11 @@ a.shopping-cart-icon {
 a.category-badge > span.badge:hover {
     background: var(--darkgrey) !important;
     color: var(--white) !important;
+}
+
+a.product-title,
+a.product-title:hover {
+    color: var(--black);
 }
 
 #social-icons {
@@ -301,7 +306,7 @@ a.shop-now-button:focus,
 .btn-orange:active,
 .btn-orange:focus {
     background: var(--orange);
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 
@@ -352,6 +357,8 @@ a.shop-now-button:focus,
     color: var(--white);
 }
 
+
+
 /* =======================
    Icons & Buttons
 ======================= */
@@ -375,6 +382,14 @@ a.shop-now-button:focus,
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.update-link {
+    color: var(--orange);
+}
+
+.remove-item {
+    color: var(--darkgrey);
 }
 
 .basket-container {
