@@ -32,13 +32,17 @@
 
             {% if request.user.is_superuser %}
             <small class="ml-3">
-                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-primary mr-3" id="btn-edit">Edit</a>
-                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">
-                    Delete
-                  </button>
-                
+                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-edit mr-3">Edit</a>
+                <button type="button" class="btn btn-sm btn-delete" 
+                                                        data-toggle="modal" 
+                                                        data-target="#deleteModal" 
+                                                        data-product-id="{{ product.id }}" 
+                                                        data-product-name="{{ product.name }}">
+                                                    Delete
+                                                </button>
             </small>
             {% endif %}
+        
 
             <p class="mt-3">{{ product.description }}</p>
 
@@ -91,10 +95,10 @@
             <form action="{% url 'add_to_wishlist' product.id %}" method="post" class="d-inline">
                 {% csrf_token %}
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="btn btn-success btn-sm mt-2">Add to Wishlist</button>
+                <button type="submit" class="btn btn-orange btn-sm mt-2">Add to Wishlist</button>
             </form>
             {% else %}
-            <a href="{% url 'account_signup' %}" class="btn btn-success btn-sm mt-2">Add to Wishlist
+            <a href="{% url 'account_signup' %}" class="btn btn-orange btn-sm mt-2">Add to Wishlist
             </a>
             {% endif %}
 
@@ -151,26 +155,43 @@
     </div>
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete <strong id="productName"></strong>? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="#" id="confirmDeleteButton" class="btn btn-danger">Delete</a>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"><a href="{% url 'delete_product' product.id %}" class="btn btn-sm btn-danger" id="btn-delete">Delete</a></button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
         {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    $('#deleteModal').on('show.bs.modal', function (event) {
+        const button = $(event.relatedTarget);  // Button that triggered the modal
+        const productId = button.data('product-id');  // Get the product ID
+        const productName = button.data('product-name');  // Get product name
+
+        // Update modal content
+        $('#productName').text(productName);
+
+        // Ensure the delete URL matches your actual URL pattern
+        const deleteUrl = `/products/delete/${productId}/`;  
+        $('#confirmDeleteButton').attr('href', deleteUrl);
+    });
+});
+
+    </script>
 {% endblock %}  

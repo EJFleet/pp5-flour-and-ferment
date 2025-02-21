@@ -287,21 +287,21 @@ footer a:hover {
 .shop-now-button,
 .btn-orange {
     background: var(--orange);
-    color: white;
+    color: var(--black);
 }
 
 .shop-now-button {
     min-width: 10rem;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+a.shop-now-button:hover,
+a.shop-now-button:active,
+a.shop-now-button:focus,
 .btn-orange:hover,
 .btn-orange:active,
 .btn-orange:focus {
-    background: var(--hessian);
-    color: white;
+    background: var(--orange);
+    color: var(--white) !important;
 }
 
 
@@ -324,15 +324,35 @@ footer a:hover {
     color: var(--white) !important;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+/* Edit Button */
+.btn-edit {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    transition: background-color 0.3s ease;
 }
+
+.btn-edit:hover,
+.btn-edit:focus {
+    background-color: var(--hessian); /* Subtle hover effect */
+    color: var(--white);
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: var(--darkgrey);
+    color: var(--white);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    background-color: var(--black); /* Stronger hover effect */
+    color: var(--white);
+}
+
+
 
 /* =======================
    Icons & Buttons
