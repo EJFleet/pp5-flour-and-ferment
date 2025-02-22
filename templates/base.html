@@ -131,9 +131,9 @@
             <!-- Superuser links -->
             {% if user.is_superuser %}
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Product
-                Admin</a>
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Admin</a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin Panel</a></li>
                 <li><a class="dropdown-item" href="{% url 'add_product' %}">Add New Product</a></li>
                 <li><a class="dropdown-item" href="{% url 'products' %}">Edit/Delete A Product</a></li>
               </ul>
@@ -187,7 +187,7 @@
     {% endblock %}
   </main>  
 
-  <footer>
+  <footer class="mt-5">
     <div class="container">
     <div class="row offset-md-1">
       <div class="col-6 col-md-2 mb-3">
