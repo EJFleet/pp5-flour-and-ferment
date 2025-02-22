@@ -309,6 +309,36 @@ footer a:hover {
 }
 
 /* =======================
+   Mail Chimp
+======================= */
+
+#mc_embed_signup {
+    background-color: var(--darkgrey);
+    color: var(--white);
+    clear:left;
+}
+
+#mc_embed_signup h2 {
+    font-weight: normal;
+    padding: 0;
+    margin: 15px 0;
+    font-size: 1.4em;
+}
+
+#mc_embed_signup .button {
+    background-color: var(--orange);
+    color: var(--black);
+}
+
+#mc_embed_signup .button:hover,
+#mc_embed_signup .button:active,
+#mc_embed_signup .button:focus {
+    transform: scale(1.05);
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+/* =======================
    Buttons
 ======================= */
 

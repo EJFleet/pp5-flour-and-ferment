@@ -18,7 +18,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
   <!-- Google Fonts -->
@@ -187,69 +187,86 @@
     {% endblock %}
   </main>  
 
-  <footer class="mt-5">
+  <footer>
     <div class="container">
-    <div class="row offset-md-1">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Site Pages</h5>
-        <ul class="nav flex-column footer-column">
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Home</a></li>
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Shop</a></li>
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Recipes</a></li>
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">About</a></li>
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-2 mb-3">
-        <!-- Logged-in user links -->
-        {% if user.is_authenticated %}
-          <h5>Account</h5>
+      <div class="row offset-md-1">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Site Pages</h5>
           <ul class="nav flex-column footer-column">
-            <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-body-secondary">Profile</a></li>
-            <li class="nav-item mb-2"><a href="{% url 'wishlist' %}" class="nav-link p-0 text-body-secondary">Wishlist</a></li>
-            <li class="nav-item mb-2"><a href="{% url 'account_logout' %}" class="nav-link p-0 text-body-secondary">Logout</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Home</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Shop</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Recipes</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">About</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Contact</a></li>
           </ul>
-        <!-- Non logged-in user links -->
-        {% else %}
-          <h5>Account</h5>
-          <ul class="nav flex-column footer-column">
-            <li class="nav-item mb-2"><a href="{% url 'account_signup' %}" class="nav-link p-0 text-body-secondary">Register</a></li>
-            <li class="nav-item mb-2"><a href="{% url 'account_login' %}" class="nav-link p-0 text-body-secondary">Login</a></li>
-          </ul>
-        {% endif %}
-      </div>
+        </div>
 
-      <div class="col-6 col-md-2 mb-3">
-        <h5>
-          Follow:
-          <p id="social-icons">
-          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
-            <a href="https://x.com/home" target="_blank"><i class="fab fa-x-twitter ms-3"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a>
-            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a>
-          </p>
+        <div class="col-6 col-md-2 mb-3">
+          <!-- Logged-in user links -->
+          {% if user.is_authenticated %}
+            <h5>Account</h5>
+            <ul class="nav flex-column footer-column">
+              <li class="nav-item mb-2"><a href="{% url 'profile' %}" class="nav-link p-0 text-body-secondary">Profile</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'wishlist' %}" class="nav-link p-0 text-body-secondary">Wishlist</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'account_logout' %}" class="nav-link p-0 text-body-secondary">Logout</a></li>
+            </ul>
+          <!-- Non logged-in user links -->
+          {% else %}
+            <h5>Account</h5>
+            <ul class="nav flex-column footer-column">
+              <li class="nav-item mb-2"><a href="{% url 'account_signup' %}" class="nav-link p-0 text-body-secondary">Register</a></li>
+              <li class="nav-item mb-2"><a href="{% url 'account_login' %}" class="nav-link p-0 text-body-secondary">Login</a></li>
+            </ul>
+          {% endif %}
+        </div>
 
-        </h5>
-        
-      </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>
+            Follow:
+            <p id="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
+              <a href="https://x.com/home" target="_blank"><i class="fab fa-x-twitter ms-3"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a>
+            </p>
+          </h5>          
+        </div>
 
-      <div class="col-md-5 offset-md-1 mb-3">
-        <!-- Newsletter subscription button -->
-        <form>
-          <h5>Subscribe to our newsletter</h5>
-          <p>Exciting news and exclusive deals!</p>
-        </form>
+        <div class="col-md-5 offset-md-1 mb-3">
+          <!-- Newsletter subscription button -->
+            <div id="mc_embed_shell">            
+              <div id="mc_embed_signup" class="p-4">
+                  <form action="https://gmail.us17.list-manage.com/subscribe/post?u=56445f83ba6730f952cb172a2&amp;id=a08c53d4b4&amp;f_id=0015c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                      <div id="mc_embed_signup_scroll"><h2>Subscribe to our Newsletter for access to Exclusive Offers!</h2>
+                          <div class="mc-field-group"><label for="mce-EMAIL">Email Address</label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+                      <div id="mce-responses" class="clear foot">
+                          <div class="response" id="mce-error-response" style="display: none;"></div>
+                          <div class="response" id="mce-success-response" style="display: none;"></div>
+                      </div>
+                  <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                      /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                      <input type="text" name="b_56445f83ba6730f952cb172a2_a08c53d4b4" tabindex="-1" value="">
+                  </div>
+                      <div class="optionalParent">
+                          <div class="clear foot">
+                              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                          </div>
+                      </div>
+                  </div>
+              </form>
+              </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+          <div class="d-flex flex-column flex-sm-row justify-content-between p-4 my-4 border-top">
+            <p class="footer-credit-text">&copy; 2024 Flour & Ferment</p>
+            <p class="footer-link"><a href="">Privacy Policy </a></p>
+            <p class="footer-link"><a href="">Site Map</a></p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="d-flex flex-column flex-sm-row justify-content-between p-4 my-4 border-top">
-      <p class="footer-credit-text">&copy; 2024 Flour & Ferment</p>
-      <p class="footer-link"><a href="">Privacy Policy </a></p>
-      <p class="footer-link"><a href="">Site Map</a></p>
-    </div>
-  </div>
   </footer>
 
 
@@ -257,6 +274,10 @@
   <script type="text/javascript">
     $('.toast').toast('show');
   </script>
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script
+    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; fnames[6] = 'COMPANY'; ftypes[6] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+  </div>
   {% endblock %}
 
 
