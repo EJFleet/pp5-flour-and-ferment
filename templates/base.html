@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="keywords" content="sourdough supplies, sourdough tools, sourdough starter, sourdough baking kit, sourdough bread tools, sourdough baking equipment, sourdough cookbooks, sourdough starter kit, organic sourdough starter, bread flour, rye flour, proofing basket, dough scraper, bread lame, artisan bread baking, beginner sourdough baking, Dublin sourdough store, sourdough gift set, home baking essentials">
+  <meta name="keywords" content="sourdough supplies, sourdough tools, sourdough starter, sourdough baking kit, sourdough bread tools, sourdough baking equipment, sourdough cookbooks, sourdough starter kit, organic sourdough starter, bread flour, rye flour, proofing basket, dough scraper, bread lame, artisan bread baking, beginner sourdough baking, Dublin sourdough store, sourdough gift set, home baking essentials" />
   {% endblock %}
 
   {% block extra_meta %}
@@ -58,7 +58,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container fluid">
-        <a class="navbar-brand logo-font" href="{% url 'home' %}">Flour & Ferment</a>
+        <a class="navbar-brand logo-font py-0 my-0" href="{% url 'home' %}" id="logo"><img src="{{MEDIA_URL}}ff-logo-circle-tiny.png "
+          alt="Piano key logo" id="piano-logo"></a>
 
         <button class="navbar-toggler mr-4" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -159,7 +160,6 @@
         </div>
       </div>
     </nav>
-
   </header>
 
   <main>    
