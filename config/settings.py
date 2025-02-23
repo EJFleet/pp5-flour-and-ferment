@@ -46,14 +46,14 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'home',
-    'products',
     'basket',
     'checkout',
     'contact',
+    'faq',
+    'home',
+    'products',
     'profiles',
     'wishlist',
-
 
 
     # Other
