@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col text-center mt-5">
+            <div class="d-flex justify-content-center mt-4">
+                <h2 class="logo-font">About</h2>
+            </div>
+            <hr class="w-50 mb-3">
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <div class="text-center mb-5">
+                <h2 class="mt-4">Our Story</h2>
+                <p class="mt-4 lead text-muted">
+                    Welcome to <strong>Flour & Ferment</strong>, your one-stop shop for everything sourdough. 
+                    Based in the heart of Dublin, Ireland, we’re passionate about helping bakers of all skill levels 
+                    master the art of sourdough baking. Whether you’re a beginner or an experienced baker, we have 
+                    everything you need to succeed.
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="mb-3">Why We Started</h3>
+                <p>
+                    Our journey began with a simple love for sourdough. There's something magical about transforming 
+                    flour, water, and salt into a loaf with complex flavors and a perfectly crisp crust. But quality 
+                    ingredients and reliable tools make all the difference. That’s why we created a store dedicated to 
+                    sourdough enthusiasts.
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="mb-3">What We Offer</h3>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-bread-slice text-orange"></i> <strong>Sourdough Starters:</strong> Live, active starters, ready to use.</li>
+                    <li class="mb-2"><i class="fas fa-seedling text-orange"></i> <strong>Premium Flours:</strong> Organic rye, bread flour, and more.</li>
+                    <li class="mb-2"><i class="fas fa-utensils text-orange"></i> <strong>Baking Equipment:</strong> Bannetons, dough scrapers, and more.</li>
+                    <li class="mb-2"><i class="fas fa-book text-orange"></i> <strong>Cookbooks:</strong> Sourdough recipes from renowned bakers.</li>
+                </ul>
+            </div>
+
+            <div class="mb-5">
+                <h3 class="mb-3">Join Our Community</h3>
+                <p>
+                    Flour & Ferment is more than a store—it's a community. We love hearing about your sourdough successes 
+                    and sharing tips. Subscribe to our newsletter for exclusive offers, updates, and new recipes.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <p class="mt-4"><strong>Thank you for choosing Flour & Ferment. We’re excited to be part of your sourdough journey!</strong></p>
+                <a href="{% url 'products' %}" class="btn btn-orange mt-3">Shop Our Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
