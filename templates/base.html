@@ -78,12 +78,11 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Recipes</a>
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
               <ul class="dropdown-menu">
-                <li><a href="" class="dropdown-item">All Recipes</a></li>
-                <li><a href="" class="dropdown-item">Bread</a></li>
-                <li><a href="" class="dropdown-item">Pizza</a></li>
-                <li><a href="" class="dropdown-item">Sweet Treats</a></li>
+                <li><a class="dropdown-item" href="{% url 'about' %}">About Us</a></li>
+                <li><a class="dropdown-item" href="">FAQs</a></li>
+                <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
               </ul>
             </li>
             <!-- Search bar -->
@@ -103,14 +102,7 @@
               </form>
             </li>
             <!-- From Lewis Dillon Web Piano Academy -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'about' %}">About Us</a></li>
-                <li><a class="dropdown-item" href="">FAQs</a></li>
-                <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
-              </ul>
-            </li>
+            
             <!-- Logged-in user links -->
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
@@ -196,7 +188,6 @@
           <ul class="nav flex-column footer-column">
             <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-0 text-body-secondary">Home</a></li>
             <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-body-secondary">Shop</a></li>
-            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">Recipes</a></li>
             <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary">About</a></li>
             <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">FAQs</a></li>
             <li class="nav-item mb-2"><a href="{% url 'contact' %}" class="nav-link p-0 text-body-secondary">Contact</a></li>
