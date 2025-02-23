@@ -81,7 +81,7 @@
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">About</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'about' %}">About Us</a></li>
-                <li><a class="dropdown-item" href="">FAQs</a></li>
+                <li><a class="dropdown-item" href="{% url 'faq' %}">FAQs</a></li>
                 <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
               </ul>
             </li>
@@ -189,7 +189,7 @@
             <li class="nav-item mb-2"><a href="{% url 'home' %}" class="nav-link p-0 text-body-secondary">Home</a></li>
             <li class="nav-item mb-2"><a href="{% url 'products' %}" class="nav-link p-0 text-body-secondary">Shop</a></li>
             <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary">About</a></li>
-            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+            <li class="nav-item mb-2"><a href="{% url 'faq' %}" class="nav-link p-0 text-body-secondary">FAQs</a></li>
             <li class="nav-item mb-2"><a href="{% url 'contact' %}" class="nav-link p-0 text-body-secondary">Contact</a></li>
           </ul>
         </div>
@@ -228,7 +228,7 @@
         <div class="col-md-5 offset-md-1 mb-3">
           <!-- Newsletter subscription button -->
             <div id="mc_embed_shell">            
-              <div id="mc_embed_signup" class="p-4">
+              <div id="mc_embed_signup" class="p-2">
                   <form action="https://gmail.us17.list-manage.com/subscribe/post?u=56445f83ba6730f952cb172a2&amp;id=a08c53d4b4&amp;f_id=0015c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                       <div id="mc_embed_signup_scroll"><h2>Subscribe to our Newsletter for access to Exclusive Offers!</h2>
                           <div class="mc-field-group"><label for="mce-EMAIL">Email Address</label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
