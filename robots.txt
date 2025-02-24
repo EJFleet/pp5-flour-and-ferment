@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Sitemap: https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/sitemap.xml
