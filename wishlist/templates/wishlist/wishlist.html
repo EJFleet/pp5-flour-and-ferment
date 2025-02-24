@@ -101,9 +101,11 @@
            </div>
            {% else %}
                <p class="text-center mt-4">Your wishlist is empty.</p>
-               <p class="text-center"><a href="{% url 'home' %}" class="btn btn-orange text-uppercase mt-3">Back to Home</a></p>
            {% endif %}
        </div>
    </div>
+   <div class="text-center">
+    <a href="{% url 'products' %}" class="btn btn-orange text-uppercase my-3">Back to Store</a>
+</div>
 </div>
 {% endblock %}
