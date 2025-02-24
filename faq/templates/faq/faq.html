@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Have questions about Flour & Ferment sourdough supplies? See our FAQ page for information on shipping, orders, returns and more.">
+{% endblock %}
+
 {% block title %}FAQ{% endblock %}
 
 {% block page_header %}
@@ -41,7 +45,7 @@
                 {% endfor %}                
             </div>
             <div class="text-center">
-                <a href="{% url 'home' %}" class="btn btn-orange text-uppercase mt-3">Back to Home</a>
+                <a href="{% url 'home' %}" class="btn btn-orange text-uppercase my-3">Back to Home</a>
             </div>
         </div>
     </div>

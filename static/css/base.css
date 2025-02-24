@@ -46,8 +46,16 @@ main {
     transition: transform 0.3s ease;
 }
 
-.card-img-top:hover {
+.card-img-top:hover,
+.product-detail-image:hover {
     transform: scale(1.05);
+}
+
+.product-detail-image {
+    object-fit: cover;
+    height: 25rem;
+    width: 100%;
+    transition: transform 0.3s ease;
 }
 
 .footer-column {
@@ -375,6 +383,14 @@ a.shop-now-button:focus,
     color: var(--white) !important;
 }
 
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: var(--orange);
+    color: var(--white) !important;
+}
+
+
 .btn-outline-black {
     background: var(--white);
     color: var(--black) !important; /* use important to override link colors for <a> elements */
@@ -413,8 +429,18 @@ a.shop-now-button:focus,
 
 .btn-delete:hover,
 .btn-delete:focus {
-    background-color: var(--black); /* Stronger hover effect */
+    background-color: red; /* Stronger hover effect */
     color: var(--white);
+}
+
+/* Icon Button Styling */
+.btn-edit i, .btn-delete i {
+    font-size: 1.2rem; /* Adjust icon size */
+    transition: transform 0.2s ease;
+}
+
+.btn-edit:hover i, .btn-delete:hover i {
+    transform: scale(1.2); /* Slight hover effect */
 }
 
 
