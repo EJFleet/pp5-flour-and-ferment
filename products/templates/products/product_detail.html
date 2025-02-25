@@ -31,17 +31,30 @@
                 {% endif %}
             </div>
 
-            {% if request.user.is_superuser %}
+                
                 <small>
+                    {% if request.user.is_superuser %}
                     <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-edit mr-2" title="Edit">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <button type="button" class="btn btn-sm btn-delete" data-toggle="modal" data-target="#deleteModal"
+                    <button type="button" class="btn btn-sm btn-delete mr-2" data-toggle="modal" data-target="#deleteModal"
                         data-product-id="{{ product.id }}" data-product-name="{{ product.name }}" title="Delete">
                         <i class="fas fa-trash-alt"></i>
                     </button>
+                    {% endif %} 
+                    <!-- Add to Wishlist Button -->
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'add_to_wishlist' product.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-orange btn-sm" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                    </form>
+                    {% else %}
+                    <a href="{% url 'account_signup' %}" class="btn btn-orange btn-sm" title="Add to Wishlist"><i class="fas fa-heart"></i>
+                    </a>
+                    {% endif %}
                 </small>
-                {% endif %}
+                          
 
 
 
@@ -91,18 +104,6 @@
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
-            <!-- Add to Wishlist Button -->
-            {% if user.is_authenticated %}
-            <form action="{% url 'add_to_wishlist' product.id %}" method="post" class="d-inline">
-                {% csrf_token %}
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="btn btn-orange btn-sm mt-2">Add to Wishlist</button>
-            </form>
-            {% else %}
-            <a href="{% url 'account_signup' %}" class="btn btn-orange btn-sm mt-2">Add to Wishlist
-            </a>
-            {% endif %}
-
         </div>
     </div>
     <div class="row">
