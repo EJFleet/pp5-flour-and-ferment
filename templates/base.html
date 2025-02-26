@@ -56,7 +56,7 @@
 
   <header>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
       <div class="container fluid">
         <a class="navbar-brand logo-font py-0 my-0" href="{% url 'home' %}" id="logo"><img src="{{MEDIA_URL}}ff-logo-circle-tiny.png "
           alt="Flour & Ferment logo" id="flour-and-ferment-logo"></a>
@@ -92,7 +92,7 @@
                 <div class="input-group w-100">
                   <input class="form-control border rounded-1" type="text" name="q" placeholder="Search products...">
                   <div class="input-group-append">
-                    <button class="form-control btn btn-orange border rounded-1" type="submit">
+                    <button class="form-control btn btn-orange border rounded-1" type="submit" aria-label="Click to search">
                       <span class="icon">
                         <i class="fas fa-search"></i>
                       </span>
@@ -219,10 +219,10 @@
           <h5>
             Follow:
             <p id="social-icons">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
-              <a href="https://x.com/home" target="_blank"><i class="fab fa-x-twitter ms-3"></i></a>
-              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square ms-3"></i></a>
-              <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square ms-3"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-square ms-3"></i></a>
+              <a href="https://x.com/home" target="_blank" aria-label="Visit us on X"><i class="fab fa-x-twitter ms-3"></i></a>
+              <a href="https://www.instagram.com/" target="_blank" aria-label="Visit our Instagram"><i class="fab fa-instagram-square ms-3"></i></a>
+              <a href="https://www.youtube.com/" target="_blank" aria-label="Visit our YouTube page"><i class="fab fa-youtube-square ms-3"></i></a>
             </p>
           </h5>          
         </div>
