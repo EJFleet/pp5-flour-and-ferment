@@ -152,9 +152,14 @@ h3 {
     transition: box-shadow 0.3s ease;
 }
 
+.nav-link:hover {
+    color: var(--darkgrey);
+    transform: scale(1.05);    
+}
+
 .navbar-nav .nav-link,
 .input-group > .form-control {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
 }
 
 a {
