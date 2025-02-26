@@ -152,6 +152,10 @@ h3 {
     transition: box-shadow 0.3s ease;
 }
 
+.nav-link {
+    color: var(--black) !important;
+}
+
 .nav-link:hover {
     color: var(--darkgrey);
     transform: scale(1.05);    
