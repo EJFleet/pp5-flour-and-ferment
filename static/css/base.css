@@ -55,6 +55,11 @@ h3 {
     margin-bottom: 0.6rem;
 }
 
+.primaryAction {
+    text-transform: uppercase;
+    border-radius: 0.25rem !important;
+}
+
 .subheading {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -172,7 +177,13 @@ a {
 }
 
 a:hover {
-    text-decoration: underline var(--black);
+    text-decoration: underline;
+}
+
+#products-page-heading:hover,
+#products-page-heading:focus
+ {
+    text-decoration: underline var(--black) !important;
 }
 
 #navbar-basket-link {
@@ -392,6 +403,7 @@ footer a:hover {
     background-color: var(--orange);
     color: var(--black);
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 #mc_embed_signup .button:hover,
@@ -411,11 +423,13 @@ footer a:hover {
     background: var(--orange);
     color: var(--black);
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .shop-now-button {
     min-width: 10rem;
     transition: transform 0.3s ease;
+    text-transform: uppercase;
 }
 
 .shop-now-button:hover {
@@ -431,18 +445,23 @@ a.shop-now-button:focus,
 .btn-orange:focus {
     background: var(--orange);
     color: var(--white);
+    text-transform: uppercase;
 }
 
 
 .btn-black {
     background: var(--black);
     color: var(--white) !important;
+    text-transform: uppercase;
 }
 
 .btn-black:hover,
 .btn-black:active,
-.btn-black:focus {
-    background: var(--orange);
+.btn-black:focus,
+.primaryAction:hover,
+.primaryAction:active,
+.primaryAction:focus {
+    background: var(--orange) !important;
     color: var(--white) !important;
 }
 
@@ -451,6 +470,7 @@ a.shop-now-button:focus,
     background: var(--white);
     color: var(--black) !important; /* use important to override link colors for <a> elements */
     border: 1px solid var(--black);
+    text-transform: uppercase;
 }
 
 
