@@ -537,6 +537,14 @@ a.shop-now-button:focus,
     margin-top: 2px; /* Reduce spacing above text */
 }
 
+#logged-in-as,
+#logged-in-name {
+    font-size: 0.9rem;
+}
+
+#logged-in-name {
+    text-decoration: underline;
+}
 
 
 /* =======================
