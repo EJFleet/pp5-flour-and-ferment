@@ -5,8 +5,18 @@ from .models import Faq
 
 
 def faq(request):
+    """
+    Display the FAQ page.
 
-    """ A view to return the faq page """
+    Retrieves all FAQ entries from the database and passes them 
+    to the template for rendering.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Renders the FAQ template with all FAQs.
+    """
     
     context = {
         'faqs': Faq.objects.all(),

@@ -18,6 +18,19 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Store additional checkout data in the Stripe PaymentIntent metadata.
+
+    This function is triggered before payment is processed to attach
+    the basket contents and user preferences to the Stripe PaymentIntent.
+
+    Args:
+        request (HttpRequest): The HTTP request containing checkout data.
+
+    Returns:
+        HttpResponse: A 200 status response if successful, or a 400 error
+        response with the exception details if something goes wrong.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,6 +47,25 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Handle checkout form submission and payment processing.
+
+    - If the request method is POST:
+        - Validates the order form.
+        - Creates an order instance and associated line items.
+        - Stores order details in the session and redirects to checkout success.
+    - If the request method is GET:
+        - Ensures the basket is not empty.
+        - Creates a Stripe PaymentIntent.
+        - Prefills the order form for authenticated users.
+
+    Args:
+        request (HttpRequest): The HTTP request containing checkout data.
+
+    Returns:
+        HttpResponse: Renders the checkout template with the order form
+        and Stripe client secret for payment processing.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -136,7 +168,21 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handle successful checkout process.
+
+    - Fetches the order details using the provided order number.
+    - If the user is authenticated:
+        - Links the order to the user's profile.
+        - Saves the user’s checkout information if requested.
+    - Clears the basket from the session.
+    - Displays a success message.
+
+    Args:
+        request (HttpRequest): The HTTP request after checkout completion.
+        order_number (str): The unique identifier for the completed order.
+
+    Returns:
+        HttpResponse: Renders the checkout success template with order details.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

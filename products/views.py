@@ -9,11 +9,20 @@ from .forms import ProductForm
 
 # Create your views here.
 
-
 def all_products(request):
+    """
+    Display all products, including sorting and search functionality.
 
-    """ A view to show all products, including sorting and search queries """
+    - Supports sorting by name, category, and other attributes.
+    - Filters products by selected category.
+    - Implements a search feature to find products by name or description.
 
+    Args:
+        request (HttpRequest): The HTTP request containing potential filters or queries.
+
+    Returns:
+        HttpResponse: Renders the products page with a filtered and sorted list of products.
+    """
     products = Product.objects.all()
     query = None
     category_names = None
@@ -66,12 +75,21 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """
+    Display details of a specific product.
 
-    """ A view to show individual product details """
+    - Retrieves the product by its ID.
+    - Selects three random products to display as related suggestions.
 
+    Args:
+        request (HttpRequest): The HTTP request object.
+        product_id (int): The ID of the product to display.
+
+    Returns:
+        HttpResponse: Renders the product detail page with the product and related suggestions.
+    """
     product = get_object_or_404(Product, pk=product_id)
     random_products = Product.objects.exclude(id=product.id).order_by('?')[:3]
-
 
     context = {
         'product': product,
@@ -83,7 +101,18 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """
+    Allow superusers to add a new product to the store.
+
+    - Only accessible to store owners (superusers).
+    - Handles form submission for new products.
+
+    Args:
+        request (HttpRequest): The HTTP request containing form data.
+
+    Returns:
+        HttpResponse: Renders the add product page or redirects to the product detail page on success.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -109,7 +138,19 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """
+    Allow superusers to edit an existing product.
+
+    - Retrieves the product by ID.
+    - Handles form submission to update the product.
+
+    Args:
+        request (HttpRequest): The HTTP request containing form data.
+        product_id (int): The ID of the product to edit.
+
+    Returns:
+        HttpResponse: Renders the edit product page or redirects to the updated product detail page.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -138,7 +179,19 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """
+    Allow superusers to delete a product.
+
+    - Retrieves the product by ID.
+    - Deletes the product from the database.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        product_id (int): The ID of the product to delete.
+
+    Returns:
+        HttpResponse: Redirects to the products page with a success message.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

@@ -4,30 +4,53 @@ from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 from .models import Wishlist, WishlistItem
-# Create your views here.
 
 
 @login_required
 def view_wishlist(request):
+    """
+    Display the user's wishlist.
 
-    """ A view to return the wishlist page """
+    - Retrieves or creates a wishlist for the authenticated user.
+    - Fetches all wishlist items associated with the wishlist.
+    - Renders the wishlist template with the retrieved items.
 
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Renders the wishlist page with the user's wishlist items.
+    """
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
     wishlist_items = wishlist.wishlist_items.all()
+    
     context = {
         'wishlist_items': wishlist_items
-        }
+    }
     
     return render(request, 'wishlist/wishlist.html', context)
 
 
 @login_required
 def add_to_wishlist(request, item_id):
+    """
+    Add a product to the user's wishlist.
 
-    """ Add a product to the wishlist """
+    - Retrieves the product by its ID.
+    - Gets or creates a wishlist for the authenticated user.
+    - Checks if the product is already in the wishlist:
+        - If not, adds it and displays a success message.
+        - If already present, displays an info message.
 
+    Args:
+        request (HttpRequest): The HTTP request object containing the redirect URL.
+        item_id (int): The ID of the product to be added.
+
+    Returns:
+        HttpResponseRedirect: Redirects to the previous page or the wishlist page.
+    """
     product = get_object_or_404(Product, pk=item_id)
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     _, created = WishlistItem.objects.get_or_create(
         wishlist=wishlist, product=product
@@ -43,7 +66,21 @@ def add_to_wishlist(request, item_id):
 
 @login_required
 def remove_from_wishlist(request, item_id):
-    """Remove a product from the wishlist."""
+    """
+    Remove a product from the user's wishlist.
+
+    - Retrieves the user's wishlist.
+    - Attempts to delete the wishlist item by its product ID.
+    - Displays a success message if the item was removed.
+    - Displays a warning message if the item was not found.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        item_id (int): The ID of the product to be removed.
+
+    Returns:
+        HttpResponseRedirect: Redirects to the wishlist page.
+    """
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     # Try to delete the wishlist item
