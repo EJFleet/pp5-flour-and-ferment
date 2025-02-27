@@ -62,7 +62,9 @@ def all_products(request):
     else:
         categories = ProductCategory.objects.all()    
 
-    current_sorting = f'{sort}_{direction}' if sort else 'name_asc'
+    sort = request.GET.get('sort', 'name')
+    direction = request.GET.get('direction', 'asc')
+    current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
