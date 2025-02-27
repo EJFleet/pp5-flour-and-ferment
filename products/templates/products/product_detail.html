@@ -91,16 +91,16 @@
                         </div>
                     </div>
 
-                    <div class="col{% if s %}-12 mt-2{% endif %}">
+                    <div class="col-12 mt-2">
                         <!-- Keep Shopping Button -->
-                        <a href="{% url 'products' %}" class="btn btn-outline-black  mt-5">
+                        <a href="{% url 'products' %}" class="btn btn-outline-black mt-2">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         <!-- Add to Basket Button -->
-                        <input type="submit" class="btn btn-black  text-uppercase mt-2 mt-md-5" value="Add to Basket">
+                        <input type="submit" class="btn btn-black text-uppercase mt-2" value="Add to Basket">
                     </div>
                     <!-- Hidden Redirect Field -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
