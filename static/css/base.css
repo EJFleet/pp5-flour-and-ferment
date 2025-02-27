@@ -606,6 +606,19 @@ a.shop-now-button:focus,
     }
 }
 
+@media (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+    #title-container {
+        position:relative;
+        top: -18rem;
+    }
+
+    .col-md-6 {
+        flex: 0 0 66.6667%; /* 8/12 columns */
+        max-width: 66.6667%;
+    }
+}
+
+
 /* Center shopping basket icon in the dropdown for smaller screens */
 @media (max-width: 991px) { /* Bootstrap's lg breakpoint */
     .basket-container {
