@@ -97,8 +97,7 @@
                                 {% endif %}
                                 {% if request.user.is_superuser %}
                                 <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-edit mr-3"
-                                        id="btn-edit">Edit</a>
+                                    <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-edit mr-3">Edit</a>
                                     <button type="button" class="btn btn-sm btn-delete" data-toggle="modal"
                                         data-target="#deleteModal" data-product-id="{{ product.id }}"
                                         data-product-name="{{ product.name }}">
@@ -164,13 +163,13 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
