@@ -62,7 +62,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Profile | | | | |
 | | Click on the Update Information button | Inputted information is saved |  | |
-| | Click on Order History links | Redirects to user order confirmation |  | |
+| | Click on Order History links | Redirects to user order confirmation, alert message displayed |  | |
 | | Click on Back to Profile (in Order History) | Redirects to Profile page | | |
 
 | Wishlist | | | | |

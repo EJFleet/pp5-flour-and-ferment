@@ -274,6 +274,17 @@ a.product-title:hover {
     overflow-y: auto;
 }
 
+.order-confirmation-wrapper p {
+    margin-bottom: 0.3rem; /* Reduce gap between text */
+}
+.order-confirmation-wrapper .row {
+    padding-bottom: 5px; /* Add small spacing */
+}
+
+.text-justify-custom {
+    text-align: justify;
+}
+
 /* Allauth form formatting */
 
 .allauth-form-inner-content {

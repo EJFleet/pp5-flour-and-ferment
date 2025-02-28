@@ -27,7 +27,7 @@
         <!-- Order Summary -->
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             {% include 'checkout/includes/order_summary.html' %}
-                </div>
+        </div>
 
         <!-- Checkout Form -->
         <div class="col-12 col-lg-6">
@@ -47,10 +47,12 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
-    {{ block.super }}
-    <script type="text/javascript" src="{% static 'checkout/js/countryfield.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+
+<!-- Stripe Javascript -->
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+<!-- Countryfield Javascript -->
+<script type="text/javascript" src="{% static 'checkout/js/countryfield.js' %}"></script>
 {% endblock %}

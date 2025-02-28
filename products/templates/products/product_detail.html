@@ -23,8 +23,8 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-detail-container mb-5 mt-md-5">
-                <h1 class="product-name mt-2 mb-0">{{ product.name }}</h1>
-                <h3 class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</h3>
+                <h1 class="product-name mt-4 mb-2">{{ product.name }}</h1>
+                <h2 class="lead mb-3 text-left font-weight-bold">€{{ product.price }}</h3>
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -35,7 +35,7 @@
             </div>
 
 
-            <small>
+            <div class="d-flex align-items-center">
                 {% if request.user.is_superuser %}
                 <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-edit mr-2" title="Edit">
                     <i class="fas fa-edit"></i>
@@ -45,24 +45,22 @@
                     <i class="fas fa-trash-alt"></i>
                 </button>
                 {% endif %}
-                <!-- Add to Wishlist Button -->
+                
                 {% if user.is_authenticated %}
                 <form action="{% url 'add_to_wishlist' product.id %}" method="post" class="d-inline">
                     {% csrf_token %}
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    <button type="submit" class="btn btn-orange btn-sm" title="Add to Wishlist"><i
-                            class="fas fa-heart"></i></button>
+                    <button type="submit" class="btn btn-orange btn-sm" title="Add to Wishlist">
+                        <i class="fas fa-heart"></i>
+                    </button>
                 </form>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="btn btn-orange btn-sm" title="Add to Wishlist"><i
-                        class="fas fa-heart"></i>
+                <a href="{% url 'account_signup' %}" class="btn btn-orange btn-sm" title="Add to Wishlist">
+                    <i class="fas fa-heart"></i>
                 </a>
                 {% endif %}
-            </small>
-
-
-
-
+            </div>
+            
             <p class="mt-3">{{ product.description }}</p>
 
             <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
@@ -70,6 +68,7 @@
                 <div class="form-row">
                     <div class="col-12">
                         <p class="mt-3"><strong>Quantity:</strong></p>
+                        <!-- Quantity Input -->
                         <div class="form-group w-50">
                             <div class="input-group input-group-{{ product.id }}">
                                 <div class="input-group-prepend">
@@ -82,7 +81,7 @@
                                 <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
                                     name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
                                 <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
+                                    <button class="increment-qty btn btn-black increment-qty_{{ product.id }}"
                                         data-item_id="{{ product.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
@@ -112,7 +111,7 @@
     </div>
     <div class="row">
         <div class="col text-center mt-3">
-            <h3 class="mt-5">Products You Might Enjoy</h3>
+            <h3 class="mt-5 mb-4">Products You Might Enjoy</h3>
             <hr class="w-50 mb-1">
         </div>
     </div>

@@ -1,7 +1,7 @@
 <a href="{% url 'product_detail' item.product.id %}">
     {% if item.product.image %}
-        <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+    <img class="img-fluid" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
     {% else %}
-        <img class="img-fluid" src="{{ MEDIA_URL }}default-image.png" alt="No Image Available for {{ item.product.name }}">
+    <img class="img-fluid" src="{{ MEDIA_URL }}default-image.png" alt="No Image Available for {{ item.product.name }}">
     {% endif %}
 </a>

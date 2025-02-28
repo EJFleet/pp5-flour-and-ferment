@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}Checkout{% endblock %}
+{% block extra_title %}| Order Confirmation{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -99,7 +99,7 @@
                         <p class="mb-0 text-black font-weight-bold">Address 2</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
+                        <p class="mb-0">{{ order.street_address2 }}</p>
                     </div>
                 </div>
                 {% endif %}
@@ -164,7 +164,7 @@
                         <p class="mb-0 text-black font-weight-bold">Order Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">€{{ order.order_total }}</p>
+                        <p class="mb-0">€{{ order.order_total|floatformat:2 }}</p>
                     </div>
                 </div>
 
@@ -173,7 +173,7 @@
                         <p class="mb-0 text-black font-weight-bold">Delivery</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">€{{ order.delivery_cost }}</p>
+                        <p class="mb-0">€{{ order.delivery_cost|floatformat:2 }}</p>
                     </div>
                 </div>
 
@@ -182,7 +182,7 @@
                         <p class="mb-0 text-black font-weight-bold">Grand Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0"><strong>€{{ order.grand_total }}</strong></p>
+                        <p class="mb-0"><strong>€{{ order.grand_total|floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -191,14 +191,14 @@
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
             {% if from_profile %}
-            <a href="{% url 'profile' %}" class="btn btn-orange  my-2">
+            <a href="{% url 'profile' %}" class="btn btn-orange mt-2 mb-5">
                 <span class="icon mr-2">
                     <i class="fas fa-angle-left"></i>
                 </span>
                 <span class="text-uppercase">Back to Profile</span>
             </a>
             {% else %}
-            <a href="{% url 'products' %}" class="btn btn-orange my-2">
+            <a href="{% url 'products' %}" class="btn btn-orange mt-2 mb-5">
                 <span class="text-uppercase">Back to Store</span>
             </a>
             {% endif %}

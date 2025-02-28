@@ -24,21 +24,29 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6 mx-auto">
-
             <div class="accordion" id="faq-accordion">
                 {% for faq in faqs %}
                 <div class="card shadow-sm border-0 mb-3">
                   <div class="card-header bg-light" id="heading{{ faq.id }}">
                     <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left text-dark collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ faq.id }}" aria-expanded="false" aria-controls="#collapse{{ faq.id }}"><i class="fas fa-question-circle mr-2"></i>
-                        {{ faq.question }}
+                      <button class="btn btn-link btn-block text-left text-dark collapsed"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#collapse{{ faq.id }}"
+                              aria-expanded="false"
+                              aria-controls="collapse{{ faq.id }}"
+                              id="faq-btn-{{ faq.id }}">
+                        <i class="fas fa-question-circle mr-2"></i> {{ faq.question }}
                       </button>
                     </h2>
                   </div>
               
-                  <div id="collapse{{ faq.id }}" class="collapse" aria-labelledby="heading{{ faq.id }}" data-parent="#faq-accordion">
-                    <div class="card-body bg-white text-muted">
-                     {{ faq.answer }}
+                  <div id="collapse{{ faq.id }}"
+                       class="collapse"
+                       aria-labelledby="faq-btn-{{ faq.id }}"
+                       data-parent="#faq-accordion">
+                    <div class="card-body bg-white text-muted" tabindex="-1">
+                      {{ faq.answer }}
                     </div>
                   </div>
                 </div>
@@ -50,4 +58,14 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+    $(document).ready(function () {
+        $('.collapse').on('shown.bs.collapse', function () {
+            $(this).find('.card-body').attr('tabindex', '-1').focus();
+        });
+    });
+</script>
 {% endblock %}
