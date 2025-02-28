@@ -6,6 +6,8 @@
     content="Explore our wide range of sourdough supplies, including starters, baking tools, flours, and cookbooks. Everything you need for perfect sourdough bread, based in Dublin, Ireland.">
 {% endblock %}
 
+{% block extra_title %}| Shop{% endblock %}
+
 
 {% block page_header %}
 <div class="container-fluid">
@@ -72,8 +74,7 @@
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}default-image.png"
-                                alt="No image available for {{ product.name }}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}default-image.png" alt="No image available for {{ product.name }}">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
