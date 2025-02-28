@@ -145,10 +145,6 @@ h3 {
     color: var(--black) !important;
 }
 
-.text-orange {
-    color: var(--orange) !important;
-}
-
 /* =======================
    Navbar & Links
 ======================= */
@@ -362,6 +358,12 @@ a.product-title:hover {
     border-color: #dc3545;
     border-radius: 0;
 }
+
+/* Keep below the .nav-link as both have !important and this is needed to change shopping basket colour */
+.text-orange {
+    color: var(--orange) !important;
+}
+
 
 /* =======================
    Footer
