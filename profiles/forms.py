@@ -1,26 +1,16 @@
 from django import forms
-from django_countries.fields import CountryField
-from django_countries.widgets import CountrySelectWidget
 from .models import UserProfile
 
-class UserProfileForm(forms.ModelForm):
-    default_country = forms.ChoiceField(
-        choices=[("", "Select Country")] + list(CountryField().choices),
-        required=False,
-        widget=CountrySelectWidget()
-    )
 
+class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         exclude = ('user',)
-        widgets = {
-            'default_country': CountrySelectWidget(),  # Explicitly set widget
-        }
 
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        labels and set autofocus on first field.
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -33,12 +23,13 @@ class UserProfileForm(forms.ModelForm):
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        
         for field in self.fields:
-            if field != 'default_country':  # Exclude default_country from placeholders
+            if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
                     placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black profile-form-input'
+                self.fields[field].widget.attrs['placeholder'] = placeholder            
+            self.fields[field].widget.attrs['class'] = ('border-black profile-form-input')
             self.fields[field].label = False

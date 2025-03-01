@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_countries',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -128,8 +129,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600, ssl_require=True)
+}
 else: 
     DATABASES = {
         'default': {
