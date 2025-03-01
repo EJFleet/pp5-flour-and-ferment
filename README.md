@@ -56,6 +56,7 @@ For the details of all testing carried out, please go to [TESTING.MD](docs/testi
 
 The user experience (UX) for this project was designed with careful consideration of user needs and project goals, ensuring a seamless, intuitive, and engaging experience for all users. The planning process was informed by Agile methodologies and centered around user stories, categorized into epics to structure development priorities effectively.
 
+
 <details>
 
 <summary> Epics and User Stories screenshot </summary>
@@ -64,49 +65,114 @@ The user experience (UX) for this project was designed with careful consideratio
 
 </details>
 
-[Link to original document]()
+[Link to original document](https://docs.google.com/spreadsheets/d/1DywOsRNp3SZfBRsrRaIck3M5WMe0I2QfKYrEEFMTcZw/edit?usp=sharing)
 
   ### User Stories
 
-  #### Navigation
+#### **Navigation**  
 
-  As a user I can:
+As a user, I can:  
+- Use a simple navigation menu so that I can easily find content.  
+- View a responsive navigation menu on any screen size so that navigating the site remains easy on all my devices.  
+- See login-dependent navbar links so that I can access relevant options when logged in or logged out.  
 
+---
 
-  #### 
+#### **Products**  
 
-  As a Site User I can:
- 
+As a user, I can:  
+- Browse a list of available products so that I can see what is for sale.  
+- View details of a product so that I can learn more about it before purchasing.  
+- Filter products by category so that I can find relevant items more easily.  
+- Search for products so that I can find items that match my needs.  
 
-  As a Site Admin I can:
+As a logged-in user, I can:
+- Add products to my wishlist so that I can easily find them for purchasing later.
 
+---
 
-  #### 
+#### **Shopping Basket**  
 
-    
-  As a Staff Member I can:
-  
+As a user, I can:  
+- Add items to my basket so that I can purchase them later.  
+- Remove items from my basket so that I can adjust my order before checkout.  
+- See a summary of my basket so that I can review my order before purchasing.  
+- View a running total of my basket so that I can keep track of my spending.  
 
+---
 
-  #### 
+#### **Purchasing & Checkout**  
 
-  As a Site User I can:
-  
+As a user, I can:  
+- Securely enter my payment and shipping details so that I can place an order.  
+- See a confirmation page after placing an order so that I know my order was successful.  
+- Receive an order confirmation email so that I have a record of my purchase.  
 
+---
 
-  #### 
+#### **User Authentication**  
 
-  As a Site User I can:
-  
-  As a logged-in Site User I can:
-  
+As a user, I can:  
+- Create an account so that I can save my details for future purchases.  
+- Log in and out securely so that my account remains private.  
 
-  As a Site Admin I can:
+---
 
+#### **User Profiles**  
 
-  #### 
+As a logged-in user, I can:  
+- View my past orders so that I can keep track of my purchase history.  
+- Update my profile information so that my details are always correct. 
+- View my wishlist so that I can add products to my basket or remove them from my wishlist. 
 
-  As a Site Admin I can:
+---
+
+#### **About Page**  
+
+As a user, I can:  
+- View the About page so that I can understand the purpose and mission of the site.  
+
+---
+
+#### **Support & FAQ**  
+
+As a user, I can:  
+- Contact the site owner via a form so that I can ask for help if needed.  
+- See a confirmation message after submitting a query so that I know my message was sent.  
+- Read an FAQ section so that I can find answers to common questions.  
+
+---
+
+#### **SEO & Marketing**  
+
+As a site owner, I can:  
+- Add SEO-friendly meta descriptions so that my site ranks well in search engines.  
+- Generate a sitemap so that search engines can easily index my pages.  
+- Implement a robots.txt file so that search engines can properly crawl my site.  
+- Create a Facebook page so that users can follow and engage with the brand.  
+- Include social media links in the footer so that users can easily find and interact with the business.  
+- Provide a privacy policy so that users can understand how their data is handled.  
+- Have a newsletter signup so that I can collect emails for marketing purposes.  
+
+---
+
+#### **Product Management (Frontend CRUD)**  
+
+As a site admin, I can:  
+- Add new products so that I can expand the store's inventory.  
+- Update existing products so that information remains accurate and relevant.  
+- Delete products so that I can remove outdated or discontinued items.  
+
+---
+
+#### **Admin Panel Management**  
+
+As a site admin, I can:  
+- Manage user accounts so that I can remove or update users if necessary.  
+- Manage orders so that I can keep track of sales and customer purchases.
+- View messages sent by site users from the contact form page so that I can reply to queries.
+- Bulk manage products so that I can efficiently update multiple items at once.  
+
 
 
 ### Design
