@@ -252,11 +252,11 @@ The initial Entity Relationship Diagram (ERD) was created during the planning ph
 
 The website's colour scheme is designed to evoke a sense of **warmth, sophistication, and natural elegance**, aligning with the artisanal and hand-crafted nature of sourdough bread.
 
-#### **Primary Colors**
+##### **Primary Colors**
 - **Syracuse Red Orange (#C7500D)** – A bold, warm accent color that adds vibrancy and contrast, ideal for calls-to-action and key elements.
 - **Eerie Black (#1F1E1E)** – A deep, rich black used for text and essential components, ensuring readability and strong visual impact.
 
-#### **Neutral & Supporting Colors**
+##### **Neutral & Supporting Colors**
 - **White (#FEFDFB)** – A clean, crisp white that maintains a light and airy aesthetic.
 - **Silver (#A7A9A5)** – A subtle gray tone used for backgrounds and secondary elements, adding a modern touch.
 - **Beaver (#988671)** – A soft, earthy brown that provides a warm, natural foundation for the design.
@@ -291,16 +291,15 @@ Together, these fonts create a **harmonious blend of elegance and readability**,
 
 #### Imagery
 
-- All images used for...
-- All images used for ... were downloaded for free from [Pexels](https://pexels.com)
-- Hero image: Photo by <a href="https://unsplash.com/@mcthilda?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mathilda Khoo</a> on <a href="https://unsplash.com/photos/brown-bread-on-stainless-steel-surface-U1IBTApJdFY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+- All images used for products were taken from various e-commerce stores.
+- Hero image: Photo from <a href="https://brodandtaylor.com/blogs/recipes/sourdough-starter-from-creation-to-maintenance">Brod & Taylor website</a>.
       
 
   <details>
 
   <summary>Favicon was created using <a href="https://favicon.io">favicon.io</a></summary>
     
-  ![Favicon]()
+  ![Favicon](docs/images/favicon.png)
 
   </details>
 
