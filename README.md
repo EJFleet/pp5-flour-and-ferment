@@ -2,15 +2,17 @@
 
 ## Intro
 
-For my fifth portfolio project, I created...
+For my fifth portfolio project, I created an e-commerce platform designed for sourdough bread baking enthusiasts.  The site allows users to browse and purchase a variety of sourdough equipment, from starters to flours, baking equipment and cookbooks.  Users can create accounts, manage orders, add products to their wishlist, contact the site administrators and receive email notifications for their purchases.
+
+Administrators have the ability to manage products, respond to customer inquiries, and oversee transactions through a dedicated dashboard. Built using Django, PostgreSQL, and AWS, Flour & Ferment offers an engaging, user-friendly shopping experience for bakers of all levels.
 
 ![Flour & Ferment responsive screenshot](docs/images/am-i-responsive.png)
 
-Visit the deployed site here: [Flour & Ferment]()
+Visit the deployed site here: [Flour & Ferment](https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/)
 
 View Flour & Ferment on [Github](https://github.com/EJFleet/pp5-flour-and-ferment)
 
-For Admin access with relevant sign-in information: [Flour & Ferment Admin]()
+For Admin access with relevant sign-in information: [Flour & Ferment Admin](https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/admin/)
 
 For the details of all testing carried out, please go to [TESTING.MD](docs/testing/TESTING.md)
 
