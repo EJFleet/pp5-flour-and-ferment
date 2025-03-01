@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -41,8 +43,11 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now. '
+            'Please try again later.'
+        )
         return HttpResponse(content=e, status=400)
 
 
@@ -51,9 +56,9 @@ def checkout(request):
     Handle checkout form submission and payment processing.
 
     - If the request method is POST:
-        - Validates the order form.
+    - Validates the order form.
         - Creates an order instance and associated line items.
-        - Stores order details in the session and redirects to checkout success.
+        - Stores order details in the session, redirects to checkout success.
     - If the request method is GET:
         - Ensures the basket is not empty.
         - Creates a Stripe PaymentIntent.
@@ -95,32 +100,47 @@ def checkout(request):
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
-                    )
+                                        order=order,
+                                        product=product,
+                                        quantity=item_data,
+                                        )
 
                     order_line_item.save()
-                    
+
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your basket wasn't found in our database. \
-                        Please call us for assistance!")
+                    messages.error(
+                        request,
+                        (
+                            "One of the products in your basket wasn't found "
+                            "in our database. Please call us for assistance!"
+                        )
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
-            
+
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
-        
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]
+                                    ))
+
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
-    
+            messages.error(
+                request,
+                (
+                    "There was an error with your form."
+                    "Please double check your information."
+                )
+            )
+
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(
+                request,
+                (
+                    "There's nothing in your basket"
+                    "at the moment")
+                )
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
@@ -132,7 +152,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the user
+        # maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -153,16 +174,21 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
-    
+        messages.warning(
+            request,
+            (
+                "Stripe public key is missing."
+                "Did you forget to set it in your environment?"
+            )
+            )
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
-    
+
     return render(request, template, context)
 
 
@@ -208,9 +234,14 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+    messages.success(
+        request,
+        (
+            f"Order successfully processed! Your order number is "
+            f"{order_number}. "
+            f"A confirmation email will be sent to {order.email}."
+        )
+    )
 
     if 'basket' in request.session:
         del request.session['basket']

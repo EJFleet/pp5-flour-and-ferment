@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def index(request):
     """
     Display the homepage.
@@ -16,7 +17,7 @@ def about(request):
     """
     Display the About page.
 
-    This view renders the page that provides information about 
+    This view renders the page that provides information about
     the company.
 
     """

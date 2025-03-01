@@ -23,11 +23,11 @@ def view_wishlist(request):
     """
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
     wishlist_items = wishlist.wishlist_items.all()
-    
+
     context = {
         'wishlist_items': wishlist_items
     }
-    
+
     return render(request, 'wishlist/wishlist.html', context)
 
 
@@ -43,11 +43,13 @@ def add_to_wishlist(request, item_id):
         - If already present, displays an info message.
 
     Args:
-        request (HttpRequest): The HTTP request object containing the redirect URL.
+        request (HttpRequest): The HTTP request object containing
+        the redirect URL.
         item_id (int): The ID of the product to be added.
 
     Returns:
-        HttpResponseRedirect: Redirects to the previous page or the wishlist page.
+        HttpResponseRedirect: Redirects to the previous page
+        or the wishlist page.
     """
     product = get_object_or_404(Product, pk=item_id)
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
@@ -57,7 +59,9 @@ def add_to_wishlist(request, item_id):
     )
 
     if created:
-        messages.success(request, f'{product.name} has been added to your wishlist.')
+        messages.success(
+            request, f'{product.name} has been added to your wishlist.'
+            )
     else:
         messages.info(request, f'{product.name} is already in your wishlist.')
 
@@ -84,10 +88,14 @@ def remove_from_wishlist(request, item_id):
     wishlist, _ = Wishlist.objects.get_or_create(user=request.user)
 
     # Try to delete the wishlist item
-    deleted, _ = WishlistItem.objects.filter(wishlist=wishlist, product_id=item_id).delete()
+    deleted, _ = WishlistItem.objects.filter(
+        wishlist=wishlist, product_id=item_id
+        ).delete()
 
     if deleted:
-        messages.success(request, 'The item has been removed from your wishlist.')
+        messages.success(
+            request, 'The item has been removed from your wishlist.'
+            )
     else:
         messages.warning(request, 'The item was not found in your wishlist.')
 

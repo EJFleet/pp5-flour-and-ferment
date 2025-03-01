@@ -3,6 +3,7 @@ from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
     country = forms.ChoiceField(
         choices=[("", "Select a Country")] + list(CountryField().choices),
@@ -16,7 +17,7 @@ class OrderForm(forms.ModelForm):
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'country',
                   'county',)
-    
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated

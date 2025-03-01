@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Contact
 
+
 class ContactAdmin(admin.ModelAdmin):
     list_display = (
         'name',
@@ -9,7 +10,7 @@ class ContactAdmin(admin.ModelAdmin):
         'status',
         'created_at',
     )
-    
+
     list_filter = (
         'status',
         'created_at',
@@ -31,13 +32,16 @@ class ContactAdmin(admin.ModelAdmin):
 
     def mark_as_read(self, request, queryset):
         queryset.update(status='read')
-        self.message_user(request, f"{queryset.count()} message(s) marked as read.")
+        self.message_user(
+            request, f"{queryset.count()} message(s) marked as read."
+        )
     mark_as_read.short_description = "Mark selected messages as read"
-
 
     def mark_as_unread(self, request, queryset):
         queryset.update(status='unread')
-        self.message_user(request, f"{queryset.count()} message(s) marked as unread.")
+        self.message_user(
+            request, f"{queryset.count()} message(s) marked as unread."
+        )
     mark_as_unread.short_description = "Mark selected messages as unread"
 
 

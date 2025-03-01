@@ -29,7 +29,8 @@ def profile(request):
         request (HttpRequest): The HTTP request object.
 
     Returns:
-        HttpResponse: Renders the profile page with the profile form and order history.
+        HttpResponse: Renders the profile page with the profile form
+        and order history.
     """
     profile = get_object_or_404(UserProfile, user=request.user)
 

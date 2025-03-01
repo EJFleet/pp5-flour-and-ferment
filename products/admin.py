@@ -18,5 +18,6 @@ class ProductCategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductCategory, ProductCategoryAdmin)

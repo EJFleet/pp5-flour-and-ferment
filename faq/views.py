@@ -8,7 +8,7 @@ def faq(request):
     """
     Display the FAQ page.
 
-    Retrieves all FAQ entries from the database and passes them 
+    Retrieves all FAQ entries from the database and passes them
     to the template for rendering.
 
     Args:
@@ -17,10 +17,9 @@ def faq(request):
     Returns:
         HttpResponse: Renders the FAQ template with all FAQs.
     """
-    
+
     context = {
         'faqs': Faq.objects.all(),
     }
 
     return render(request, 'faq/faq.html', context)
-

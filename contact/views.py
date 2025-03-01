@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
 
+
 def view_contact_page(request):
     """
     Handle displaying and processing the contact form.
@@ -9,7 +10,7 @@ def view_contact_page(request):
     - If the request method is POST:
         - Retrieves form data (name, email, subject, message).
         - Validates that all fields are filled.
-        - Saves the message as a Contact object with the default status of 'unread'.
+        - Saves the message as a Contact object with default status 'unread'.
         - Displays a success message and redirects to the success page.
         - If any field is missing, an error message is shown.
 
@@ -20,7 +21,8 @@ def view_contact_page(request):
         request (HttpRequest): The HTTP request object.
 
     Returns:
-        HttpResponse: Renders the contact form template or redirects to the success page upon form submission.
+        HttpResponse: Renders the contact form template or redirects
+        to the success page upon form submission.
     """
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -37,11 +39,14 @@ def view_contact_page(request):
                 status='unread'  # Default status
             )
             contact.save()
-            
-            messages.success(request, "Your message has been sent successfully!")
+
+            messages.success(
+                    request, "Your message has been sent successfully!"
+                    )
             return redirect('contact_success')
         else:
-            messages.error(request, "All fields are required. Please try again.")
+            messages.error(
+                    request, "All fields are required. Please try again.")
 
     return render(request, 'contact/contact.html')
 
