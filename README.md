@@ -250,14 +250,28 @@ The initial Entity Relationship Diagram (ERD) was created during the planning ph
 
 #### Colour Scheme
 
-The colour scheme was chosen to give a fresh, clean look to the app that does not distract from the text and images of the products and recipes and to provide contrast for good readability of the information. The colour palette was created using [Coolors](https://coolors.co/).
+The website's colour scheme is designed to evoke a sense of **warmth, sophistication, and natural elegance**, aligning with the artisanal and hand-crafted nature of sourdough bread.
+
+#### **Primary Colors**
+- **Syracuse Red Orange (#C7500D)** – A bold, warm accent color that adds vibrancy and contrast, ideal for calls-to-action and key elements.
+- **Eerie Black (#1F1E1E)** – A deep, rich black used for text and essential components, ensuring readability and strong visual impact.
+
+#### **Neutral & Supporting Colors**
+- **White (#FEFDFB)** – A clean, crisp white that maintains a light and airy aesthetic.
+- **Silver (#A7A9A5)** – A subtle gray tone used for backgrounds and secondary elements, adding a modern touch.
+- **Beaver (#988671)** – A soft, earthy brown that provides a warm, natural foundation for the design.
+- **Taupe (#3B342B)** – A muted, deep brown that enhances depth and contrast while maintaining a grounded, organic feel.
+
+Together, this palette creates a **balanced, inviting, and high-contrast visual experience** that reflects both **craftsmanship and authenticity**.
+
+The colour palette was created using [Coolors](https://coolors.co/).
 
 <details>
 
 <summary> Colour Palette  </summary>
 
   
-![Colour Palette](docs/images/coolors-colour-palette-s.png)
+![Colour Palette](docs/images/colour-palette-coolors.png)
 
 </details>
 

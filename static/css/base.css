@@ -3,11 +3,11 @@
 ======================= */
 :root {
     --white: #FEFDFB;
-    --lightgrey: #a7a9a5;
-    --darkgrey: #3B342B;
+    --lightgrey: #A7A9A5;
     --hessian: #988671;
-    --black: #1F1E1E;
     --orange: #C7500D;
+    --darkbrown: #3B342B;
+    --black: #1F1E1E;
 }
 
 /* =======================
@@ -158,7 +158,7 @@ h3 {
 }
 
 .nav-link:hover {
-    color: var(--darkgrey);
+    color: var(--darkbrown);
     transform: scale(1.05);    
 }
 
@@ -192,7 +192,7 @@ a:hover {
 }
 
 a.category-badge > span.badge:hover {
-    background: var(--darkgrey) !important;
+    background: var(--darkbrown) !important;
     color: var(--white) !important;
 }
 
@@ -392,7 +392,7 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--darkgrey) !important;
+    color: var(--darkbrown) !important;
 }
 
 /* =======================
@@ -400,7 +400,7 @@ footer a:hover {
 ======================= */
 
 #mc_embed_signup {
-    background-color: var(--darkgrey);
+    background-color: var(--darkbrown);
     color: var(--white);
     clear:left;
 }
@@ -511,7 +511,7 @@ a.shop-now-button:focus,
 
 /* Delete Button */
 .btn-delete {
-    background-color: var(--darkgrey);
+    background-color: var(--darkbrown);
     color: var(--white);
     border: none;
     transition: background-color 0.3s ease;
@@ -573,7 +573,7 @@ a.shop-now-button:focus,
 }
 
 .remove-item {
-    color: var(--darkgrey);
+    color: var(--darkbrown);
 }
 
 .basket-container {

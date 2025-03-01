@@ -16,7 +16,7 @@
 
 /* Remove from Wishlist */
 .btn-remove-wishlist {
-    background-color: var(--darkgrey);
+    background-color: var(--darkbrown);
     color: var(--white);
     border: none;
     transition: background-color 0.3s ease;
