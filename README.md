@@ -264,7 +264,14 @@ The colour scheme was chosen to give a fresh, clean look to the app that does no
 
 #### Fonts
   
-[Google Fonts](https://fonts.google.com/) was used to add the following fonts:
+The following [Google Fonts](https://fonts.google.com/) fonts were chosen to create a **modern, elegant, and highly readable** user experience.
+
+- **Playfair Display**: A sophisticated serif font with a **classic yet contemporary** feel, used for headings and key display text. Its high contrast and refined letterforms add a touch of **elegance and professionalism** to the site's design.
+  
+- **Merriweather**: A highly readable serif font designed for **comfortable, long-form reading**, used for body text and general content. Its **balanced proportions and slightly condensed style** ensure clarity across all screen sizes.
+
+Together, these fonts create a **harmonious blend of elegance and readability**, reinforcing the site's aesthetic while maintaining usability.
+
 
 
 
@@ -393,7 +400,7 @@ The **Shop** allows users to browse all available products, filter by categories
 
 The **Product Detail Page** provides an in-depth look at each product, including descriptions, images, and purchase options.
 
-#### Key Features:
+##### Key Features:
 - **High-Quality Product Images**: Clickable images allow users to view the full-size product image.
 - **Detailed Description**: Displays product information, price, and category.
 - **Add to Basket**: Users can specify a quantity and add the product to their basket.
@@ -650,7 +657,7 @@ Users can view a dedicated page about the mission, services and community behind
 
 ---
 
-## FAQ Page
+#### FAQ Page
 
 The FAQ (Frequently Asked Questions) page provides quick and helpful answers to common customer inquiries.
 
@@ -671,7 +678,7 @@ The FAQ (Frequently Asked Questions) page provides quick and helpful answers to 
 
 The Contact page provides users with an easy way to reach out for inquiries, support, or feedback. 
 
-### Contact Form
+##### Contact Form
 - **User-Friendly Form**: Includes fields for name, email, subject, and message.
 - **Validation**: Ensures required fields are filled before submission.
 - **Submit Button**: Users can send their messages directly through the site.
