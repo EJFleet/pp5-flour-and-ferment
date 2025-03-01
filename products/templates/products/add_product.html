@@ -38,7 +38,7 @@
                             {% endif %}
                         {% endfor %}
                         <div class="d-flex flex-column flex-md-row justify-content-end">
-                            <button class="btn btn-orange px-4" type="submit" aria-label="Add product">Add Product</button>
+                            <button class="btn btn-orange px-4 mr-4" type="submit" aria-label="Add product">Add Product</button>
                             <a class="btn btn-outline-black" href="{% url 'products' %}" aria-label="Cancel and return to products">Cancel</a>                            
                         </div>
                     </form>
@@ -53,8 +53,8 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
-    $('#new-image').change(function () {
-        var file = $('#new-image')[0].files[0];
+    $('#id_image').change(function () {
+        var file = $('#id_image')[0].files[0];
         $('#filename').text(`Image will be set to: ${file.name}`);
     });
 </script>
