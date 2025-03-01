@@ -23,7 +23,7 @@ def all_products(request):
     Returns:
         HttpResponse: Renders the products page with a filtered and sorted list of products.
     """
-    products = Product.objects.all()
+    products = Product.objects.all().annotate(lower_name=Lower('name')).order_by('lower_name')
     query = None
     category_names = None
     categories = None
@@ -60,7 +60,12 @@ def all_products(request):
             products = products.filter(queries)
         
     else:
-        categories = ProductCategory.objects.all()    
+        categories = ProductCategory.objects.all()
+
+    # Enforce default sorting if no sorting is explicitly provided
+
+    if not request.GET.get('sort'):
+        products = products.order_by('lower_name')    
 
     sort = request.GET.get('sort', 'name')
     direction = request.GET.get('direction', 'asc')
