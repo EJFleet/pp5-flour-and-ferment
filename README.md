@@ -290,21 +290,27 @@ The colour scheme was chosen to give a fresh, clean look to the app that does no
 
 ### General Features
 
-#### Navigation Bar
+This website provides a seamless and user-friendly experience for purchasing sourdough baking supplies. Below are the key features that enhance usability and functionality:
 
-The site features a responsive navigation bar that is consistent across all pages.
+#### Navigation
+
+- **Responsive Navigation Bar**: The site features a fixed-top navbar with dropdown menus for easy access to products and site pages.
+- **Search Functionality**: Users can search for products using a search bar located in the navbar.
+
 <details>
 
 <summary> Details </summary>
+
 It includes links to the following pages:
-- Home
-- Register, Login/Logout (based on user authentication status)
-- etc
+- Home (by clicking on the app logo)
+- Our Story, FAQ and Contact (dropdown menu from About)
+- Login/Register (logged out users)
+- My Profile, My Wishlist and Logout (dropdown menu from Account - logged in users only)
+- Admin, Add New Product, Edit/Delete A Produt (dropdown menu from Admin - admin users only)
 
 It also includes:
-- the app logo
 - a search bar 
-- etc
+- a shopping basket icon with the total price of the contents of the user's basket
 
 **Key Features**:
 - Fixed to the top of the screen in all views to allow for easy navigation.
@@ -312,10 +318,14 @@ It also includes:
 - On smaller screens, it collapses into a dropdown toggler for a cleaner and more user-friendly interface.
 
 **Screenshots**:
-![Navigation Bar Desktop View - logged in](docs/images/features/navbar/navbar-desktop-logged-in.png)
-![Navigation Bar Mobile View - logged in](docs/images/features/navbar/navmenu-mobile-logged-in.png)
+
+![Navigation Bar Desktop View - logged in](docs/images/features/navbar/navbar-desktop-logged-in-admin.png)
+![Navigation Bar Mobile View - logged in](docs/images/features/navbar/navmenu-mobile-logged-in-admin.png)
+![Navigation Bar Desktop View - logged in](docs/images/features/navbar/navbar-desktop-logged-in-nonadmin.png)
+![Navigation Bar Mobile View - logged in](docs/images/features/navbar/navmenu-mobile-logged-in-nonadmin.png)
 ![Navigation Bar Desktop View - logged out](docs/images/features/navbar/navbar-desktop-logged-out.png)
 ![Navigation Bar Mobile View - logged out](docs/images/features/navbar/navbar-mobile-logged-out.png)
+
 
 </details>
 
@@ -323,20 +333,28 @@ It also includes:
 ---
 
 #### Footer
-The site displays a footer on all pages which is fully responsive at all screen sizes.
+The site displays a footer on all pages which is fully responsive at all screen sizes. It provides essential navigation and engagement options for users. It is structured into different sections for easy accessibility.
 
 <details>
 
 <summary> Details </summary>
 
-It provides quick access to:
-- Copyright information for the site.
-- Social media links (Facebook, X, Instagram, YouTube).
-- etc
+Navigation Links
+- **Site Pages**: Quick links to key pages including Home, Shop, Our Story, FAQ, and Contact.
+- **Account Links**: Options for users to register or log in to their account (logged-out users) or access their profile, wishlist or logout (logged-in users)
 
-**Key Features**:
-- Social media icons open in a new tab when clicked.
-- The footer is fully responsive and adjusts to fit any screen size.
+Social Media
+- **Follow Us**: Links to social media platforms such as Facebook, X (Twitter), Instagram, and YouTube.
+- **Icons**: Social media icons are displayed for quick recognition.
+
+Newsletter Subscription
+- **Call to Action**: Users are encouraged to subscribe for exclusive offers.
+- **Email Input**: A simple form is provided via MailChimp for users to enter their email and subscribe.
+- **Styled Button**: A visually distinct "Subscribe" button for engagement.
+
+Legal & Branding
+- **Copyright Notice**: Displays the current year and company name.
+- **Privacy Policy**: A link to the site's privacy policy.
 
 **Screenshots**:
 ![Footer Desktop View](docs/images/features/footer/footer-desktop.png)
@@ -345,137 +363,112 @@ It provides quick access to:
 </details>
 
 ---
-### Recipe Features
 
-#### Recipe List View
-The recipe list view displays all available recipes in a paginated format. Users can browse through the recipes to find one they are interested in.
+### Shop 
+
+The **Shop** allows users to browse all available products, filter by categories, and sort items based on price, name, and category.
+
+#### Key Features:
+- **Category Selection**: Users can browse by category using category badges.
+- **Search & Sorting**: A search bar and sorting dropdown help users find products easily.
+- **Product Grid**: Displays products with images, prices, and quick access to product details.
+- **Admin Controls**: Admin users can edit or delete products directly from the shop page.
+
+#### Product Cards:
+- **Product Image & Name**: Clicking on an image or name redirects users to the product detail page.
+- **Price Display**: Clear product pricing with currency formatting.
+- **Category Links**: Products are linked to their respective categories for easy navigation.
 
 <details>
 
-<summary> Details </summary>
+<summary> Screenshots </summary>
 
-**Key Features**:
-- Pagination: Limits the number of recipes displayed per page for better user experience.
-- Each recipe card displays:
-  - Recipe title
-  - Thumbnail image
-  - Short description
-  - Date on which the recipe was posted
-- Clicking on a recipe card redirects the user to the full recipe details page.
-
-**Screenshots**:
-
-Desktop:
-![Recipe List Desktop View - top ](docs/images/features/recipe-list/recipe-list-top-desktop.png)
-![Recipe List Desktop View - bottom](docs/images/features/recipe-list/recipe-list-bottom-desktop.png)
-
-Mobile:
-![Recipe List Mobile View - top](docs/images/features/recipe-list/recipe-list-mobile.png)
-![Recipe List Mobile View - bottom](docs/images/features/recipe-list/recipe-list-bottom-mobile.png)
-
-Example of draft recipe display (2nd from left):
-![Draft recipe](docs/images/features/recipe-list/recipe-list-top-desktop-drafts.png)
+![Shop Page]()
 
 </details>
 
 ---
 
-#### Recipe Details
-The recipe details page provides complete information about a selected recipe.
+#### Product Detail Page
+
+The **Product Detail Page** provides an in-depth look at each product, including descriptions, images, and purchase options.
+
+#### Key Features:
+- **High-Quality Product Images**: Clickable images allow users to view the full-size product image.
+- **Detailed Description**: Displays product information, price, and category.
+- **Add to Basket**: Users can specify a quantity and add the product to their basket.
+- **Wishlist Integration**: Logged-in users can add the product to their wishlist.
+- **Admin Controls**: Superusers can edit or delete products from this page.
+- **Related Products**: The page suggests similar products that users might be interested in.
+- **Quick Navigation**: Users can return to the shop page or continue shopping with ease.
 
 <details>
 
-<summary> Details </summary>
+<summary> Screenshots </summary>
 
-**Key Features**:
-- Displays:
-  - Recipe title, description, servings, ingredients, and method.
-  - Featured image (or placeholder if no image is provided).
-  - Author and date of creation.
-
-**Screenshots**:
-
-Anonymous User (Desktop):
-
-![Recipe Detail Desktop View - Anonymous User](docs/images/features/recipe-detail/recipe-detail-desktop-top-not-logged-in.png)
-![Recipe Detail Desktop View - Anonymous User](docs/images/features/recipe-detail/recipe-detail-desktop-middle-not-logged-in.png)
-![Recipe Detail Desktop View - Anonymous User](docs/images/features/recipe-detail/recipe-detail-desktop-bottom-not-logged-in.png)
-
-Logged-in Non-Staff User (Desktop):
-
-![Recipe Detail Desktop View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-top-logged-in-non-staff.png)
-![Recipe Detail Desktop View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-middle-logged-in-non-staff.png)
-![Recipe Detail Desktop View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-bottom-logged-in-non-staff.png)
-
-Logged-in Staff User (Desktop):
-
-![Recipe Detail Desktop View - Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-top.png)
-![Recipe Detail Desktop View - Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-middle.png)
-![Recipe Detail Desktop View - Staff User](docs/images/features/recipe-detail/recipe-detail-desktop-bottom-no-comments-logged-in.png)
-
-Anonymous User (Mobile):
-
-![Recipe Detail Mobile View - Anonymous User](docs/images/features/recipe-detail/recipe-detail-mobile-top-not-logged-in.png)
-![Recipe Detail Mobile View - Anonymous User](docs/images/features/recipe-detail/recipe-detail-mobile-bottom-not-logged-in.png)
-
-Logged-in Non-Staff User (Mobile):
-
-![Recipe Detail Mobile View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-top-non-staff.png)
-![Recipe Detail Mobile View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-middle-non-staff.png)
-![Recipe Detail Mobile View - Non-Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-bottom-non-staff.png)
-
-Logged-in Staff User (Mobile):
-
-![Recipe Detail Mobile View - Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-top.png)
-![Recipe Detail Mobile View - Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-middle-logged-in.png)
-![Recipe Detail Mobile View - Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-middle-2-logged-in.png)
-![Recipe Detail Mobile View - Staff User](docs/images/features/recipe-detail/recipe-detail-mobile-bottome-logged-in.png)
+![Shop Page]()
 
 </details>
 
 ---
 
-#### Product Management (Admin/Staff Only)
-Staff and admin users can manage product listings directly from the site or the admin panel.
+
+#### Shopping Basket
+- **Add to Basket**: Items can be easily added to the basket from product pages.
+- **Basket Overview**: Users can view their basket summary, including item quantities and total cost.
+- **Update & Remove Items**: Items can be adjusted or removed from the basket before proceeding to checkout.
+
+**Screenshots**:
+
+![Basket Page]()
+
+
+---
+
+#### Checkout Process
+- **Secure Checkout**: The site integrates Stripe for secure payments.
+- **Order Summary**: Users receive a breakdown of their purchase before confirming payment.
+- **Order Confirmation**: A confirmation page is displayed upon successful purchase.
+
+
+![Checkout Page]()
+
+---
+
+### **Search & Filtering**
+
+#### **Search Products**
+Users can search for products by keywords in their title or description.
 
 <details>
 
 <summary> Details </summary>
 
 **Key Features**:
-- **Create Product**: Staff can create a new product with fields for ...
-- **Edit Product**: Staff can update any aspect of the product.
-- **Delete Product**: Staff can permanently delete a product.
+- A search box available in the navigation bar on all pages.
+- Results dynamically update based on the search query.
+- Message displays with search box underneath if no results for search query
 
 **Screenshots**:
 
-- Create product Form: 
+Search box Desktop:
 
-![Create Product Form](docs/images/features/product-add-edit/form-product-add.png)
-![Create Product Form](docs/images/features/product-add-edit/form-product-add-2.png)
+![Product Search](docs/images/features/search/search-navbar.png)
 
-- Edit Product Form: 
+Search results page for 'book':
 
-This is the same as the form for creating a product, except that it is prepopulated with the product details.
+![Product Search](docs/images/features/search/search-book.png)
 
-![Edit Product Form](docs/images/features/product-add-edit/edit-product-1.png)
-![Edit Product Form](docs/images/features/product-add-edit/edit-product-2.png)
+Zero search results:
 
-- Delete Product Confirmation:
-
-Before a staff/admin user deletes a product, a confirmation page is displayed with the option to continue with deletion or to cancel the action, which will take them back to the product page.
-
-![Delete Product Confirmation](docs/images/features/product-detail/product-delete-confirmation.png)
-
-
-</details>
+![Product Search](docs/images/features/search/search-zero.png)
 
 ---
 
 ### **User Account Features**
 
 #### **Registration**
-Users can sign up for an account to access additional features such as favouriting products.
+Users can sign up for an account to access additional features such as viewing order history and saving products to a wishlist.
 
 <details>
 
@@ -511,36 +504,24 @@ Users can securely log in and out of their accounts to maintain session integrit
 **Key Features**:
 
 - Login form that authenticates users using their credentials.
-- A logout option available in the navigation bar when logged in.
-- Login status displayed in the top right of the page under the navbar.
+- A logout option available in the Account dropdown menu in the navigation bar when logged in.
+- Login status displayed in the top of the Account dropdown menu.
 - Success messages displayed upon logging in or logging out.
 
 
 **Screenshots**:
 
-Desktop Login Form:
+Login Form:
 
 ![Login Form](docs/images/features/user-accounts/accounts-desktop-sign-in-form.png)
 
-Mobile Login Form:
-
-![Login Form](docs/images/features/user-accounts/accounts-mobile-sign-in-form.png)
-
-Desktop Logout Form:
+Logout Form:
 
 ![Logout Form](docs/images/features/user-accounts/accounts-desktop-sign-out.png)
 
-Mobile Logout Form:
-
-![Logout Form](docs/images/features/user-accounts/accounts-mobile-sign-out.png)
-
-Desktop Logged-in Status:
+Logged-in Status:
 
 ![Login Status](docs/images/features/user-accounts/accounts-desktop-logged-in.png)
-
-Mobile Logged-out Status:
-
-![Logged Out Status](docs/images/features/user-accounts/accounts-mobile-logged-out.png)
 
 Login Confirmation:
 ![Login Confirmation](docs/images/features/user-accounts/accounts-desktop-sign-in-confirmation.png)
@@ -592,7 +573,6 @@ The application provides comprehensive error handling for user authentication pr
 ---
 
 
-
 ### **Admin/Staff-Specific Features**
 
 #### **Admin Panel**
@@ -603,7 +583,7 @@ Admins can manage the site content directly from the Django admin panel.
 <summary> Details </summary>
 
 **Key Features**:
-- Manage users, products, recipes and queries.
+- Manage users, products, product categories, orders, faq, wishlists and queries.
 - View and filter data using the admin interface.
 - Bulk actions like deleting multiple products.
 
@@ -615,82 +595,147 @@ Admins can manage the site content directly from the Django admin panel.
 
 ---
 
-#### **Staff Permissions**
-Certain features are restricted to staff or admin users only.
+#### Product Management (Admin/Staff Only)
+Staff and admin users can manage product listings directly from the site or the admin panel.
 
 <details>
 
 <summary> Details </summary>
 
 **Key Features**:
-- Only staff can create, edit, and delete products and recipes.
+- **Add Product**: Staff can create a new product with fields for SKU, Category, Name, Description, Price, Image URL and Image
+- **Edit Product**: Staff can update any aspect of the product - accessed via Edit button on product on Products listing page or Edit icon on Product Detail page
+- **Delete Product**: Staff can permanently delete a product - accessed via Delete button on product on Products listing page or Delete icon on Product Detail page
 
+**Screenshots**:
+
+- Add product Form: 
+
+![Add Product Form](docs/images/features/product-add-edit/add-product-desktop.png)
+
+- Edit Product Form: 
+
+This is the same as the form for creating a product, except that it is prepopulated with the product details.
+
+![Edit Product Form](docs/images/features/product-add-edit/edit-product-1.png)
+
+- Delete Product Confirmation:
+
+Before a staff/admin user deletes a product, via Edit button under the product image on the Products page, or the icon on the Product Detail page, a confirmation modal is displayed with the option to continue with deletion or to cancel the action.
+
+![Delete Product Confirmation](docs/images/features/product-detail/product-delete-confirmation.png)
+
+
+</details>
+
+----
+
+### **About Menu Features**
+
+#### **Our Story Page**
+Users can view a dedicated page about the mission, services and community behind the site.
+
+<details>
+
+<summary> Details </summary>
+
+
+**Screenshots**:
+
+![Our Story Page 1]()
+![Our Story Page 2]()
+
+</details>
+
+
+---
+
+## FAQ Page
+
+The FAQ (Frequently Asked Questions) page provides quick and helpful answers to common customer inquiries.
+
+<details>
+
+<summary> Details </summary>
+
+
+**Screenshots**:
+
+![FAQ Page]()
+
+</details>
+
+
+
+#### Contact Page
+
+The Contact page provides users with an easy way to reach out for inquiries, support, or feedback. 
+
+### Contact Form
+- **User-Friendly Form**: Includes fields for name, email, subject, and message.
+- **Validation**: Ensures required fields are filled before submission.
+- **Submit Button**: Users can send their messages directly through the site.
+- **Contact Success page**: A confirmation page is displayed after the message is sent successfully.
+
+<details>
+
+<summary> Details </summary>
+
+
+**Screenshots**:
+
+![Contact Page]()
+![Contact Success Page]()
 
 </details>
 
 ---
 
-### **About Page Features**
+### **Account Menu Features**
 
-#### **About Page**
-Users can view a dedicated page about the team behing the blog, the mission and the ethos.
 
-<details>
+#### **My Profile Page**
+
+The **My Profile** page allows users to manage their personal details and access details of previous orders. 
 
 <summary> Details </summary>
 
-**Key Features**:
--
+#### **Key Features**
+- **Profile Information**: Users can view their registered name, email, and other personal details.
+- **Update Profile Details**: Users can modify their contact information, such as email or address.
+- **Order History**: A list of past purchases with order details, including date, status, and total amount.
 
 **Screenshots**:
 
-Desktop:
-
-![About Page]()
-![About Page]()
-
-Mobile:
-
-![About Page]()
-![About Page]()
-![About Page]()
+![Profile Page]()
+![Order Summary Page]()
 
 </details>
 
 
+
 ---
 
-### **Search & Filtering**
+#### My Wishlist
 
-#### **Search Products**
-Users can search for products by keywords in their title, description, ingredients or method.
+Logged-in users can save items to their wishlist for future purchasing, via the heart icon on the product detail page.
+
+Clicking on 'My Wishlist' displays the wishlist and items can be viewed and removed as needed.  Items can be quickly moved from the wishlist to the basket for easy purchase via the 'Add to Basket' button.
 
 <details>
 
 <summary> Details </summary>
 
-**Key Features**:
-- A search box available in the navigation bar on all pages.
-- Results dynamically update based on the search query.
-- Message displays with search box underneath if no results for search query
 
 **Screenshots**:
 
-Search box Desktop:
+![Wishlist Icon]()
+![Wishlist Page]()
 
-![Product Search](docs/images/features/search/search-navbar.png)
+</details>
 
-Search box Mobile:
+---
 
-![Product Search](docs/images/features/search/search-navbar-mobile.png)
-
-Search results page for 'cake':
-
-![Product Search](docs/images/features/search/search-cake.png)
-
-Zero search results:
-
-![Product Search](docs/images/features/search/search-zero.png)
 
 
 
@@ -709,7 +754,7 @@ The app provides user-friendly custom error pages for HTTP errors including `403
 
 - **403 Forbidden**:
   - Displayed when a user attempts to access a restricted page or perform an unauthorized action.
-  - Message: "You are not authorised to perform this action"
+  - Message: "Sorry, you are not authorised to perform this action"
   
 - **404 Not Found**:
   - Displayed when a user tries to access a page that does not exist.
@@ -717,20 +762,16 @@ The app provides user-friendly custom error pages for HTTP errors including `403
 
 - **405 Method Not Allowed**:
   - Displayed when a user tries to perform an HTTP method that is not supported by the server for a specific URL.
-  - Message: "The method you are trying to use is not allowed on this page."
+  - Message: "Sorry, the method you are trying to use is not allowed on this page."
 
 - **500 Internal Server Error**:
   - Displayed when an unexpected error occurs on the server.
-  - Message: "Oops! Something went wrong on our end. Please try again later."
+  - Message: "Something went wrong on our end. Please try again later."
 
 Each error page includes:
 - A **consistent site layout** to keep users oriented.
 - A **clear message** explaining the error.
-- A **call-to-action link**, the "Go Back to Home" button, to help users navigate back to the main site.
-
-
-- **403 Forbidden**
-  ![403 Forbidden Screenshot](docs/images/features/errors/error-403.png)
+- A **call-to-action link**, the "Back Home" button, to help users navigate back to the main site.
 
 - **404 Not Found**
   ![404 Not Found Screenshot](docs/images/features/errors/error-404.png)
@@ -743,9 +784,18 @@ Each error page includes:
 ---
 
 
-### Future Implementations
+## Future Implementations
 
-  I would add the following features:
+As the platform evolves, additional features and improvements may be introduced to enhance user experience, streamline operations, and expand functionality.
+
+
+### **User Profiles & Authentication**
+- Allowing users to update their passwords for enhanced security.
+
+### **Content & Recipes**
+- Introducing a dedicated recipe section with categorized listings and detailed recipe pages.
+- Implementing a tagging system for recipes to improve discoverability.
+- Adding search functionality for recipes to allow users to find relevant content quickly.
 
 ---
   
