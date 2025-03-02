@@ -627,6 +627,10 @@ footer a:hover {
     background-color: var(--orange);
 }
 
+#mce-success-response {
+    color: var(--white) !important;
+}
+
 /* =======================
    Responsive Design
 ======================= */
