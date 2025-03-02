@@ -1,6 +1,153 @@
+# Testing
+
+Return back to the [README.md](README.md) file.
+
+
+## Code Validation
+
+
+### HTML
+
+### HTML Validation
+
+For my HTML files, I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+Due to the usage of Jinja syntax (e.g., `{% extends "base.html" %}` and `{{ form|crispy }}`) and authentication requirements, the following approach was used for validation:
+
+1. Navigate to each individual page via the deployed Heroku app link.
+2. Right-click the screen or use `CTRL+U` (`⌘+U` on Mac) to "View page source."
+3. Copy the complete HTML code and paste it into the [validate by input](https://validator.w3.org/#validate_by_input) option.
+4. Fix any errors or warnings, revalidate, and record results.
+
+All pages passed validation.
+
+<details>
+
+<summary> Example screenshot of file that passed <summary
+
+[Profile page](/docs/testing/testing-images/profile-w3c.png)
+
+</details>
+
+---
+
+### CSS
+
+I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+All files passed with no errors.
+
+<details>
+
+<summary> Example screenshot of file that passed <summary
+
+[Profile css](/docs/testing/testing-images/css-profile-w3c.png)
+
+</details>
+
+---
+
+### JavaScript
+
+I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.  The JS files in my project were not written by me but taken from Boutique Ado, Stripe and CountryField.
+
+All files passed with no errors.  The Stripe one has an extra semi-colon and two undefined variables, but as it did not come from me I am leaving it alone.
+
+<details>
+
+<summary> Stripe screenshot <summary
+
+[Stripe JS](/docs/testing/testing-images/js-stripe-jshint-1.png)
+[Stripe JS](/docs/testing/testing-images/js-stripe-jshint-2.png)
+
+</details>
+
+---
+
+### Python
+
+I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+
+All files passed with no errors.
+
+<details>
+
+<summary> Example screenshot of file that passed <summary
+
+[Profile pep8](/docs/testing/testing-images/profile-pep8.png)
+
+</details>
+
+---
+
+## Dev Tools/Real World Device Testing
+---
+
+Responsiveness testing was carried out using Google Dev Tools on the devices detailed within the below table. Responsiveness was evident on all features throughout all tested devices. 
+  
+<br>
+
+### Dev Tools Device Testing - all features tested, issues noted below
+
+| Device  | Feature    | Issue  | Fix  |
+| ------- | ---------- | ------ |------|
+| iPhone SE | Product Detail page | Page looked cramped | Changed to col-11 rather than col-12, added mx-auto |
+| Nest Hub Max | All features | No issues | None needed |
+| iPad Mini | All features | No issues | None needed |
+| Asus Zenbook Fold | Scroll down | Can't see footer | This is a browser issue and not a responsivity issue |
+   
+<br>
+
+### Real World Device Testing
+
+| Device      | Feature    | Issue  | Fix  | 
+| ------------| ---------- | ------ |------|
+| Samsung S9 | All features | No issues | None needed |
+| iPad Pro (2020) | All features |  No issues  | None needed |
+| HP 15S laptop  | All features | No issues | None needed |
+| iPad Pro 2021 |    All features      |    No issues    |  None needed |
+| Google Pixel 6 | All features | No issues | None needed |
+| Samsung S22 | All features | No issues | None needed |
+
+
+### Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Notes |
+| --- | --- | --- |
+| Chrome | Works as expected |
+| Edge | Works as expected |
+| Safari | Works as expected |
+| Firefox | MailChimp box in footer looks cramped; arrows in quantity form that don't appear in other browswers |
+
+<details>
+
+<summary> Firefox Screenshots </summary>
+
+MailChimp box in footer
+[Firefox footer](/docs/testing/testing-images/browser/browser-firefox-footer.png)
+
+Quantity form
+[Firefox quantity form](/docs/testing/testing-images/browser/browser-firefox-quantity-form.png)
+
+</details>
+
+---
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+
+
 ## Defensive Programming
 
-Defensive programming was manually tested with the below user acceptance testing:
+Defensive programming was manually tested with the below user acceptance testing.
+
+<details>
+
+<summary> Manual Testing Results </summary>
 
 | Page | User Action | Expected Result |  /Fail | Comments |
 | --- | --- | --- | --- | --- |
@@ -150,3 +297,17 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click product name in order summary | Redirect to the product details page |   | |
 | | Click on 'Adjust Basket' button | Redirect to Basket page |   | |
 | | Click on 'Complete Order' button | Complete Checkout with given information, redirect to order confirmation page if valid |   | |
+
+
+</details>
+
+
+
+## Bug Fixes
+---
+
+|Bug|Solution|Fixed?|
+|-----|-----|-----|
+
+
+**There were no other known bugs at the time of submitting the project.**
