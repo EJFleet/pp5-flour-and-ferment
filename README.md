@@ -954,6 +954,79 @@ By adhering to this structured approach, I ensure that the core features are del
 
 ---
 
+## Ecommerce Business Model
+
+This site sells goods to individual customers, and therefore follows a `Business to Customer` model.
+It is of the simplest **B2C** forms, as it focuses on individual transactions, and doesn't need anything
+such as monthly/annual subscriptions.
+
+It is still in its early development stages, although it already has a newsletter system, and links for social media marketing.
+
+Social media can potentially build a community of users around the business, and boost site visitor numbers,
+especially when using larger platforms such as Facebook and Instagram.
+
+A newsletter list can be used by the business to send regular messages to site users.
+For example, what items are on special offer, new items in stock, updates to business hours, notifications of events, and much more.
+
+## Search Engine Optimization (SEO) & Social Media Marketing
+
+### Keywords
+
+I've identified some appropriate keywords using using the site [Wordtracker](https://www.wordtracker.com/) to align with my site.  I included them in the base.html in the `<head>` within a `<meta>` tag.
+
+![Keywords](docs/images/e-commerce/keywords.png)
+
+I have also included keywords in the page descriptions in the extra_meta block on each template.
+
+![Description](docs/images/e-commerce/keywords-extra-meta.png)
+
+### Sitemap
+
+I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
+This was generated using my deployed site URL: https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/
+
+After it finished crawling the entire site, it created a
+[sitemap.xml](sitemap.xml) which I've downloaded and included in the repository.
+
+### Robots
+
+I've created the [robots.txt](robots.txt) file at the root-level.
+Inside, I've included the default settings:
+
+```
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Sitemap: https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/sitemap.xml
+```
+
+### Social Media Marketing
+
+Creating a strong social base (with participation) and linking that to the business site can help drive sales.
+Using more popular providers with a wider user base, such as Facebook, typically maximizes site views.
+
+I've created a Facebook business account to showcase my store and keep users informed of any new products or changes.
+
+![screenshot](docs/images/e-commerce/facebook-1.png)
+![screenshot](docs/images/e-commerce/facebook-2.png)
+![screenshot](docs/images/e-commerce/facebook-3.png)
+
+### Newsletter Marketing
+
+I have incorporated a MailChimp newsletter sign-up form in my footer, to allow users to supply their
+email address if they are interested in learning more. 
+
+### Privacy Policy:
+
+A privacy policy page was created and can be accessed by the link in the footer. The privacy policy will show the user that this site is trustworthy and that Flour & Ferment takes privacy seriously.
+
+The privacy policy was created using:
+
+[Privacy Policy Generator.](https://www.privacypolicygenerator.info/)
+
+[Link to Privacy Policy](https://www.termsfeed.com/live/5582ef34-d31a-42e4-b04f-a198aef89f88)
+
+
 ## Technologies Used
 
 
@@ -990,6 +1063,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 
 - [Am I Responsive](https://ui.dev/amiresponsive) - Responsive screenshots and testing for multiple device views.
 - [Balsamiq](https://balsamiq.com/) - Wireframing tool used for planning the UI design.
+- [Canva](https://www.canva.com/) - Creating the site logo.
 - [ChatGPT](https://chatgpt.com/) - Used for debugging and formatting.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Developer tools for inspecting, debugging, and optimizing web applications.
 - [Code Insitute PEP8 Validator](https://pep8ci.herokuapp.com/#) - Python code validation tool.
@@ -1003,6 +1077,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 - [Heroku](https://heroku.com/) - Cloud platform for deploying web applications.
 - [JSHint](https://jshint.com/) - JavaScript code validation tool.
 - [Lucid.app](https://lucid.app) - Tool for creating Entity Relationship Diagrams (ERDs).
+- [MailChimp](https://mailchimp.com) - Newsletter sign-up tool.
 - [PostgreSQL](https://www.postgresql.org/) - Open-source relational database management system.
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - Tool for generating the site's privacy policy.
 - [Shields.io](https://shields.io/) - Generates badges for README files.
@@ -1519,7 +1594,7 @@ If you'd like to backup your database models, use the following command for each
 | Source | Location | Notes |
 | --- | --- | --- |
 |[Code Institute Boutique Ado walkthrough](https://codeinstitute.net/ie/full-stack-software-development-diploma/) | Entire site | Layout; profile, products, basket and checkout apps |
-|[Web Piano Academy README](https://github.dev/LewisMDillon/web-piano-academy/blob/main/README.md) | README | Deployment |
+|[Web Piano Academy README](https://github.dev/LewisMDillon/web-piano-academy/blob/main/README.md) | README | Deployment; E-Commerce Business Model |
 |[Web Piano Academy site](https://web-piano-academy-16cd779294ab.herokuapp.com) | Footer and Nav Menu | Layout; also used to double check code if mine was not working |
 |[Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)|Entire site|Responsivity|
 |[My PP4 project - My Cookbook](https://github.dev/EJFleet/pp4-my-cookbook-blog) | Error Pages | Structure and content |
