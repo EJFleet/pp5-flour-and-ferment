@@ -17,15 +17,87 @@ Due to the usage of Jinja syntax (e.g., `{% extends "base.html" %}` and `{{ form
 3. Copy the complete HTML code and paste it into the [validate by input](https://validator.w3.org/#validate_by_input) option.
 4. Fix any errors or warnings, revalidate, and record results.
 
-All pages passed validation.
+All pages passed validation, except for the Add Product and Edit Product pages.
 
 <details>
 
-<summary> Example screenshot of file that passed <summary
+<summary> Edit product </summary>
 
-[Profile page](/docs/testing/testing-images/profile-w3c.png)
+![Edit product page](/docs/testing/testing-images/w3c/product-edit-error.png)
 
 </details>
+
+
+<details>
+
+<summary> Add Product </summary>
+
+![Add product page](/docs/testing/testing-images/w3c/product-add-error.png)
+
+</details>
+
+
+Both these errors are caused by the JavaScript that is created when a new image file is uploaded to a product.  I was advised by Tutor Support to remove the duplicated ID, but this just caused the message to disappear, though the code was validated.
+
+I opted to revert the code to the original, which is copied from Boutique Ado, rather than leave it out for the sake of validation, as I feel it is more important to have the name of the new file displayed.
+
+It would be a priority to fix this in future iterations.
+
+<details>
+
+<summary> Message displayed when new image file is selected </summary>
+
+![Image message](/docs/testing/testing-images/w3c/product-edit-error-select-image.png)
+
+</details>
+
+
+<details>
+
+<summary> JavaScript from custom_clearable_file_input.html - current (from Boutique Ado) </summary>
+
+![CCFI JS](/docs/testing/testing-images/w3c/product-add-edit-ccfi-old-current-js.png)
+
+</details>
+
+
+<details>
+
+<summary> JavaScript change in custom_clearable_file_input.html that caused image message to disappear </summary>
+
+![CCFI JS new](/docs/testing/testing-images/w3c/product-add-edit-ccfi-new-js.png)
+
+</details>
+
+
+<details>
+
+<summary> JavaScript from edit_product.html and add_product.html - current (from Boutique Ado) </summary>
+
+![add/edit_product.html JS](/docs/testing/testing-images/w3c/product-add-edit-old-current-js.png)
+
+</details>
+
+
+<details>
+
+<summary> JavaScript change in edit_product.html and add_product.html that caused image message to disappear </summary>
+
+![add/edit_product.html JS](/docs/testing/testing-images/w3c/product-add-edit-new-js.png)
+
+</details>
+
+
+For the rest of the files that all passed, please see below for an example of what the validation looked like.
+
+<details>
+
+<summary> Example screenshot of file that passed </summary>
+
+![Profile page](/docs/testing/testing-images/profile-w3c.png)
+
+</details>
+
 
 ---
 
@@ -37,9 +109,9 @@ All files passed with no errors.
 
 <details>
 
-<summary> Example screenshot of file that passed <summary
+<summary> Example screenshot of file that passed </summary>
 
-[Profile css](/docs/testing/testing-images/css-profile-w3c.png)
+![Profile css](/docs/testing/testing-images/css-profile-w3c.png)
 
 </details>
 
@@ -53,10 +125,10 @@ All files passed with no errors.  The Stripe one has an extra semi-colon and two
 
 <details>
 
-<summary> Stripe screenshot <summary
+<summary> Stripe screenshot </summary>
 
-[Stripe JS](/docs/testing/testing-images/js-stripe-jshint-1.png)
-[Stripe JS](/docs/testing/testing-images/js-stripe-jshint-2.png)
+![Stripe JS](/docs/testing/testing-images/js-stripe-jshint-1.png)
+![Stripe JS](/docs/testing/testing-images/js-stripe-jshint-2.png)
 
 </details>
 
@@ -70,9 +142,9 @@ All files passed with no errors.
 
 <details>
 
-<summary> Example screenshot of file that passed <summary
+<summary> Example screenshot of file that passed </summary>
 
-[Profile pep8](/docs/testing/testing-images/profile-pep8.png)
+![Profile pep8](/docs/testing/testing-images/profile-pep8.png)
 
 </details>
 
@@ -348,10 +420,11 @@ Defensive programming was manually tested with the below user acceptance testing
 
 </details>
 
-
+---
 
 ## Bug Fixes
----
+
+Bugs are detailed in the kanban board at [Flour & Ferment GitHub](https://github.com/users/EJFleet/projects/3/)
 
 |Bug|Solution|Fixed?|
 |-----|-----|-----|
