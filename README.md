@@ -56,18 +56,7 @@ For the details of all testing carried out, please go to [TESTING.MD](docs/testi
 
 The user experience (UX) for this project was designed with careful consideration of user needs and project goals, ensuring a seamless, intuitive, and engaging experience for all users. The planning process was informed by Agile methodologies and centered around user stories, categorized into epics to structure development priorities effectively.
 
-
-<details>
-
-<summary> Epics and User Stories screenshot </summary>
-
-![Epics and User Stories screenshot](docs/images/epics-and-user-stories.png)
-
-</details>
-
-[Link to original document](https://docs.google.com/spreadsheets/d/1DywOsRNp3SZfBRsrRaIck3M5WMe0I2QfKYrEEFMTcZw/edit?usp=sharing)
-
-  ### User Stories
+### User Stories
 
 #### **Navigation**  
 
@@ -185,47 +174,58 @@ The Flour & Ferment app is designed with a simple structure to ensure the app is
 
 ##### Wireframes
 
-The wireframes that I originally designed have slightly different aesthetic differences to the finished product. During the construction process, I decided to change the format and layout of some of the features. The original wireframes are below - though the concept evolved, the original layout is still relevant and can be recognised in the finished site.
+The wireframes that I originally designed have a slightly different aesthetic differences to the finished product. During the construction process, I decided to change the format and layout of some of the features, particularly the homepage, where I decided on a less cluttered design.  The original wireframes are below - though the concept evolved, the original layout is still relevant and can be recognised in the finished site.
 
 <details>
 
 <summary> base.html - desktop and mobile </summary>
 
-![base.html - desktop and mobile]()
+![base.html - desktop and mobile](docs/images/wireframes/base-desktop-mobile.png)
 
 </details>
 
 <details>
 
-<summary> index.html - desktop and mobile </summary>
+<summary>index.html - desktop </summary>
 
-![index.html - PC and mobile]()
+![index.html - desktop](docs/images/wireframes/index-pc.png)
+
+</details>
+
+<summary>index.html - mobile </summary>
+
+![index.html - desktop](docs/images/wireframes/index-mobile.png)
 
 </details>
 
 <details>
 
-<summary>recipe_detail.html - desktop</summary>
+<summary>product_list.html - desktop and mobile </summary>
 
-![recipe_detail.html - desktop]()
+![recipe_detail.html - desktop](docs/images/wireframes/product-list-pc-mobile.png)
 
 </details>
 
 <details>
 
-<summary>recipe_detail.html - mobile</summary>
+<summary>product_detail.html - desktop and mobile</summary>
 
-![recipe_detail.html - mobile]()
+![recipe_detail.html - mobile](docs/images/wireframes/product-detail-pc-mobile.png)
+
+</details>
+
+<details>
+
+<summary>user_profile.html - desktop and mobile</summary>
+
+![recipe_detail.html - mobile](docs/images/wireframes/user-profile-pc-mobile.png)
 
 </details>
 
 
 #### Database Design
 
-The database design for this project consists of the following models:
-- **model**: Represents ...
-- **model**: Represents ...
-
+While planning this project, I drew up an Entity Relationship Diagram to help me to visualise the database models and their relationships.
 
 ### Database Evolution
 
@@ -235,7 +235,7 @@ The initial Entity Relationship Diagram (ERD) was created during the planning ph
 
 <summary> Current ERD  </summary>
   
-![Current ERD](docs/images/current-erd.png)
+![Current ERD](docs/images/erd-updated.png)
 
 </details>
 
@@ -243,7 +243,7 @@ The initial Entity Relationship Diagram (ERD) was created during the planning ph
 
 <summary> Original ERD </summary>
 
-![Original ERD](docs/images/first-edition-erd.png)
+![Original ERD](docs/images/erd-original.png)
 
 </details>
 
@@ -825,9 +825,26 @@ As the platform evolves, additional features and improvements may be introduced 
 
 This project was developed using Agile methodology which allowed me to iteratively and incrementally build my app, with flexibility to make changes to my design throughout the entire development process.
 
+
 #### Kanban Board
 
-GitHub Issues and Projects were used to manage the development process. Each part of the app is divided into Epics which are broken down into User Stories with Tasks. An Epic represents a large body of work, such as a feature. The board view of the Project feature was used to display and manage my progress in the form of a 'kanban board'. The user stories were added to the 'Todo' column to be prioritised for development, moved to the 'In Progress' column to indicate development of the feature had begun and finally moved to the 'Done' column when the feature had been implemented and the acceptance criteria had been met.
+GitHub Issues and Projects were used to manage the development process. Each part of the app is divided into Epics which are broken down into User Stories with Tasks. An Epic represents a large body of work, such as a feature. 
+
+<details>
+
+<summary> Epics and User Stories screenshot </summary>
+
+![Epics and User Stories screenshot](docs/images/epics-and-user-stories.png)
+
+</details>
+
+[Link to original document](https://docs.google.com/spreadsheets/d/1DywOsRNp3SZfBRsrRaIck3M5WMe0I2QfKYrEEFMTcZw/edit?usp=sharing)
+
+
+
+The board view of the Project feature was used to display and manage my progress in the form of a 'kanban board'. The user stories were added to the 'Todo' column to be prioritised for development, moved to the 'In Progress' column to indicate development of the feature had begun and finally moved to the 'Done' column when the feature had been implemented and the acceptance criteria had been met.
+
+I also added a 'Future Additions' column to keep track of user stories that were left out of this iteration but could be implemented in future iterations.
 
 <details>
 
@@ -843,10 +860,34 @@ GitHub Issues and Projects were used to manage the development process. Each par
 
 User stories were prioritised using the MoSCoW prioritisation technique. Each user story was given one of the following labels:
 
-- Must have - to indicate the user story is guaranteed to be delivered.
-- Should have - to indicate the user story would add significant value but is not vital.
-- Could have - to indicate the user story would have a small impact if left out.
-- Won't have - to indicate the user story is not a priority in the current iteration.
+1. **Must Have** – Critical requirements that are essential for the project’s success.
+2. **Should Have** – Important but not critical; can be deferred if necessary.
+3. **Could Have** – Desirable but not necessary; included if time/resources allow.
+4. **Won't Have** – Not planned for this phase; may be considered in the future.
+
+
+##### How My Prioritization Aligns with MoSCoW Guidelines
+For this project, I carefully categorized **49 user stories** using the MoSCoW method, ensuring a balance between essential and flexible requirements:
+
+| Priority | Count | Percentage |
+|----------|------|------------|
+| **Must Have** | 25 | 51% |
+| **Should Have** | 11 | 22% |
+| **Could Have** | 9 | 18% |
+| **Won't Have** | 4 | 8% |
+
+### Staying Within MoSCoW Guidelines
+Industry best practices suggest that:
+- **Must-Have items** should comprise around **50-60%** of total requirements to maintain project feasibility.
+- **Should-Have and Could-Have features** should make up around **30-40%**, allowing flexibility.
+- **Won't-Have items** should be clearly identified to prevent scope creep.
+
+My prioritization follows these principles:
+- **Must-Haves** account for **51%**, ensuring a strong foundation.  
+- **Should-Haves and Could-Haves** together make up **40%**, maintaining flexibility.  
+- **Won't-Haves** are **under 10%**, clarifying what is out of scope.  
+
+By adhering to this structured approach, I ensure that the core features are delivered while allowing room for enhancements if time and resources permit.
 
 ---
 
