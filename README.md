@@ -998,17 +998,16 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 - [JSHint](https://jshint.com/) - JavaScript code validation tool.
 - [Lucid.app](https://lucid.app) - Tool for creating Entity Relationship Diagrams (ERDs).
 - [PostgreSQL](https://www.postgresql.org/) - Open-source relational database management system.
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - Tool for generating the site's privacy policy.
 - [Shields.io](https://shields.io/) - Generates badges for README files.
+- [Temp-Mail.org](https://temp-mail.org/en/) - Generates temporary email addresses for testing user registration, profiles, order confirmations.
 - [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Validates CSS stylesheets.
 - [The W3C Markup Validation Service](https://validator.w3.org/) - Validates HTML documents.
 
 
 ##  Deployment & Local Development    
 
-## Deployment
-
 The live deployed application can be found on [Heroku](https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/).
-
 
 ### **Setting Up a PostgreSQL Database**
 
@@ -1267,7 +1266,7 @@ Your AWS IAM setup is now complete!
 
 ---
 
-## Stripe API
+### Stripe API
 
 This project uses [Stripe](https://stripe.com) to handle ecommerce payments.
 
@@ -1502,12 +1501,27 @@ If you'd like to backup your database models, use the following command for each
 <br>
 
 ## Credits
----
+
+### Design and Content Inspiration
+
+- [The Perfect Loaf](https://www.theperfectloaf.com/my-baking-tools/)
+- [Riot Rye](https://www.riotrye.ie/)
+- [Sourdough by the Sea](https://www.sourdoughbythesea.co.uk/)
 
 ### Code Credits
   
 | Source | Location | Notes |
 | --- | --- | --- |
+|[Code Institute Boutique Ado walkthrough](https://codeinstitute.net/ie/full-stack-software-development-diploma/) | Entire site | Layout; profile, products, basket and checkout apps |
+|[Web Piano Academy README](https://github.dev/LewisMDillon/web-piano-academy/blob/main/README.md) | README | Deployment |
+|[Web Piano Academy site](https://web-piano-academy-16cd779294ab.herokuapp.com) | Footer and Nav Menu | Layout; also used to double check code if mine was not working |
+|[Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)|Entire site|Responsivity|
+|[My PP4 project - My Cookbook](https://github.dev/EJFleet/pp4-my-cookbook-blog) | Error Pages | Structure and content |
+|[Stack Overflow - Using .navfill](https://stackoverflow.com/questions/49094948/how-to-evenly-space-navbar-elements-in-bootstrap-4) | Navbar | Evenly spacing elements with .nav-fill |
+|[Stack Overflow - Using unique_together](https://stackoverflow.com/questions/49094948/how-to-evenly-space-navbar-elements-in-bootstrap-4) | WishlistItem model | Ensures that the same product cannot be added multiple times to the same wishlist. |
+|[Create Contact Form - YouTube](https://www.youtube.com/watch?v=lSgRWA4PMt4&ab_channel=BLearningClub) | Contact page | Structure of contact form |
+|[Django Documentation - Admin](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/) | Admin panel | ContactAdmin model structure and WishListItemInline structure |
+|[Stack Overflow - Tabular vs Stacked Inline](https://stackoverflow.com/questions/47258289/differences-between-stacked-inline-and-tabular-inline) | Wishlist in admin panel | Helped decide between tabular or stacked inline display | 
 
     
 ### Acknowledgments
@@ -1516,4 +1530,5 @@ If you'd like to backup your database models, use the following command for each
   * Lewis Dillon for facilitating our weekly standups and being a font of information and encouragement
   * My friends and family for testing the project on their devices and offering words of encouragement
   * God for getting me through the tough bits
+  * Sarah, Oisin and Roman in Tutor Support for their help and endless patience
   * My dog Po for making me take breaks from my desk
