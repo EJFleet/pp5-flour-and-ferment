@@ -6,8 +6,6 @@ Return back to the [README.md](README.md) file.
 ## Code Validation
 
 
-### HTML
-
 ### HTML Validation
 
 For my HTML files, I have used [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
@@ -115,7 +113,7 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Browser | Notes |
-| --- | --- | --- |
+| --- | --- |
 | Chrome | Works as expected |
 | Edge | Works as expected |
 | Safari | Works as expected |
@@ -126,10 +124,10 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 <summary> Firefox Screenshots </summary>
 
 MailChimp box in footer
-[Firefox footer](/docs/testing/testing-images/browser/browser-firefox-footer.png)
+![Firefox footer](/docs/testing/testing-images/browser/browser-firefox-footer.png)
 
 Quantity form
-[Firefox quantity form](/docs/testing/testing-images/browser/browser-firefox-quantity-form.png)
+![Firefox quantity form](/docs/testing/testing-images/browser/browser-firefox-quantity-form.png)
 
 </details>
 
@@ -137,8 +135,57 @@ Quantity form
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+I tested my deployed project using the Lighthouse Audit tool in Chrome Dev Tools on each page, in incognito mode.
 
+I initially used the Lighthouse extension to test and was getting much better results for performance.  When I changed to the tool in dev tools, my pages scored much lower. I subsequently went back and tested every page with the dev tools method and these are the scores you see below.
+
+Performance is much lower than I would like it to be, and I would fix this in future development.
+
+I was more concerned that my accessibility scores would be adequate, which they appear to be.
+
+### Test Results Table
+
+| Page | Screenshot | Comments |
+|------|------------|----------|
+| **Home** | ![Home Screenshot](/docs/testing/testing-images/lighthouse/home-new-again.png) |  |
+| **Products** | ![Products Screenshot](/docs/testing/testing-images/lighthouse/products.png) |  |
+| **Product Detail** | ![Product Detail Screenshot](/docs/testing/testing-images/lighthouse/product-detail.png) |  |
+| **Our Story** | ![Our Story Screenshot](/docs/testing/testing-images/lighthouse/our-story.png) |  |
+| **FAQ** | ![FAQ Screenshot](/docs/testing/testing-images/lighthouse/faq.png) |  |
+| **Contact** | ![Contact Screenshot](/docs/testing/testing-images/lighthouse/contact.png) |  |
+| **Contact Success** | ![Contact Success Screenshot](/docs/testing/testing-images/lighthouse/contact-success.png) |  |
+| **My Profile** | ![My Profile Screenshot](/docs/testing/testing-images/lighthouse/my-profile.png) |  |
+| **Order Summary** | ![Order Summary Screenshot](/docs/testing/testing-images/lighthouse/order-summary.png) |  |
+| **My Wishlist** | ![My Wishlist Screenshot](/docs/testing/testing-images/lighthouse/my-wishlist.png) |  |
+| **Register** | ![Register Screenshot](/docs/testing/testing-images/lighthouse/register.png) |  |
+| **Login** | ![Login Screenshot](/docs/testing/testing-images/lighthouse/login.png) |  |
+| **Logout** | ![Logout Screenshot](/docs/testing/testing-images/lighthouse/logout.png) |  |
+| **Add Product** | ![Add Product Screenshot](/docs/testing/testing-images/lighthouse/add-product.png) |  |
+| **Edit Product** | ![Edit Product Screenshot](/docs/testing/testing-images/lighthouse/edit-product.png) |  |
+| **Basket** | ![Basket Screenshot](/docs/testing/testing-images/lighthouse/basket.png) |  |
+| **Checkout** | ![Checkout Screenshot](/docs/testing/testing-images/lighthouse/checkout.png) |  |
+| **Order Confirmation** | ![Order Confirmation Screenshot](/docs/testing/testing-images/lighthouse/order-confirmation.png) |  |
+
+---
+
+
+## Stripe and Webhooks
+
+### Stripe Payment Flow
+
+| Test Step | Description | Expected Result | Status |
+|-----------|------------|----------------|--------|
+| **1. Load Checkout Page** | Navigate to the checkout page with a test product in the cart. | Page loads correctly with the expected order details. | Pass |
+| **2. Initiate Payment** | Fill in delivery details and enter a valid test card (e.g., `4242 4242 4242 4242`) and use a valid CVC, expiration, and zip code. Click **Complete Order** button | Transaction is processed successfully, and the user is redirected to the confirmation page. | Pass |
+| **3. Validate Webhook Trigger** | Check if the Stripe webhook is received and that there are green 200 messages on each (`payment-intent.created`, `charge.succeeded`, `payment_intent.succeeded`, `charge.updated`). | Webhook event is logged and processed correctly. | Pass |
+| **4. Verify Order Database Entry** | Check if the order appears in the database. | Order data is correctly stored and matches the Stripe transaction ID. | Pass |
+| **5. Test Payment Failure** | Use a failing test card (e.g., `4000 0000 0000 9995` for insufficient funds). | Payment is declined, and an error message appears. | Pass |
+| **6. Check Email Notifications** | Confirm if an order confirmation email is sent to the customer. | Email is received with the correct order details. | Pass |
+| **7. Test Authentication (3D Secure)** | Use a test card that **requires authentication** (`4000 0025 0000 3155`). | Stripe presents an authentication challenge (e.g., 3D Secure prompt). | Pass |
+| **8. Confirm Authentication Success** | Approve the authentication challenge in Stripe's test modal. | Payment succeeds, user is redirected, and webhook fires. | Pass |
+| **9. Test Authentication Failure** | Choose to fail the authentication challenge in Stripe's test modal. | Payment fails with an authentication error message. | Pass  |
+
+---
 
 
 ## Defensive Programming
@@ -149,7 +196,7 @@ Defensive programming was manually tested with the below user acceptance testing
 
 <summary> Manual Testing Results </summary>
 
-| Page | User Action | Expected Result |  /Fail | Comments |
+| Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
 | Nav links | | | | |
 | | Click on Logo | Redirection to Home page |  | |
@@ -159,26 +206,26 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Shop - Baking Equipment | Redirection to Products page with only Baking Equipment displayed  | | |
 | | Click on Shop - Cookbooks | Redirection to Products page with only Cookbooks displayed  | | |
 
-| | Click on About link in navbar | Dropdown menu with links to Our Story, FAQ and Contact | | |
-| | Click on About - Our Story | Redirect to Our Story page | | |
-| | Click on About - FAQ | Redirect to FAQ page | | |
-| | Click on About - Contact | Redirect to Contact page | | |
+| | Click on About link in navbar | Dropdown menu with links to Our Story, FAQ and Contact | Pass | |
+| | Click on About - Our Story | Redirect to Our Story page | Pass | |
+| | Click on About - FAQ | Redirect to FAQ page | Pass | |
+| | Click on About - Contact | Redirect to Contact page | Pass | |
 
-| | Enter text in Search box and click Search button | Redirect to Products page with results | | |
+| | Enter text in Search box and click Search button | Redirect to Products page with results | Pass | |
 
-| | Click on Register link in navbar | Redirection to Register page | | |
-| | Click on Login link in navbar | Redirection to Login page | | |
-| | Click on Basket link in navbar | Redirection to Basket page | | |
+| | Click on Register link in navbar | Redirection to Register page | Pass | |
+| | Click on Login link in navbar | Redirection to Login page | Pass | |
+| | Click on Basket link in navbar | Redirection to Basket page | Pass | |
 
-| | Click on Account link in navbar | Dropdown menu with links to My Profile, My Wishlist and Logout displayed | | |
-| | Click on Account - My Profile link in navbar | Redirection to user's Profile page |  | |
-| | Click on Account - My Wishlist link in navbar | Redirection to user's Wishlist page |  | |
-| | Click on Account - Logout link in navbar | Redirection to Logout page |  | |
+| | Click on Account link in navbar | Dropdown menu with links to My Profile, My Wishlist and Logout displayed | Pass | |
+| | Click on Account - My Profile link in navbar | Redirection to user's Profile page | Pass | |
+| | Click on Account - My Wishlist link in navbar | Redirection to user's Wishlist page | Pass  | |
+| | Click on Account - Logout link in navbar | Redirection to Logout page | Pass | |
 
-| | Click on Admin link in navbar | Dropdown menu with links to Admin Panel, Add New Product and Edit/Delete A Product | | |
-| | Click on Admin Panel link in navbar | Redirection to Admin Panel page |  | |
-| | Click on Add New Product link in navbar | Redirection to Add Product page |  | |
-| | Click on Edit/Delete A Product link in navbar | Redirection to Products page |  | |
+| | Click on Admin link in navbar | Dropdown menu with links to Admin Panel, Add New Product and Edit/Delete A Product | Pass | |
+| | Click on Admin Panel link in navbar | Redirection to Admin Panel page | Pass | |
+| | Click on Add New Product link in navbar | Redirection to Add Product page | Pass | |
+| | Click on Edit/Delete A Product link in navbar | Redirection to Products page | Pass | |
 
 | Footer | | | | |
 | | Click on Home link | Redirection to Home page |  | |

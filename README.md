@@ -1060,6 +1060,8 @@ I have also included keywords in the page descriptions in the extra_meta block o
 
 ![Description](docs/images/e-commerce/keywords-extra-meta.png)
 
+I have also made sure to include keywords in the product descriptions.
+
 ### Sitemap
 
 I've used [XML-Sitemaps](https://www.xml-sitemaps.com) to generate a sitemap.xml file.
