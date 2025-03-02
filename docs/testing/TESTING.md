@@ -228,122 +228,122 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Edit/Delete A Product link in navbar | Redirection to Products page | Pass | |
 
 | Footer | | | | |
-| | Click on Home link | Redirection to Home page |  | |
-| | Click on Shop link | Redirection to Products page |  | |
-| | Click on Our Story link | Redirection to About page |  | |
-| | Click on FAQ link | Redirection to FAQ page |  | |
-| | Click on Contact link | Redirection to Contact page |  | |
-| | Click on Register link | Redirection to Register page |  | |
-| | Click on Login link | Redirection to Login page |  | |
-| | Click on Profile link | Redirection to user's Profile page |  | |
-| | Click on Wishlist link | Redirection to user's Wishlist page |  | |
-| | Click on Logout link | Redirection to Logout page |  | |
-| | Click on 'Subscribe' button in Newsletter sign-up box | 'Thank You for subscribing' message is displayed |  | |
-| | Click on social media icons | Relevant social media page opens in new tab | | |
+| | Click on Home link | Redirection to Home page | Pass | |
+| | Click on Shop link | Redirection to Products page |  Pass | |
+| | Click on Our Story link | Redirection to About page |  Pass | |
+| | Click on FAQ link | Redirection to FAQ page |  Pass | |
+| | Click on Contact link | Redirection to Contact page |  Pass | |
+| | Click on Register link | Redirection to Register page |  Pass | |
+| | Click on Login link | Redirection to Login page |  Pass | |
+| | Click on Profile link | Redirection to user's Profile page |  Pass | |
+| | Click on Wishlist link | Redirection to user's Wishlist page | Pass | |
+| | Click on Logout link | Redirection to Logout page | Pass | |
+| | Click on 'Subscribe' button in Newsletter sign-up box | 'Thank You for subscribing' message is displayed | Pass | |
+| | Click on social media icons | Relevant social media page opens in new tab | Pass | |
 
 | Register | | | | |
-| | Enter valid email address (twice) | Field will only accept email address format |  | |
-| | Enter valid  word (twice) | Field will only accept  word format |  | |
-| | Click on Sign Up button | Redirects user to notification to Verify Email Address |  |
+| | Enter valid email address (twice) | Field will only accept email address format | Pass | |
+| | Enter valid  word (twice) | Field will only accept  word format | Pass | |
+| | Click on Sign Up button | Redirects user to notification to Verify Email Address | Pass |
 
 | Log In | | | | |
-| | Enter valid username/email | Field will accept username or email format |  | |
-| | Enter valid  word | Field will only accept  word format |  | |
-| | Click Sign In button | Log user in, redirects to home page |  | |
+| | Enter valid username/email | Field will accept username or email format | Pass | |
+| | Enter valid  word | Field will only accept  word format | Pass | |
+| | Click Sign In button | Log user in, redirects to home page | Pass | |
 
 | Log Out | | | | |
-| | Click Sign Out link in navbar Account dropdown menu | Logs out user, redirects user to home page |  |
+| | Click Sign Out link in navbar Account dropdown menu | Logs out user, redirects user to home page | Pass |
 
 | Profile | | | | |
-| | Click on the Update Information button | Inputted information is saved |  | |
-| | Click on Order History links | Redirects to user order confirmation, alert message displayed |  | |
-| | Click on Back to Profile (in Order History) | Redirects to Profile page | | |
+| | Click on the Update Information button | Inputted information is saved | Pass | |
+| | Click on Order History links | Redirects to user order confirmation, alert message displayed | Pass | |
+| | Click on Back to Profile (in Order History) | Redirects to Profile page | Pass |
 
 | Wishlist | | | | |
-| | Click on the Add to Basket button | Item is added to basket |  | |
-| | Click on Remove button | Item is removed from Wishlist |  | |
-| | Click on Back to Store | Redirects to Products page | | |
-| | Click product image | Redirect to the product details page |   | |
-| | Click product name | Redirect to the product details page |   | |
+| | Click on the Add to Basket button | Item is added to basket | Pass | |
+| | Click on Remove button | Item is removed from Wishlist | Pass | |
+| | Click on Back to Store | Redirects to Products page |Pass | |
+| | Click product image | Redirect to the product details page | Pass | |
+| | Click product name | Redirect to the product details page | Pass | |
 
 | Site Navigations - Logged Out User | | | | |
-| | Navigate to any login required URL | Redirect to login page, redirect back after login |  | |
+| | Navigate to any login required URL | Redirect to login page, redirect back after login | Pass | |
 
 | Products | | | | |
-| | Click on product image | Redirect to clicked product details page |  | |
-| | Click on product title | Redirect to clicked product details page |  | |
-| | Click on sorting dropdown options | Sort products by selected criteria |  | |
+| | Click on product image | Redirect to clicked product details page | Pass | |
+| | Click on product title | Redirect to clicked product details page | Pass | |
+| | Click on sorting dropdown options | Sort products by selected criteria | Pass | |
 
 | Products - Admin Only| | | | |
-| | Click on an edit button | Redirect to edit product page for that product |  | |
-| | Click on a delete button | Trigger delete confirmation modal |  | |
-| | Delete confirmation modal - 'Delete' button | Delete the product |   | |
-| | Delete confirmation modal - 'Cancel' button | Close the modal |   | |
+| | Click on an edit button | Redirect to edit product page for that product | Pass | |
+| | Click on a delete button | Trigger delete confirmation modal | Pass | |
+| | Delete confirmation modal - 'Delete' button | Delete the product | Pass  | |
+| | Delete confirmation modal - 'Cancel' button | Close the modal | Pass  | |
 
 | Product Details | | | | |
-| | Click on product image | Load full image |   | |
-| | Click on 'Keep Shopping' button | Redirect to products page |   | |
-| | Click on 'Add To Basket' button | Adds product to basket, basket message displayed |   | |
-| | Click on Wishlist heart icon (logged in user) | Adds product to wishlist, succcess message displayed | | |
-| | Click on Wishlist heart icon (logged out user) | Redirects to Sign Up page | | |
+| | Click on product image | Load full image | Pass  | |
+| | Click on 'Keep Shopping' button | Redirect to products page | Pass  | |
+| | Click on 'Add To Basket' button | Adds product to basket, basket message displayed |  Pass | |
+| | Click on Wishlist heart icon (logged in user) | Adds product to wishlist, succcess message displayed | Pass | |
+| | Click on Wishlist heart icon (logged out user) | Redirects to Sign Up page | Pass | |
 
 | Product Details - Admin Only | | | | |
-| | Click on Edit button | Redirect to edit product page for that product |   | |
-| | Click on Delete button | Trigger delete confirmation modal |   | |
-| | Delete confirmation modal - 'Delete' button | Delete the product |   | |
-| | Delete confirmation modal - 'Cancel' button | Close the modal |   | |
+| | Click on Edit button | Redirect to edit product page for that product | Pass | |
+| | Click on Delete button | Trigger delete confirmation modal |  Pass | |
+| | Delete confirmation modal - 'Delete' button | Delete the product | Pass | |
+| | Delete confirmation modal - 'Cancel' button | Close the modal | Pass | |
 
 | FAQ | | | | |
-| | Click on question | Dropdown with answer appears |   | |
-| | Click on open question | Dropdown with answer disappears |   | |
-| | Click on Back Home button | Redirection to Home page |  | |
+| | Click on question | Dropdown with answer appears | Pass | |
+| | Click on open question | Dropdown with answer disappears | Pass  | |
+| | Click on Back Home button | Redirection to Home page | Pass | |
 
 | Contact | | | | |
-| | Email input | Required, accepts only email format |   | |
-| | Name input | Required |   | |
-| | Subject input | Required |   | |
-| | Message input | Require |   | |
-| | Click on 'Send Message' button | Redirects to contact success page, success message displayed, message visible in Admin panel |   | |
-| | Click on 'Back Home' button on contact success page | Redirection to Home page |  | |
+| | Email input | Required, accepts only email format | Pass | |
+| | Name input | Required |  Pass | |
+| | Subject input | Required | Pass | |
+| | Message input | Require | Pass | |
+| | Click on 'Send Message' button | Redirects to contact success page, success message displayed, message visible in Admin panel | Pass | |
+| | Click on 'Back Home' button on contact success page | Redirection to Home page |Pass | |
 
 | Add New Product - Admin Only | | | | |
-| | Sku | Not required, select from options |   | |
-| | Category Input | Not required, select from options |   | |
-| | Name Input | Required |   | |
-| | Description Input | Required |   | |
-| | Price Input | Required, Numbers only |   | |
-| | Image URL | Not required |   | |
-| | Image | Not required |   | |
+| | Sku | Not required, select from options | Pass | |
+| | Category Input | Not required, select from options | Pass | |
+| | Name Input | Required | Pass | |
+| | Description Input | Required | Pass | |
+| | Price Input | Required, Numbers only | Pass | |
+| | Image URL | Not required | Pass | |
+| | Image | Not required | Pass | |
 
 | Edit Product - Admin Only | | | | |
-| | Click on 'Cancel' button | Redirect to Products page |   | |
-| | Click on 'Update Product' button | Save changes, redirect to product details page |   | |
+| | Click on 'Cancel' button | Redirect to Products page | Pass | |
+| | Click on 'Update Product' button | Save changes, redirect to product details page | Pass | |
 
 | Basket | | | | |
-| | Adjust quantity by using + or - buttons | Quantity figure adjusts | |
-| | Click on 'Update' link after adjusting quantity | Update quantity of product in basket, subtotal and total change |   | |
-| | Click on 'Remove' link | Remove item from basket, total change |   | |
-| | Click on 'Keep Shopping' button | Redirect to Products page |   | |
-| | Click on 'Secure Checkout' button | Redirect to Checkout page |   | |
-| | Click product image | Redirect to the product details page |   | |
-| | Click product name | Redirect to the product details page |   | |
+| | Adjust quantity by using + or - buttons | Quantity figure adjusts | Pass |
+| | Click on 'Update' link after adjusting quantity | Update quantity of product in basket, subtotal and total change | Pass | |
+| | Click on 'Remove' link | Remove item from basket, total change | Pass | |
+| | Click on 'Keep Shopping' button | Redirect to Products page | Pass | |
+| | Click on 'Secure Checkout' button | Redirect to Checkout page | Pass | |
+| | Click product image | Redirect to the product details page | Pass | |
+| | Click product name | Redirect to the product details page | Pass | |
 
 | Checkout | | | | |
-| | Full Name Input | Required |   | |
-| | Email Input | Required, autofill if saved |   | |
-| | Phone Number Input | Required, autofill if saved |   | |
-| | Street Address 1 Input | Required, autofill if saved |   | |
-| | Street Address 2 Input | Not required, autofill if saved |   | |
-| | Town Or City Input | Required, autofill if saved |   | |
-| | County, State or Locality Input | Not required, autofill if saved |   | |
-| | Postal Code Input | Not required, autofill if saved |   | |
-| | Country Input | Required, autofill if saved, select from options |   | |
-| | Stripe Card Details | Required, validates on input |   | |
-| | Check 'save delivery info.' box | Saves information to user profile |   | |
-| | Click product image in order summary | Redirect to the product details page |   | |
-| | Click product name in order summary | Redirect to the product details page |   | |
-| | Click on 'Adjust Basket' button | Redirect to Basket page |   | |
-| | Click on 'Complete Order' button | Complete Checkout with given information, redirect to order confirmation page if valid |   | |
+| | Full Name Input | Required | Pass | |
+| | Email Input | Required, autofill if saved | Pass | |
+| | Phone Number Input | Required, autofill if saved | Pass | |
+| | Street Address 1 Input | Required, autofill if saved | Pass | |
+| | Street Address 2 Input | Not required, autofill if saved | Pass | |
+| | Town Or City Input | Required, autofill if saved | Pass | |
+| | County, State or Locality Input | Not required, autofill if saved | Pass | |
+| | Postal Code Input | Not required, autofill if saved | Pass | |
+| | Country Input | Required, autofill if saved, select from options | Pass | |
+| | Stripe Card Details | Required, validates on input | Pass | |
+| | Check 'save delivery info.' box | Saves information to user profile | Pass | |
+| | Click product image in order summary | Redirect to the product details page | Pass | |
+| | Click product name in order summary | Redirect to the product details page | Pass | |
+| | Click on 'Adjust Basket' button | Redirect to Basket page | Pass | |
+| | Click on 'Complete Order' button | Complete Checkout with given information, redirect to order confirmation page if valid | Pass | |
 
 
 </details>
