@@ -479,22 +479,28 @@ Legal & Branding
 
 The **Shop** allows users to browse all available products, filter by categories, and sort items based on price, name, and category.
 
-#### Key Features:
-- **Category Selection**: Users can browse by category using category badges.
-- **Search & Sorting**: A search bar and sorting dropdown help users find products easily.
-- **Product Grid**: Displays products with images, prices, and quick access to product details.
-- **Admin Controls**: Admin users can edit or delete products directly from the shop page.
-
-#### Product Cards:
-- **Product Image & Name**: Clicking on an image or name redirects users to the product detail page.
-- **Price Display**: Clear product pricing with currency formatting.
-- **Category Links**: Products are linked to their respective categories for easy navigation.
-
 <details>
 
-<summary> Screenshots </summary>
+<summary> Details </summary>
 
-![Shop Page](docs/images/features/products/shop-page.png)
+  #### Key Features:
+  - **Category Selection**: Users can browse by category using category badges.
+  - **Search & Sorting**: A search bar and sorting dropdown help users find products easily.
+  - **Product Grid**: Displays products with images, prices, and quick access to product details.
+  - **Admin Controls**: Admin users can edit or delete products directly from the shop page.
+
+  #### Product Cards:
+  - **Product Image & Name**: Clicking on an image or name redirects users to the product detail page.
+  - **Price Display**: Clear product pricing with currency formatting.
+  - **Category Links**: Products are linked to their respective categories for easy navigation.
+
+  <details>
+
+  <summary> Screenshots </summary>
+
+  ![Shop Page](docs/images/features/products/shop-page.png)
+
+  </details>
 
 </details>
 
@@ -503,6 +509,10 @@ The **Shop** allows users to browse all available products, filter by categories
 #### Product Detail Page
 
 The **Product Detail Page** provides an in-depth look at each product, including descriptions, images, and purchase options.
+
+<details>
+
+<summary> Details </summary>
 
 ##### Key Features:
 - **High-Quality Product Images**: Clickable images allow users to view the full-size product image.
@@ -513,11 +523,13 @@ The **Product Detail Page** provides an in-depth look at each product, including
 - **Related Products**: The page suggests similar products that users might be interested in.
 - **Quick Navigation**: Users can return to the shop page or continue shopping with ease.
 
-<details>
+  <details>
 
-<summary> Screenshots </summary>
+  <summary> Screenshots </summary>
 
-![Shop Page]()
+  ![Product Detail Page](docs/images/features/products/product-detail-page.png)
+
+  </details>
 
 </details>
 
@@ -525,28 +537,55 @@ The **Product Detail Page** provides an in-depth look at each product, including
 
 
 #### Shopping Basket
+
+The shopping basket provides users with an intuitive way to manage their selected products before checkout. It allows easy modifications, ensuring a smooth shopping experience.
+
+<details>
+
+  <summary> Details </summary>
+
 - **Add to Basket**: Items can be easily added to the basket from product pages.
 - **Basket Overview**: Users can view their basket summary, including item quantities and total cost.
 - **Update & Remove Items**: Items can be adjusted or removed from the basket before proceeding to checkout.
 
-**Screenshots**:
+  <details>
 
-![Basket Page]()
+    <summary> Screenshots </summary>
 
+  ![Basket Page](docs/images/features/basket/shopping-basket.png)
+
+  </details>
+
+</details>
 
 ---
 
 #### Checkout Process
+
+The checkout process ensures a secure and seamless transaction, guiding users through order review, payment, and confirmation with Stripe integration for secure payments.
+
+<details>
+
+  <summary> Details </summary>
+
 - **Secure Checkout**: The site integrates Stripe for secure payments.
 - **Order Summary**: Users receive a breakdown of their purchase before confirming payment.
 - **Order Confirmation**: A confirmation page is displayed upon successful purchase.
 
-Checkout
-![Checkout Page 1](docs/images/features/checkout/checkout-1.png)
-![Checkout Page 2](docs/images/features/checkout/checkout-2.png)
+  <details>
 
-Order Confirmation
-![Order Confirmation Page](docs/images/features/checkout/checkout-order-confirmation.png)
+    <summary> Screenshots </summary>
+
+  Checkout
+  ![Checkout Page 1](docs/images/features/checkout/checkout-1.png)
+  ![Checkout Page 2](docs/images/features/checkout/checkout-2.png)
+
+  Order Confirmation
+  ![Order Confirmation Page](docs/images/features/checkout/checkout-order-confirmation.png)
+
+  </details>
+
+</details>
 
 ---
 
@@ -564,19 +603,25 @@ Users can search for products by keywords in their title or description.
 - Results dynamically update based on the search query.
 - Message displays with search box underneath if no results for search query
 
-**Screenshots**:
+  <details>
 
-Search box Desktop:
+    <summary> Screenshots </summary>
 
-![Product Search](docs/images/features/search/search-navbar.png)
+  Search box Desktop:
 
-Search results page for 'book':
+  ![Product Search](docs/images/features/search/search-navbar.png)
 
-![Product Search](docs/images/features/search/search-book.png)
+  Search results page for 'book':
 
-Zero search results:
+  ![Product Search](docs/images/features/search/search-book.png)
 
-![Product Search](docs/images/features/search/search-zero.png)
+  Zero search results:
+
+  ![Product Search](docs/images/features/search/search-zero.png)
+
+  </details>
+
+</details>
 
 ---
 
@@ -813,25 +858,32 @@ The Contact page provides users with an easy way to reach out for inquiries, sup
 
 The **My Profile** page allows users to manage their personal details and access details of previous orders. 
 
-<summary> Details </summary>
+<details>
 
-##### **Key Features**
-- **Profile Information**: Users can view their registered name, email, and other personal details.
-- **Update Profile Details**: Users can modify their contact information, such as email or address.
-- **Order History**: A list of past purchases with order details, including date, status, and total amount.
+  <summary> Details </summary>
 
-**Screenshots**:
+  ##### **Key Features**
+  - **Profile Information**: Users can view their registered name, email, and other personal details.
+  - **Update Profile Details**: Users can modify their contact information, such as email or address.
+  - **Order History**: A list of past purchases with order details, including date, status, and total amount.
 
-Profile - Desktop
-![Profile Page](docs/images/features/profile/profile-page-desktop.png)
+  <details>
 
-Profile - Mobile
-![Profile Page](docs/images/features/profile/profile-page-mobile.png)
+  <summary> Screenshots </summary>
 
-Profile - Order Summary Page
-![Order Summary Page](docs/images/features/profile/profile-order-summary-desktop.png)
+  Profile - Desktop
+  ![Profile Page](docs/images/features/profile/profile-page-desktop.png)
+
+  Profile - Mobile
+  ![Profile Page](docs/images/features/profile/profile-page-mobile.png)
+
+  Profile - Order Summary Page
+  ![Order Summary Page](docs/images/features/profile/profile-order-summary-desktop.png)
+
+  </details>
 
 </details>
+
 ---
 
 #### My Wishlist
@@ -931,7 +983,6 @@ GitHub Issues and Projects were used to manage the development process. Each par
 </details>
 
 [Link to original document](https://docs.google.com/spreadsheets/d/1DywOsRNp3SZfBRsrRaIck3M5WMe0I2QfKYrEEFMTcZw/edit?usp=sharing)
-
 
 
 The board view of the Project feature was used to display and manage my progress in the form of a 'kanban board'. The user stories were added to the 'Todo' column to be prioritised for development, moved to the 'In Progress' column to indicate development of the feature had begun and finally moved to the 'Done' column when the feature had been implemented and the acceptance criteria had been met.
@@ -1058,7 +1109,6 @@ The privacy policy was created using:
 
 ## Technologies Used
 
-
 ### Languages
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -1082,8 +1132,6 @@ The privacy policy was created using:
 - [psycopg2 2.9.10](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for Python, enabling Django to interact with PostgreSQL.
 - [stripe 11.5.0](https://stripe.com/docs/api) - Payment processing API used for secure transactions.
 - [wheel 0.45.1](https://pypi.org/project/wheel/) - A built-package format for Python.
-
-This combination of frameworks and libraries ensures a **secure, scalable, and efficient** e-commerce experience for Flour & Ferment.
 
 
 ### Tools
@@ -1198,8 +1246,6 @@ If you are a **Code Institute student**, you may use the Code Institute-hosted P
 
 --- 
 
----
-
 ### AWS S3 Setup (Static Hosting)
 
 #### **Step 1 - Create an S3 Bucket**
@@ -1283,7 +1329,6 @@ On the 'Edit Access control list' page:
 3. Check the box to acknowledge the risk.
 4. Click **Save changes**.
 
----
 Your AWS S3 bucket is now configured for **public static website hosting**.
 
 ---
@@ -1369,7 +1414,6 @@ Your AWS S3 bucket is now configured for **public static website hosting**.
 9. Open the `.csv` file in a text editor (e.g., Notepad or TextEdit). The values inside will be separated by commas.
 10. Use these values as your **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** in your **Heroku config vars** or `.env` file.
 
----
 Your AWS IAM setup is now complete!
 
 ---
@@ -1415,7 +1459,6 @@ To ensure payments are properly recorded, you need to **set up Stripe Webhooks**
    ```
 
 ---
-
 
 ### Gmail API
 This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
@@ -1600,13 +1643,10 @@ If you'd like to backup your database models, use the following command for each
 
   For more details about forking and cloning a repository, please refer to [GitHub documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
-
   </details> 
 
 ---
 
-
-<br>
 
 ## Credits
 
@@ -1631,7 +1671,6 @@ If you'd like to backup your database models, use the following command for each
 |[Django Documentation - Admin](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/) | Admin panel | ContactAdmin model structure and WishListItemInline structure |
 |[Stack Overflow - Tabular vs Stacked Inline](https://stackoverflow.com/questions/47258289/differences-between-stacked-inline-and-tabular-inline) | Wishlist in admin panel | Helped decide between tabular or stacked inline display | 
 
-    
 ### Acknowledgments
 
   * My mentor Brian Macharia for his help and clear explanations of what needed to be done
