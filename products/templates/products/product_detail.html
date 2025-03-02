@@ -78,7 +78,7 @@
                                         </span>
                                     </button>
                                 </div>
-                                <input class="form-control qty_input id_qty_{{ product.id }}" aria-label="Quantity for {{ product.name }}" type="number"
+                                <input class="form-control qty_input id_qty_{{ product.id }}" id="quantity-box" aria-label="Quantity for {{ product.name }}" type="number"
                                     name="quantity" value="1" min="1" max="99"
                                     data-item_id="{{ product.id }}">
                                 <div class="input-group-append">
@@ -94,6 +94,8 @@
                     </div>
 
                     <div class="col-12 mt-2">
+                        <!-- Add to Basket Button -->
+                        <input type="submit" class="btn btn-black text-uppercase mt-2" value="Add to Basket">
                         <!-- Keep Shopping Button -->
                         <a href="{% url 'products' %}" class="btn btn-outline-black mt-2">
                             <span class="icon">
@@ -101,8 +103,6 @@
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
-                        <!-- Add to Basket Button -->
-                        <input type="submit" class="btn btn-black text-uppercase mt-2" value="Add to Basket">
                     </div>
                     <!-- Hidden Redirect Field -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">

@@ -303,6 +303,7 @@ Cards & Containers
     margin-top: 1rem;
 }
 
+
 /* =======================
     Navbar & Navigation
 ======================= */
@@ -324,6 +325,19 @@ Cards & Containers
 .navbar-nav .nav-link,
 .input-group > .form-control {
     font-size: 0.9rem;
+}
+
+.input-group-append .btn-orange {
+    height: 2.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#quantity-box {
+    font-size: 1rem;
 }
 
 #navbar-basket-link {
