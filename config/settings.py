@@ -87,7 +87,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',   # required by allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -129,9 +129,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600, ssl_require=True)
-}
-else: 
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -139,23 +143,34 @@ else:
         }
     }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+        {
+            'NAME': (
+                'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator'
+            ),
+        },
+        {
+            'NAME': (
+                'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
+            ),
+        },
+        {
+            'NAME': (
+                'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
+            ),
+        },
+        {
+            'NAME': (
+                'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
+            ),
+        },
 ]
 
 
@@ -212,7 +227,7 @@ if 'USE_AWS' in os.environ:
         "staticfiles": {"BACKEND": "custom_storages.StaticStorage"},
     }
 
-    STATICFILES_LOCATION = 'static'    
+    STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
 
     # Override static and media URLs in production
