@@ -396,12 +396,17 @@ It also includes:
 
 **Screenshots**:
 
+Logged-in Admin User
 ![Navigation Bar Desktop View - logged in](docs/images/features/navbar/navbar-desktop-logged-in-admin.png)
 ![Navigation Bar Mobile View - logged in](docs/images/features/navbar/navmenu-mobile-logged-in-admin.png)
+
+Logged-in Non-Admin User
 ![Navigation Bar Desktop View - logged in](docs/images/features/navbar/navbar-desktop-logged-in-nonadmin.png)
 ![Navigation Bar Mobile View - logged in](docs/images/features/navbar/navmenu-mobile-logged-in-nonadmin.png)
+
+Logged-out User
 ![Navigation Bar Desktop View - logged out](docs/images/features/navbar/navbar-desktop-logged-out.png)
-![Navigation Bar Mobile View - logged out](docs/images/features/navbar/navbar-mobile-logged-out.png)
+![Navigation Bar Mobile View - logged out](docs/images/features/navbar/navmenu-mobile-logged-out.png)
 
 
 </details>
@@ -460,7 +465,7 @@ The **Shop** allows users to browse all available products, filter by categories
 
 <summary> Screenshots </summary>
 
-![Shop Page]()
+![Shop Page](docs/images/features/products/shop-page.png)
 
 </details>
 
@@ -507,8 +512,12 @@ The **Product Detail Page** provides an in-depth look at each product, including
 - **Order Summary**: Users receive a breakdown of their purchase before confirming payment.
 - **Order Confirmation**: A confirmation page is displayed upon successful purchase.
 
+Checkout
+![Checkout Page 1](docs/images/features/checkout/checkout-1.png)
+![Checkout Page 2](docs/images/features/checkout/checkout-2.png)
 
-![Checkout Page]()
+Order Confirmation
+![Order Confirmation Page](docs/images/features/checkout/checkout-order-confirmation.png)
 
 ---
 
@@ -688,19 +697,19 @@ Staff and admin users can manage product listings directly from the site or the 
 
 - Add product Form: 
 
-![Add Product Form](docs/images/features/product-add-edit/add-product-desktop.png)
+![Add Product Form](docs/images/features/products/add-product-desktop.png)
 
 - Edit Product Form: 
 
 This is the same as the form for creating a product, except that it is prepopulated with the product details.
 
-![Edit Product Form](docs/images/features/product-add-edit/edit-product-1.png)
+![Edit Product Form](docs/images/features/products/edit-product-desktop.png)
 
 - Delete Product Confirmation:
 
 Before a staff/admin user deletes a product, via Edit button under the product image on the Products page, or the icon on the Product Detail page, a confirmation modal is displayed with the option to continue with deletion or to cancel the action.
 
-![Delete Product Confirmation](docs/images/features/product-detail/product-delete-confirmation.png)
+![Delete Product Confirmation](docs/images/features/products/delete-confirm-modal.png)
 
 
 </details>
@@ -719,8 +728,8 @@ Users can view a dedicated page about the mission, services and community behind
 
 **Screenshots**:
 
-![Our Story Page 1]()
-![Our Story Page 2]()
+![Our Story Page 1](docs/images/features/about/about-1.png)
+![Our Story Page 2](docs/images/features/about/about-2.png)
 
 </details>
 
@@ -738,7 +747,7 @@ The FAQ (Frequently Asked Questions) page provides quick and helpful answers to 
 
 **Screenshots**:
 
-![FAQ Page]()
+![FAQ Page](docs/images/features/faq/faq-page.png)
 
 </details>
 
@@ -761,14 +770,14 @@ The Contact page provides users with an easy way to reach out for inquiries, sup
 
 **Screenshots**:
 
-![Contact Page]()
-![Contact Success Page]()
+![Contact Page](docs/images/features/contact/contact-page.png)
+![Contact Success Page](docs/images/features/contact/contact-success-page.png)
 
 </details>
 
 ---
 
-### **Account Menu Features**
+### **Account Dropdown Menu Features**
 
 
 #### **My Profile Page**
@@ -777,20 +786,23 @@ The **My Profile** page allows users to manage their personal details and access
 
 <summary> Details </summary>
 
-#### **Key Features**
+##### **Key Features**
 - **Profile Information**: Users can view their registered name, email, and other personal details.
 - **Update Profile Details**: Users can modify their contact information, such as email or address.
 - **Order History**: A list of past purchases with order details, including date, status, and total amount.
 
 **Screenshots**:
 
-![Profile Page]()
-![Order Summary Page]()
+Profile - Desktop
+![Profile Page](docs/images/features/profile/profile-page-desktop.png)
+
+Profile - Mobile
+![Profile Page](docs/images/features/profile/profile-page-mobile.png)
+
+Profile - Order Summary Page
+![Order Summary Page](docs/images/features/profile/profile-order-summary-desktop.png)
 
 </details>
-
-
-
 ---
 
 #### My Wishlist
@@ -801,24 +813,18 @@ Clicking on 'My Wishlist' displays the wishlist and items can be viewed and remo
 
 <details>
 
-<summary> Details </summary>
+<summary> Screenshots </summary>
 
+Wishlist Icon
+![Wishlist Icon](docs/images/features/wishlist/wishlist-icon.png)
 
-**Screenshots**:
-
-![Wishlist Icon]()
-![Wishlist Page]()
-
-</details>
-
----
-
-
-
+Wishlist Page
+![Wishlist Page](docs/images/features/wishlist/wishlist-page.png)
 
 </details>
 
 ---
+
 ### Error Pages
 
 #### Custom Error Pages
@@ -851,10 +857,10 @@ Each error page includes:
 - A **call-to-action link**, the "Back Home" button, to help users navigate back to the main site.
 
 - **404 Not Found**
-  ![404 Not Found Screenshot](docs/images/features/errors/error-404.png)
+  ![404 Not Found Screenshot](docs/images/features/errors/404-error.png)
 
 - **500 Internal Server Error**
-  ![500 Internal Server Error Screenshot](docs/images/features/errors/500-server-error.png)
+  ![500 Internal Server Error Screenshot](docs/images/features/errors/500-error.png)
 
 </details>
 
