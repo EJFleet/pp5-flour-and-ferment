@@ -308,6 +308,13 @@ Defensive programming was manually tested with the below user acceptance testing
 
 |Bug|Solution|Fixed?|
 |-----|-----|-----|
+| Images not rendering in products.html | Fix filepaths in fixtures.json and add media context processor to settings.py | Yes |
+| Order confirmation emails not sending | Added missing line in webhook_handler.py for sending the email when order is made | Yes |
+| 'Complete Order' button is not working | I had copy and pasted JavaScript from the Boutique Ado project, but I had used code from too far ahead, which was causing the issues. I used code from the appropriate stage and was able to fix it. | Yes |
+| Add to basket function not working in wishlist | The line `redirect_url = request.POST.get('redirect_url')` in basket/views.py was causing the issue, as the button to 'add to basket' on the wishlist was not associated with an item_id in the same way that the 'add to basket' button is on the product detail page.  Added `<input type="hidden" name="redirect_url" value="{% url 'wishlist' %}">` to the button in wishlist.html | Yes |
+| 401 errors for Stripe webhooks | Stopped using the Stripe CLI for testing as it was causing confusion by giving a different signing secret | Yes |
+| Hamburger icon disappeared from navbar | Added navbar-light back in, as the hamburger icon visibility is dependent on it. | Yes |
+| Sorting selector not displaying sorting choice correctly | Updated view and added a default sorting order of 'Name(A-Z)' | Yes |
 
 
 **There were no other known bugs at the time of submitting the project.**

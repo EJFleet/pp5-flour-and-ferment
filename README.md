@@ -1670,6 +1670,9 @@ If you'd like to backup your database models, use the following command for each
 |[Create Contact Form - YouTube](https://www.youtube.com/watch?v=lSgRWA4PMt4&ab_channel=BLearningClub) | Contact page | Structure of contact form |
 |[Django Documentation - Admin](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/) | Admin panel | ContactAdmin model structure and WishListItemInline structure |
 |[Stack Overflow - Tabular vs Stacked Inline](https://stackoverflow.com/questions/47258289/differences-between-stacked-inline-and-tabular-inline) | Wishlist in admin panel | Helped decide between tabular or stacked inline display | 
+|[Stack Overflow - TypeError bug](https://stackoverflow.com/questions/23417403/typeerror-argument-of-type-nonetype-is-not-iterable) | Bug fix in wishlist | Helped figure out TypeError issue |
+|[Rollbar.com - TypeError bug](https://rollbar.com/blog/python-typeerror-nonetype-object-is-not-iterable/) | Bug fix in wishlist | Helped figure out TypeError issue |
+
 
 ### Acknowledgments
 
