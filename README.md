@@ -248,6 +248,8 @@ The wireframes that I originally designed have a slightly different aesthetic di
 
 </details>
 
+<details>
+
 <summary>index.html - mobile </summary>
 
 ![index.html - desktop](docs/images/wireframes/index-mobile.png)
@@ -283,7 +285,7 @@ The wireframes that I originally designed have a slightly different aesthetic di
 
 While planning this project, I drew up an Entity Relationship Diagram to help me to visualise the database models and their relationships.
 
-### Database Evolution
+##### Database Evolution
 
 The initial Entity Relationship Diagram (ERD) was created during the planning phase to represent the anticipated relationships between the models. However, as development progressed, certain requirements and challenges emerged that led to changes in the database structure. This is a common aspect of Agile development, allowing flexibility to adapt to new insights.
 
@@ -349,16 +351,15 @@ Together, these fonts create a **harmonious blend of elegance and readability**,
 
 - All images used for products were taken from various e-commerce stores.
 - Hero image: Photo from <a href="https://brodandtaylor.com/blogs/recipes/sourdough-starter-from-creation-to-maintenance">Brod & Taylor website</a>.
-      
+- Favicon was created using <a href="https://favicon.io">favicon.io</a>
 
   <details>
 
-  <summary>Favicon was created using <a href="https://favicon.io">favicon.io</a></summary>
+  <summary>Favicon</summary>
     
   ![Favicon](docs/images/favicon.png)
 
   </details>
-
 
 ---
 
@@ -1004,7 +1005,460 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 
 ##  Deployment & Local Development    
 
-  
+## Deployment
+
+The live deployed application can be found on [Heroku](https://pp5-ci-flour-and-ferment-b9db037d992a.herokuapp.com/).
+
+
+### **Setting Up a PostgreSQL Database**
+
+For deploying this project, we use **PostgreSQL**, a powerful, open-source relational database system. Follow these steps to create and connect your PostgreSQL database to your Heroku application.
+
+#### **Step 1: Create a PostgreSQL Database**
+If you don’t already have a PostgreSQL instance, you can set one up using a cloud database provider like **ElephantSQL**. Here’s how to create one with **ElephantSQL** (other providers may have similar steps):
+
+1. Navigate to [ElephantSQL](https://www.elephantsql.com/).
+2. Click **Create New Instance**.
+3. Provide a name for your database (e.g., `flour-and-ferment-db`).
+4. Choose the **Tiny Turtle (Free)** plan if available, or another suitable plan.
+5. Select a **Region** closest to your users for optimal performance.
+6. Click **Create Instance**.
+7. Once created, go to your **Instance Details** to find the **Database URL**.
+
+#### **Step 2: Connect PostgreSQL to Your Heroku App**
+Now that we have a database, we need to link it to **Heroku**:
+
+1. Log in to **Heroku** and navigate to your project dashboard.
+2. Click **Settings** → **Reveal Config Vars**.
+3. Add a new environment variable:
+   - **Key:** `DATABASE_URL`
+   - **Value:** Paste your **Database URL** from ElephantSQL.
+
+#### **Step 3: Apply Database Migrations**
+Once the database is connected, run the following commands in your terminal to set up your schema:
+
+```sh
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
+#### **Step 4: Set Up a Superuser (Optional, but Recommended)**
+If your project has an **admin panel**, create a superuser for managing data:
+
+```sh
+python3 manage.py createsuperuser
+```
+Follow the prompts to set up login credentials.
+
+#### **Step 5: Deploy and Test Connection**
+1. Ensure your `requirements.txt` includes **psycopg2**:
+   ```sh
+   pip3 freeze --local > requirements.txt
+   ```
+2. Deploy changes to Heroku:
+   ```sh
+   git add .
+   git commit -m "Connected PostgreSQL database"
+   git push heroku main
+   ```
+3. Test that your site is loading data from PostgreSQL correctly.
+
+---
+
+Your PostgreSQL database is now set up and fully connected to your Heroku app!
+
+##### **Appendix: Code Institute PostgreSQL Database Setup**
+
+If you are a **Code Institute student**, you may use the Code Institute-hosted PostgreSQL database instead of setting up your own.
+
+###### **Steps to Set Up**
+1. Create an account at **[Code Institute PostgreSQL](https://dbs.ci-dbs.net/manage/KeeMR5RVAMT6WX8k/)**.
+2. Click **Create New Instance**.
+3. Copy the **Database URL** provided.
+4. In **Heroku**, navigate to **Settings → Reveal Config Vars**.
+5. Add a new environment variable:
+   - **Key:** `DATABASE_URL`
+   - **Value:** Paste your **Code Institute PostgreSQL URL**.
+6. Run migrations to apply the database schema:
+   ```sh
+   python3 manage.py makemigrations
+   python3 manage.py migrate
+7. Optionally, create a superuser for admin access:
+  ```sh
+  python manage.py createsuperuser
+  ```
+8. Your database is now ready to use.
+
+--- 
+
+---
+
+### AWS S3 Setup (Static Hosting)
+
+#### **Step 1 - Create an S3 Bucket**
+1. Log in to your AWS account and navigate to the AWS dashboard.
+2. To access S3, either:
+   - Click on the **S3** service directly, or
+   - Type **“S3”** in the search bar and click on **S3**.
+3. Click **Create bucket**.
+4. Configure the new bucket:
+   - **Enter a bucket name** (must be globally unique).
+   - **Select** ‘ACLs enabled’.
+   - **Choose** ‘Bucket owner preferred’.
+   - **Deselect** ‘Block all public access’.
+   - **Check the box** acknowledging the risk of public access.
+   - Leave other settings unchanged and click **Create bucket**.
+
+#### **Step 2 - Enable Static Website Hosting**
+1. Once the bucket is created, click on its name to access its details.
+2. Click on the **Properties** tab.
+3. Scroll down to **Static website hosting** and click **Edit**.
+4. Configure the settings:
+   - **Enable** Static website hosting.
+   - Set **Index document** to `index.html`.
+   - Set **Error document** to `error.html`.
+   - Click **Save changes**.
+
+#### **Step 3 - Configure CORS (Cross-Origin Resource Sharing)**
+1. Go to the **Permissions** tab.
+2. Scroll down to **Cross-origin resource sharing (CORS)** and click **Edit**.
+3. Add the following JSON code:
+
+```json
+[
+  {
+    "AllowedHeaders": ["Authorization"],
+    "AllowedMethods": ["GET"],
+    "AllowedOrigins": ["*"],
+    "ExposeHeaders": []
+  }
+]
+```
+
+4. Click **Save changes**.
+
+#### **Step 4 - Add a Bucket Policy**
+1. On the **Permissions** tab, scroll to **Bucket policy** and click **Edit**.
+2. Click **Policy Generator** (opens in a new tab).
+3. In the Policy Generator:
+   - Select **S3 Bucket Policy**.
+   - For **Principal**, enter `"*"` (without quotes).
+   - For **Action**, select `GetObject`.
+   - Copy your bucket’s **ARN** from the bucket policy editor in the other tab and paste it into the ARN field in the Policy Generator.
+   - Click **Add Statement**.
+   - Scroll down and click **Generate Policy**.
+   - Copy the generated policy from the pop-up.
+4. Return to the **Bucket policy editor** and paste in the policy.
+5. Modify the **Resource** field to include `/*` at the end, allowing access to all objects:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Id": "PolicyGenerated",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "YOUR_ARN/*"
+    }
+  ]
+}
+```
+
+6. Click **Save changes**.
+
+#### **Step 5 - Edit the Access Control List (ACL)**
+1. On the **Permissions** tab, scroll down to **Access control list (ACL)** and click **Edit**.
+On the 'Edit Access control list' page:
+2. Under **Everyone (public access)**, check the **List** permission.
+3. Check the box to acknowledge the risk.
+4. Click **Save changes**.
+
+---
+Your AWS S3 bucket is now configured for **public static website hosting**.
+
+---
+
+### AWS IAM Setup (Groups, Policies, and Users)
+
+#### **Step 1 - Create a User Group**
+1. Search for **‘IAM’** in the AWS search bar.
+2. Click on **IAM**.
+3. In the left menu, click **User Groups**.
+4. Click **Create Group**.
+5. Enter a **group name** (e.g., related to your bucket, such as `manage-my-bucket`).
+6. Scroll to the bottom and click **Create user group**.
+
+#### **Step 2 - Create a Policy**
+1. In the left menu, click **Policies**.
+2. Click **Create Policy**.
+3. Click the **JSON** tab.
+4. Click **Actions** → **Import policy**.
+5. Search for **‘s3’**.
+6. Select **AmazonS3FullAccess**.
+7. Click **Import Policy**.
+
+##### **Add Your ARN to the Policy**
+1. Open a new tab, search for **‘S3’**, and open the **S3 service**.
+2. Select your bucket.
+3. Click **Copy ARN**.
+4. Go back to the policy editor and replace `YOUR_ARN` with your actual ARN.
+5. Modify the **Resource** section as follows:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "YOUR_ARN",
+        "YOUR_ARN/*"
+      ]
+    }
+  ]
+}
+```
+
+6. Scroll down and click **Next**.
+7. Enter a **policy name** and description.
+8. Scroll down and click **Create policy**.
+9. You should see a success message confirming the policy has been created.
+
+#### **Step 3 - Attach the Policy to the Group**
+1. In the left menu, click **User Groups**.
+2. Click on your group.
+3. Click the **Permissions** tab.
+4. Click the **Add permissions** dropdown.
+5. Select **Attach policies**.
+6. Search for the policy you just created (by name or description).
+7. Select the checkbox next to the policy.
+8. Click **Attach policies**.
+
+#### **Step 4 - Create a User**
+1. In the left menu, click **Users**.
+2. Click **Create User**.
+3. Enter a **username**.
+4. Click **Next**.
+5. Select the **group** you created earlier.
+6. Click **Next**.
+7. Scroll down and click **Create User**.
+
+#### **Step 5 - Create an Access Key**
+1. Click on your newly created user.
+2. Click the **Security Credentials** tab.
+3. Scroll to the **Access Keys** section and click **Create access key**.
+4. Select **Application running outside AWS**.
+5. Click **Next**.
+6. Click **Create access key**.
+7. Download the **.csv file**.
+8. Click **Done**.
+9. Open the `.csv` file in a text editor (e.g., Notepad or TextEdit). The values inside will be separated by commas.
+10. Use these values as your **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** in your **Heroku config vars** or `.env` file.
+
+---
+Your AWS IAM setup is now complete!
+
+---
+
+## Stripe API
+
+This project uses [Stripe](https://stripe.com) to handle ecommerce payments.
+
+### **Step 1: Get Your API Keys**
+Once you've created a **Stripe account** and logged in, follow these steps to connect your project:
+
+1. In your **Stripe Dashboard**, click **Developers** → **API Keys**.
+2. Expand **"Get your test API keys"** to see your keys:
+   - `STRIPE_PUBLIC_KEY` = **Publishable Key** (starts with **pk_**).
+   - `STRIPE_SECRET_KEY` = **Secret Key** (starts with **sk_**).
+3. Copy these keys and add them to your **Heroku Config Vars**:
+   - Navigate to **Settings** → **Reveal Config Vars** in Heroku.
+   - Add the following variables:
+   ```sh
+   STRIPE_PUBLIC_KEY=<your-publishable-key>
+   STRIPE_SECRET_KEY=<your-secret-key>
+   ```
+
+---
+
+### **Step 2: Set Up Webhooks**
+To ensure payments are properly recorded, you need to **set up Stripe Webhooks**.
+
+1. In your **Stripe Dashboard**, click **Developers** → **Webhooks**.
+2. Click **+ Add Endpoint**.
+3. **Enter your webhook URL**:
+   ```sh
+   https://your-deployed-site.herokuapp.com/checkout/wh/
+   ```
+   - **Important**: Ensure the URL **ends with a slash (`/`)**, or the webhook will fail.
+4. Click **+ Select events**.
+5. Choose **"Receive all events"**.
+6. Click **Add Events**, then **Add Endpoint**.
+7. In the newly created webhook, click **Reveal Signing Secret**.
+8. Copy the key that starts with **wh_** and add it to your **Heroku Config Vars**:
+   ```sh
+   STRIPE_WH_SECRET=<your-signing-secret>
+   ```
+
+---
+
+
+### Gmail API
+This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
+
+Once you've created a Gmail (Google) account and logged-in, follow these series of steps to get your project connected.
+
+- Click on the **Account Settings** (cog icon) in the top-right corner of Gmail.
+- Click on the **Accounts and Import** tab.
+- Within the section called "Change account settings", click on the link for **Other Google Account settings**.
+- From this new page, select **Security** on the left.
+- Select **2-Step Verification** to turn it on. (verify your password and account)
+- Once verified, select **Turn On** for 2FA.
+- Navigate back to the **Security** page, and you'll see a new option called **App passwords**.
+- This might prompt you once again to confirm your password and account.
+- Select **Mail** for the app type.
+- Select **Other (Custom name)** for the device type.
+	- Any custom name, such as "Django" or flour-and-ferment
+- You'll be provided with a 16-character password (API key).
+	- Save this somewhere locally, as you cannot access this key again later!
+	- `EMAIL_HOST_PASS` = user's 16-character API key
+	- `EMAIL_HOST_USER` = user's own personal Gmail email address
+
+
+### **Heroku Deployment**
+This project is deployed on **Heroku**, a platform-as-a-service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+#### **Step 1: Create a Heroku App**
+1. Log in to [Heroku](https://www.heroku.com/) and navigate to your **Heroku Dashboard**.
+2. Click **New** → **Create new app**.
+3. Enter a **unique app name**.
+4. Choose a **region** closest to your users (EU or USA).
+5. Click **Create App**.
+
+#### **Step 2: Configure Heroku Environment Variables**
+Heroku requires several **environment variables** to function properly. Add these by:
+1. Navigating to **Settings** → **Reveal Config Vars**.
+2. Adding the following key-value pairs:
+
+| Key                 | Value (Replace with your own) |
+|---------------------|----------------------------------|
+| `DATABASE_URL`      | PostgreSQL database URL |
+| `DISABLE_COLLECTSTATIC` | 1 (*temporary, remove before final deployment*) |
+| `EMAIL_HOST_PASS`   | Your Gmail API key |
+| `EMAIL_HOST_USER`   | Your Gmail email address |
+| `SECRET_KEY`        | Your Django secret key |
+| `STRIPE_PUBLIC_KEY` | Your Stripe public key |
+| `STRIPE_SECRET_KEY` | Your Stripe secret key |
+| `STRIPE_WH_SECRET`  | Your Stripe webhook secret |
+
+#### **Step 3: Install Required Packages**
+Ensure that all required dependencies are installed before deployment:
+```sh
+pip3 install -r requirements.txt
+```
+If you have installed new packages, update the `requirements.txt` file:
+```sh
+pip3 freeze --local > requirements.txt
+```
+
+#### **Step 4: Set Up the Procfile**
+Heroku requires a **Procfile** to run the application. Create one using:
+```sh
+echo web: gunicorn app_name.wsgi > Procfile
+```
+*(Replace `app_name` with your Django project's main app where `settings.py` is located.)*
+
+#### **Step 5: Deploy to Heroku**
+You can deploy your project in one of two ways:
+
+##### **Option 1: Deploy via Heroku GitHub Integration**
+1. In **Heroku Dashboard**, go to **Deploy**.
+2. Connect your app to **GitHub**.
+3. Select the correct **GitHub repository**.
+4. Enable **Automatic Deploys** (recommended).
+5. Click **Deploy Branch**.
+
+##### **Option 2: Deploy via Command Line**
+1. Log into Heroku:
+   ```sh
+   heroku login -i
+   ```
+2. Set the Heroku remote repository:
+   ```sh
+   heroku git:remote -a your-heroku-app-name
+   ```
+3. Deploy the app:
+   ```sh
+   git add .
+   git commit -m "Deploying to Heroku"
+   git push heroku main
+   ```
+
+#### **Step 6: Migrate Database & Create Superuser**
+Once the app is deployed, run these commands to set up the database:
+```sh
+heroku run python3 manage.py migrate
+heroku run python3 manage.py createsuperuser
+```
+
+#### **Step 7: Finalize Deployment**
+1. Remove the `DISABLE_COLLECTSTATIC` variable from Heroku Config Vars.
+2. Restart dynos to apply changes.
+3. Test the application by visiting your **Heroku app URL**.
+
+Your project is now successfully deployed on Heroku! 🚀
+
+---
+
+### Local Deployment
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("DATABASE_URL", "user's own value")
+os.environ.setdefault("EMAIL_HOST_PASS", "user's own value")
+os.environ.setdefault("EMAIL_HOST_USER", "user's own value")
+os.environ.setdefault("SECRET_KEY", "user's own value")
+os.environ.setdefault("STRIPE_PUBLIC_KEY", "user's own value")
+os.environ.setdefault("STRIPE_SECRET_KEY", "user's own value")
+os.environ.setdefault("STRIPE_WH_SECRET", "user's own value")
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DEBUG", "True")
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+
+If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
+
+- `python3 manage.py dumpdata your-model > your-model.json`
+- *repeat this action for each model you wish to backup*
+
 ### Forking the GitHub Repository
 
   A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository.
@@ -1013,7 +1467,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
   <summary>Steps for forking GitHub Repository</summary>
 
   1. Navigate to GitHub and log in.  
-  2. Once logged in, navigate to this repository using this link [My Cookbook Repository](https://github.com/EJFleet/pp4-my-cookbook-blog).
+  2. Once logged in, navigate to this repository using this link [Flour & Ferment Repository](https://github.com/EJFleet/pp5-flour-and-ferment).
   3. Above the repository file section and to the top, right of the page is the '**Fork**' button, click on this to make a fork of this repository.
   4. You should now have access to a forked copy of this repository in your Github account.
 
@@ -1021,7 +1475,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 
   -----
 
-  ### Cloning the GitHub Repository
+### Cloning the GitHub Repository
 
   A local clone of this repository can be made on GitHub. Please follow the below steps.
 
@@ -1029,7 +1483,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
   <summary>Steps for cloning GitHub Repository</summary>
 
   1. Navigate to GitHub and log in.
-  2. The [My Cookbook Repository](https://github.com/EJFleet/pp4-my-cookbook-blog) can be found at this location.
+  2. The [GitHub repository](https://github.com/EJFleet/pp5-flour-and-ferment) can be found at this location.
   3. Above the repository file section, locate the '**Code**' button.
   4. Click on this button and choose your clone method from HTTPS, SSH or GitHub CLI, copy the URL to your clipboard by clicking the '**Copy**' button.
   5. Open your Git Bash Terminal.
@@ -1044,66 +1498,7 @@ This combination of frameworks and libraries ensures a **secure, scalable, and e
 
 ---
 
- 
-### Code Institute PostgreSQL Database
 
-<details>
-
-<summary>Details</summary>
-
-1. Create an [Code Institute PostgreSQL](https://dbs.ci-dbs.net/manage/KeeMR5RVAMT6WX8k/) account.
-2. Create a new instance.
-3. Copy the database URL.
-4. Add database to the settings.py-file in Django.
-
-</details>
-
----
-  
-### Cloudinary API 
-
-Cloudinary provides a cloud hosting solution for media storage. All users uploaded images in the FreeFid project are hosted here.
-
-<details> 
-
-<summary>Details</summary> 
-
-Set up a new account at [Cloudinary](https://cloudinary.com/) and add your Cloudinary API environment variable to your **env.py** and Heroku Config Vars.
-In your project workspace: 
-
-- Add Cloudinary libraries to INSTALLED_APPS in settings.py 
-- In the order: 
-```
-   'cloudinary_storage',  
-   'django.contrib.staticfiles',  
-   'cloudinary',
-```
-- Add to **env.py** and link up with **settings.py**: ```os.environ["CLOUDINARY_URL"]="cloudinary://...."``` 
-- Set Cloudinary as storage for media and static files in settings.py:
-- ```STATIC_URL = '/static/'```
-```
-  STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  
-  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]  
-  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')‌  
-  MEDIA_URL = '/media/'  
-  DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-```
-</details>
-
----
-
-### Deploying to Heroku
-
-<details>
-
-<summary> Deploying to Heroku </summary>
-
-To get the Django framework installed and set up I followed the Code institutes [Django Blog cheatsheet](docs/django-blog-cheatsheet.pdf)
-
-
-</details>
-
------
 <br>
 
 ## Credits
