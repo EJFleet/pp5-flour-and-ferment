@@ -56,6 +56,62 @@ For the details of all testing carried out, please go to [TESTING.MD](docs/testi
 
 The user experience (UX) for this project was designed with careful consideration of user needs and project goals, ensuring a seamless, intuitive, and engaging experience for all users. The planning process was informed by Agile methodologies and centered around user stories, categorized into epics to structure development priorities effectively.
 
+### The Five Planes of UX & Application to Flour & Ferment
+
+The Five Planes of UX provide a structured approach to designing user experiences. These planes move from abstract concepts to concrete implementation, ensuring that both user needs and business objectives are met effectively. Here’s how they apply to **Flour & Ferment**.
+
+#### **1. Strategy Plane: Defining User & Business Goals**
+The **strategy** plane focuses on the purpose of the site and its intended audience.
+
+- **Business Goals**: The primary objective of Flour & Ferment is to provide a **one-stop shop** for high-quality ingredients and specialized baking equipment for sourdough enthusiasts.
+- **User Needs**: The platform caters to both **beginners** (starter kits, beginner-friendly tools) and **experts** (niche tools, cookbooks), ensuring an inclusive shopping experience.
+
+#### **2. Scope Plane: Features & Functionality**
+The **scope** plane defines what functionalities the site includes.
+
+- **Core Features:**
+  - Product browsing, product details, basket, checkout.
+  - Wishlist and profile (order history, user details) for logged-in users.
+  - FAQ, contact form, and “Our Story” page.
+  - Admin panel with full CRUD functionality for managing products.
+- **Deferred Features:** (Planned for future iterations)
+  - Recipe section, product ratings and reviews, gift vouchers, baking classes.
+
+#### **3. Structure Plane: Information Architecture & User Flow**
+The **structure** plane determines how content is organized and how users navigate the site.
+
+- **Navigation & Hierarchy:**
+  - Clear categories for products (e.g., flours, equipment, cookbooks).
+  - Users can easily access important sections: **Shop, Wishlist, Profile, FAQ, Contact**.
+- **User Flow Considerations:**
+  - Users land on the homepage, browse products via categories or search.
+  - Clicking a product opens its **detail page**, where they can add it to their basket or wishlist.
+  - Users proceed to checkout, entering details and making a secure payment.
+  - Upon checkout, they receive confirmation and can track their orders in their **profile**.
+  - Admins can manage products directly from the front end.
+
+#### **4. Skeleton Plane: UI Design & Layout**
+The **skeleton** plane deals with how elements are arranged on the page for usability and accessibility.
+
+- **Intuitive Layout:**
+  - The **navbar** provides clear navigation with login-dependent options.
+  - A structured **product grid** with filtering and sorting enhances the shopping experience.
+  - The **basket page** allows easy quantity adjustments before checkout.
+- **Mobile Responsiveness:**
+  - The site uses Bootstrap to ensure a **fully responsive** experience on all devices.
+  - The navigation menu collapses into a mobile-friendly dropdown.
+
+#### **5. Surface Plane: Visual Design & Branding**
+The **surface** plane focuses on aesthetics and branding, reinforcing the platform’s identity.
+
+- **Color Scheme:** Inspired by the warmth and authenticity of artisanal baking, the site uses **earthy tones**, complemented by deep contrasts for readability.
+- **Typography:** A combination of **Playfair Display** (elegant serif) and **Merriweather** (highly readable body text) maintains a balance of sophistication and usability.
+- **Imagery:** High-quality product images create a visually appealing experience, and hero images reinforce the passion behind sourdough baking.
+
+#### **Conclusion**
+By following the **Five Planes of UX**, Flour & Ferment delivers a **seamless and engaging user experience**, ensuring that both the business and its customers achieve their goals. The foundation is well-structured, with room for future enhancements to grow the platform.
+
+
 ### User Stories
 
 #### **Navigation**  
@@ -903,45 +959,47 @@ By adhering to this structured approach, I ensure that the core features are del
 
 
 ### Frameworks, Libraries & Packages
-  
-- [Django 4.2.16](https://docs.djangoproject.com/en/4.2/) - The main web framework used to build the application, creating models, views and templates.
-- [Bootstrap 4](https://getbootstrap.com/) - front-end CSS framework for modern responsiveness and pre-built components
-- [Font Awesome 5.15.4](https://fontawesome.com/) - social media icons in footer
-- [Google Fonts](https://fonts.google.com/) - fonts used on the app
-- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) - enhanced form rendering with customizable styles and better integration with Bootstrap
-- [cripsy-bootstrap5](https://github.com/django-crispy-forms/crispy-bootstrap5) - Bootstrap 5 styling support to `django-crispy-forms`
-- [django-allauth](https://django-allauth.readthedocs.io/en/latest/) - user authentication, registration, and account management
-- [Gunicorn](https://gunicorn.org/) - used for WSGI server
-- [psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL adapter for Python, used to interact with the PostgreSQL database
-- [django-summernote](https://summernote.org/) - WYSIWYG text editor integrated into Django admin and forms for creating rich-text content
-- [cloudinary 1.36.0](https://cloudinary.com/) - managing and serving images using the Cloudinary API
-- [whitenoise (5.3.0)](https://whitenoise.readthedocs.io/en/latest/) - serving static files in production
+
+### Frameworks, Libraries & Packages  
+
+- [boto3 1.36.23](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - Amazon Web Services (AWS) SDK for Python, used for managing S3 file storage.
+- [Bootstrap 4](https://getbootstrap.com/) - front-end CSS framework for modern responsiveness and pre-built components.
+- [Django 4.2.8](https://docs.djangoproject.com/en/4.2/) - The main web framework used to build the application, providing models, views, and template functionality.
+- [django-allauth 0.54.0](https://django-allauth.readthedocs.io/en/latest/) - Handles authentication, registration, and account management for users.
+- [django-countries 7.1](https://github.com/SmileyChris/django-countries) - Provides a country field for Django models.
+- [django-crispy-forms 1.14.0](https://django-crispy-forms.readthedocs.io/en/latest/) - Enhances form rendering with Bootstrap compatibility.
+- [django-storages 1.14.5](https://django-storages.readthedocs.io/en/latest/) - Facilitates media and static file storage using cloud services.
+- [dj-database-url 0.5.0](https://pypi.org/project/dj-database-url/) - Simplifies database configuration using environment variables.
+- [Gunicorn 23.0.0](https://gunicorn.org/) - A WSGI HTTP server for running the Django application in production.
+- [pillow 11.1.0](https://pillow.readthedocs.io/en/stable/) - Python Imaging Library for handling image files.
+- [psycopg2 2.9.10](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for Python, enabling Django to interact with PostgreSQL.
+- [stripe 11.5.0](https://stripe.com/docs/api) - Payment processing API used for secure transactions.
+- [wheel 0.45.1](https://pypi.org/project/wheel/) - A built-package format for Python.
+
+This combination of frameworks and libraries ensures a **secure, scalable, and efficient** e-commerce experience for Flour & Ferment.
 
 
 ### Tools
 
-- [Git](https://git-scm.com/) - version control
-- [GitHub](https://github.com/) - save and store the files for the app
-- [GitPod](https://gitpod.io/) - developing the app
-- [Heroku](https://heroku.com/) - deploying the app
-- [PostgreSQL](https://www.postgresql.org/) - database
-- [Cloudinary](https://cloudinary.com/) - storing images
-- [Balsamiq](https://balsamiq.com/) - wireframes
-- [Lucid.app](lucid.app) - creating the ERD
-- [Coolors](https://coolors.co/) - colour scheme
-- [Am I Responsive](https://ui.dev/amiresponsive) -responsive screenshots
-- [favicon.io](https://favicon.io/) - custom favicon
-- [FontAwesome](https://fontawesome.com/) - social media icons in footer
-- [ChatGPT](https://chatgpt.com/) - debugging and formatting
-- [The W3C Markup Validation Service](https://validator.w3.org/) - validating HTML
-- [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - validating CSS
-- [Code Insitute PEP8 Validator](https://pep8ci.herokuapp.com/#) - validating the Python code
-- [JSHint](https://jshint.com/) - validating JavaScript
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-- [Codebeautify.org](https://codebeautify.org/python-formatter-beautifier) - formatting the code
-- [Shields.io](https://shields.io/) - adding badges to the readme
-- [Django Secret Key Generator](https://djecrety.ir/) - generating a secret key
-- [Pexels](https://www.pexels.com/) - team member photos
+- [Am I Responsive](https://ui.dev/amiresponsive) - Responsive screenshots and testing for multiple device views.
+- [Balsamiq](https://balsamiq.com/) - Wireframing tool used for planning the UI design.
+- [ChatGPT](https://chatgpt.com/) - Used for debugging and formatting.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Developer tools for inspecting, debugging, and optimizing web applications.
+- [Code Insitute PEP8 Validator](https://pep8ci.herokuapp.com/#) - Python code validation tool.
+- [Coolors](https://coolors.co/) - Color palette generator for UI design.
+- [Django Secret Key Generator](https://djecrety.ir/) - Generates secure Django secret keys.
+- [favicon.io](https://favicon.io/) - Online tool for generating favicons.
+- [Font Awesome 5.15.4](https://fontawesome.com/) - Provides scalable vector icons and social media icons.
+- [Git](https://git-scm.com/) - Version control system for managing code changes.
+- [GitHub](https://github.com/) - Cloud-based repository hosting service.
+- [Google Fonts](https://fonts.google.com/) - Online font library used in the application.
+- [Heroku](https://heroku.com/) - Cloud platform for deploying web applications.
+- [JSHint](https://jshint.com/) - JavaScript code validation tool.
+- [Lucid.app](https://lucid.app) - Tool for creating Entity Relationship Diagrams (ERDs).
+- [PostgreSQL](https://www.postgresql.org/) - Open-source relational database management system.
+- [Shields.io](https://shields.io/) - Generates badges for README files.
+- [The W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Validates CSS stylesheets.
+- [The W3C Markup Validation Service](https://validator.w3.org/) - Validates HTML documents.
 
 
 ##  Deployment & Local Development    
