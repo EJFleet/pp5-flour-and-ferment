@@ -23,32 +23,61 @@ For the details of all testing carried out, please go to [TESTING.MD](docs/testi
 
 ---
 
-* [User Experience (UX)](#user-experience-ux)
-  * [User Stories](#user-stories)
-  * [Design](#design)
-    * [Planning](#planning)
-    * [Imagery](#imagery)
+# Table of Contents
 
-* [Features](#features)
-  * [Future Implementations](#future-implementations)
-
-* [Project Management & Agile Methodologies](#project-management--agile-methodologies)
-  * [Kanban Board](#kanban-board)
-  * [MoSCoW Prioritisation](#moscow-prioritisation)
-
-* [Technologies Used](#technologies-used)
-  * [Languages](#languages)
-  * [Frameworks, Libraries & Packages](#frameworks-libraries--packages)
-  * [Tools](#tools)
-
-* [Deployment & Local Development](#deployment--local-development)
-  * [Forking the GitHub Repository](#forking-the-github-repository)
-  * [Cloning the GitHub Repository](#cloning-the-github-repository)
-  * [Deploying to Heroku](#deploying-to-heroku)
-
-* [Credits](#credits)
-  * [Code Inspiration](#code-inspiration)
-  * [Acknowledgments](#acknowledgments)
+- [Flour & Ferment - E-commerce Web App](#flour--ferment---e-commerce-web-app)
+  - [Intro](#intro)
+  - [User Experience (UX)](#user-experience-ux)
+    - [The Five Planes of UX](#the-five-planes-of-ux)
+    - [User Stories](#user-stories)
+  - [Design](#design)
+    - [Planning](#planning)
+    - [Wireframes](#wireframes)
+    - [Database Design](#database-design)
+    - [Colour Scheme](#colour-scheme)
+    - [Fonts](#fonts)
+    - [Imagery](#imagery)
+  - [Features](#features)
+    - [General Features](#general-features)
+    - [Shop](#shop)
+    - [Product Detail Page](#product-detail-page)
+    - [Shopping Basket](#shopping-basket)
+    - [Checkout Process](#checkout-process)
+    - [Search & Filtering](#search--filtering)
+    - [User Account Features](#user-account-features)
+    - [Admin/Staff-Specific Features](#adminstaff-specific-features)
+    - [About Menu Features](#about-menu-features)
+    - [Error Pages](#error-pages)
+  - [Future Implementations](#future-implementations)
+  - [Project Management & Agile Methodologies](#project-management--agile-methodologies)
+    - [Kanban Board](#kanban-board)
+    - [MoSCoW Prioritisation](#moscow-prioritisation)
+  - [Ecommerce Business Model](#ecommerce-business-model)
+  - [SEO & Social Media Marketing](#seo--social-media-marketing)
+    - [Keywords](#keywords)
+    - [Sitemap](#sitemap)
+    - [Robots](#robots)
+    - [Social Media Marketing](#social-media-marketing)
+    - [Newsletter Marketing](#newsletter-marketing)
+    - [Privacy Policy](#privacy-policy)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks, Libraries & Packages](#frameworks-libraries--packages)
+    - [Tools](#tools)
+  - [Deployment & Local Development](#deployment--local-development)
+    - [Setting Up PostgreSQL](#setting-up-postgresql)
+    - [AWS S3 Setup](#aws-s3-setup)
+    - [AWS IAM Setup](#aws-iam-setup)
+    - [Stripe API](#stripe-api)
+    - [Gmail API](#gmail-api)
+    - [Heroku Deployment](#heroku-deployment)
+    - [Local Deployment](#local-deployment)
+    - [Forking the GitHub Repository](#forking-the-github-repository)
+    - [Cloning the GitHub Repository](#cloning-the-github-repository)
+  - [Credits](#credits)
+    - [Design and Content Inspiration](#design-and-content-inspiration)
+    - [Code Credits](#code-credits)
+    - [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -1037,8 +1066,6 @@ The privacy policy was created using:
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-
-### Frameworks, Libraries & Packages
 
 ### Frameworks, Libraries & Packages  
 
