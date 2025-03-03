@@ -52,6 +52,7 @@ For the details of all testing carried out, please go to [TESTING.MD](docs/testi
   - [Project Management & Agile Methodologies](#project-management--agile-methodologies)
     - [Kanban Board](#kanban-board)
     - [MoSCoW Prioritisation](#moscow-prioritisation)
+    - [Milestones](#milestones)
   - [Ecommerce Business Model](#ecommerce-business-model)
   - [SEO & Social Media Marketing](#seo--social-media-marketing)
     - [Keywords](#keywords)
@@ -1031,6 +1032,28 @@ My prioritization follows these principles:
 - **Won't-Haves** are **under 10%**, clarifying what is out of scope.  
 
 By adhering to this structured approach, I ensure that the core features are delivered while allowing room for enhancements if time and resources permit.
+
+
+#### **Milestones**  
+
+For this project, I used the Milestone approach for the first time, with four planned milestones, each lasting **one week**. The milestones helped structure my workflow and set clear goals, but in practice, I only achieved completing the milestone by the deadline for the first two, while the third took 9-10 days and the rest of the time was spent on the fourth one.
+
+Despite this, having **milestones as a guide** was valuable. They provided direction, helped me prioritize features, and ensured I stayed on track—even when adjustments were needed.  
+
+##### **What Worked Well:**  
+- **Early structure & momentum** – The first two milestones kept development focused.  
+- **Flexibility** – I could shift priorities when needed without losing sight of the bigger picture.  
+- **Deadlines drove progress** – Even though I didn’t complete everything planned, I still finished **on time**.  
+
+##### **What I Had to Adjust:**  
+- Some planned features had to be left out to meet the deadline.  
+- Later milestones were followed **loosely** rather than strictly.  
+- Unexpected challenges required reworking parts of the project.
+
+##### **Final Thoughts:**  
+Even though I didn’t rigidly stick to all four milestones, **they were still extremely helpful** in guiding development. This experience reinforced the importance of **iteration, adaptability, and focusing on delivering a working product** rather than just following a fixed plan.  
+
+[Milestones on GitHub](https://github.com/EJFleet/pp5-flour-and-ferment/milestones?state=closed)
 
 ---
 
