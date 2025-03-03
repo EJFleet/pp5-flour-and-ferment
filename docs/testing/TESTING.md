@@ -1,6 +1,44 @@
-# Testing
+# Table of Contents
 
-Return back to the [README.md](README.md) file.
+1. [Code Validation](#code-validation)
+   - [HTML Validation](#html-validation)
+   - [CSS Validation](#css)
+   - [JavaScript Validation](#javascript)
+   - [Python Validation](#python)
+
+2. [Dev Tools & Real Device Testing](#dev-toolsreal-world-device-testing)
+   - [Dev Tools Device Testing](#dev-tools-device-testing---all-features-tested-issues-noted-below)
+   - [Real World Device Testing](#real-world-device-testing)
+   - [Browser Compatibility](#browser-compatibility)
+
+3. [Lighthouse Audit](#lighthouse-audit)
+   - [Test Results](#test-results-table)
+
+4. [Stripe and Webhooks](#stripe-and-webhooks)
+   - [Stripe Payment Flow](#stripe-payment-flow)
+
+5. [Defensive Programming](#defensive-programming)
+   - [Manual Testing Results](#manual-testing-results)
+
+6. [User Story Testing](#user-story-testing)
+   - [Navigation](#navigation)
+   - [Products](#products)
+   - [Shopping Basket](#shopping-basket)
+   - [Purchasing & Checkout](#purchasing--checkout)
+   - [User Authentication](#user-authentication)
+   - [User Profiles](#user-profiles)
+   - [About Page](#about-page)
+   - [Support & FAQ](#support--faq)
+   - [SEO & Marketing](#seo--marketing)
+   - [Product Management](#product-management)
+   - [Admin Panel Management](#admin-panel-management)
+
+7. [Bug Fixes](#bug-fixes)
+   - [Known Bugs & Fixes](#bugfixes)
+
+---
+
+Return back to the [README.md](/README.md) file.
 
 
 ## Code Validation
