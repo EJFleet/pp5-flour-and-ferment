@@ -654,10 +654,15 @@ footer a:hover {
         position:relative;
         top: -18rem;
     }
+}
 
-    .col-md-6 {
-        flex: 0 0 66.6667%; /* 8/12 columns */
-        max-width: 66.6667%;
+@media (max-width: 768px) {
+    #hero-container {
+        margin-top: 3.25rem;
+    }
+
+    .product-list-container .row > div {
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -676,10 +681,9 @@ footer a:hover {
         justify-content: center;
         text-align: center;
     }
-}
 
-@media (max-width: 768px) {
-    #hero-container {
-        margin-top: 3.25rem;
+    .image-container {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

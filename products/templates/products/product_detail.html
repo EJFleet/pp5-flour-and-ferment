@@ -6,8 +6,8 @@
 {% block content %}
 <div class="container-fluid mt-5">
     <div class="row mb-3 mt-2 mt-lg-5">
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container my-5">
+        <div class="image-container col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="my-5">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="product-detail-image img-fluid rounded shadow-sm" src="{{ product.image.url }}"
@@ -33,7 +33,6 @@
                 </p>
                 {% endif %}
             </div>
-
 
             <div class="d-flex align-items-center">
                 {% if request.user.is_superuser %}
@@ -117,12 +116,12 @@
         </div>
     </div>
     <div class="row pt-3 pb-5">
-        <div class="product-list-container col-lg-10 offset-lg-2">
+        <div class="container product-list-container col-lg-10 offset-lg-1">
             <div class="row mt-1 mb-2"></div>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 {% for product in random_products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100 border-0 w-100">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
