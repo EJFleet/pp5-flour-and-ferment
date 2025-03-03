@@ -640,6 +640,11 @@ footer a:hover {
     .container {
         max-width: 80%;
     }
+
+    .product-detail-image {
+        max-width: 600px; /* Adjust to your preferred max size */
+        height: auto;
+    }
 }
 
 /* Adjust for mobile devices */
@@ -663,6 +668,11 @@ footer a:hover {
 
     .product-list-container .row > div {
         margin-bottom: 1.5rem;
+    }
+
+    .product-detail-image {
+        max-width: 500px; /* Adjust to your preferred max size */
+        height: auto;
     }
 }
 
