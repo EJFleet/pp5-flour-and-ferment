@@ -12,27 +12,14 @@
    - [Browser Compatibility](#browser-compatibility)
 
 3. [Lighthouse Audit](#lighthouse-audit)
-   - [Test Results](#test-results-table)
 
 4. [Stripe and Webhooks](#stripe-and-webhooks)
    - [Stripe Payment Flow](#stripe-payment-flow)
 
 5. [Defensive Programming](#defensive-programming)
-   - [Manual Testing Results](#manual-testing-results)
 
 6. [User Story Testing](#user-story-testing)
-   - [Navigation](#navigation)
-   - [Products](#products)
-   - [Shopping Basket](#shopping-basket)
-   - [Purchasing & Checkout](#purchasing--checkout)
-   - [User Authentication](#user-authentication)
-   - [User Profiles](#user-profiles)
-   - [About Page](#about-page)
-   - [Support & FAQ](#support--faq)
-   - [SEO & Marketing](#seo--marketing)
-   - [Product Management](#product-management)
-   - [Admin Panel Management](#admin-panel-management)
-
+   
 7. [Bug Fixes](#bug-fixes)
    - [Known Bugs & Fixes](#bugfixes)
 
@@ -201,8 +188,8 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 | ------- | ---------- | ------ |------|
 | iPhone SE | Product Detail page | Page looked cramped | Changed to col-11 rather than col-12, added mx-auto |
 | Nest Hub Max | All features | No issues | None needed |
-| iPad Mini | Product page and Product Detail page | Layout all wrong | Updated css and bootstrap for responsivity |
-| Asus Zenbook Fold | Product page and Product Detail page | Layout all wrong | Updated css and bootstrap for responsivity |
+| iPad Mini | Product page and Product Detail page | Unsatisfactory layout | Updated css and bootstrap for responsivity |
+| Asus Zenbook Fold | Product page and Product Detail page | Unsatisfactory layout | Updated css and bootstrap for responsivity |
    
 <br>
 
@@ -252,7 +239,10 @@ Performance is much lower than I would like it to be, and I would fix this in fu
 
 I was more concerned that my accessibility scores would be adequate, which they appear to be.
 
-### Test Results Table
+### Lighthouse Results Table
+<details>
+
+<summary> Table </summary>
 
 | Page | Screenshot | Comments |
 |------|------------|----------|
@@ -274,6 +264,8 @@ I was more concerned that my accessibility scores would be adequate, which they 
 | **Basket** | ![Basket Screenshot](/docs/testing/testing-images/lighthouse/basket.png) |  |
 | **Checkout** | ![Checkout Screenshot](/docs/testing/testing-images/lighthouse/checkout.png) |  |
 | **Order Confirmation** | ![Order Confirmation Screenshot](/docs/testing/testing-images/lighthouse/order-confirmation.png) |  |
+
+</details>
 
 ---
 
@@ -303,39 +295,41 @@ Defensive programming was manually tested with the below user acceptance testing
 
 <details>
 
-<summary> Manual Testing Results </summary>
+### Manual Testing Results
+
+<summary> Table </summary>
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Nav links | | | | |
+| **Nav links** | | | | |
+| Logo and Shop dropdown menu | | | | |
 | | Click on Logo | Redirection to Home page |  | |
 | | Click on Shop link in navbar | Dropdown menu with links to All Items and different categories | | |
 | | Click on Shop - All Items | Redirection to Products page | | |
 | | Click on Shop - Sourdough Starters & Flours | Redirection to Products page with only Sourdough etc displayed | | |
 | | Click on Shop - Baking Equipment | Redirection to Products page with only Baking Equipment displayed  | | |
 | | Click on Shop - Cookbooks | Redirection to Products page with only Cookbooks displayed  | | |
-
+| About dropdown menu | | | | |
 | | Click on About link in navbar | Dropdown menu with links to Our Story, FAQ and Contact | Pass | |
 | | Click on About - Our Story | Redirect to Our Story page | Pass | |
 | | Click on About - FAQ | Redirect to FAQ page | Pass | |
 | | Click on About - Contact | Redirect to Contact page | Pass | |
-
+| Search bar | | | | |
 | | Enter text in Search box and click Search button | Redirect to Products page with results | Pass | |
-
+| Register/ Login/ Basket icon | | | | |
 | | Click on Register link in navbar | Redirection to Register page | Pass | |
 | | Click on Login link in navbar | Redirection to Login page | Pass | |
 | | Click on Basket link in navbar | Redirection to Basket page | Pass | |
-
+| Account dropdown menu | | | | |
 | | Click on Account link in navbar | Dropdown menu with links to My Profile, My Wishlist and Logout displayed | Pass | |
 | | Click on Account - My Profile link in navbar | Redirection to user's Profile page | Pass | |
 | | Click on Account - My Wishlist link in navbar | Redirection to user's Wishlist page | Pass  | |
 | | Click on Account - Logout link in navbar | Redirection to Logout page | Pass | |
-
+| Admin dropdown menu | | | | |
 | | Click on Admin link in navbar | Dropdown menu with links to Admin Panel, Add New Product and Edit/Delete A Product | Pass | |
 | | Click on Admin Panel link in navbar | Redirection to Admin Panel page | Pass | |
 | | Click on Add New Product link in navbar | Redirection to Add Product page | Pass | |
 | | Click on Edit/Delete A Product link in navbar | Redirection to Products page | Pass | |
-
 | Footer | | | | |
 | | Click on Home link | Redirection to Home page | Pass | |
 | | Click on Shop link | Redirection to Products page |  Pass | |
@@ -349,64 +343,53 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on Logout link | Redirection to Logout page | Pass | |
 | | Click on 'Subscribe' button in Newsletter sign-up box | 'Thank You for subscribing' message is displayed | Pass | |
 | | Click on social media icons | Relevant social media page opens in new tab | Pass | |
-
+| Registration | | | | |
 | Register | | | | |
 | | Enter valid email address (twice) | Field will only accept email address format | Pass | |
 | | Enter valid  word (twice) | Field will only accept  word format | Pass | |
 | | Click on Sign Up button | Redirects user to notification to Verify Email Address | Pass |
-
 | Log In | | | | |
 | | Enter valid username/email | Field will accept username or email format | Pass | |
 | | Enter valid  word | Field will only accept  word format | Pass | |
 | | Click Sign In button | Log user in, redirects to home page | Pass | |
-
 | Log Out | | | | |
 | | Click Sign Out link in navbar Account dropdown menu | Logs out user, redirects user to home page | Pass |
-
 | Profile | | | | |
 | | Click on the Update Information button | Inputted information is saved | Pass | |
 | | Click on Order History links | Redirects to user order confirmation, alert message displayed | Pass | |
 | | Click on Back to Profile (in Order History) | Redirects to Profile page | Pass |
-
 | Wishlist | | | | |
 | | Click on the Add to Basket button | Item is added to basket | Pass | |
 | | Click on Remove button | Item is removed from Wishlist | Pass | |
 | | Click on Back to Store | Redirects to Products page |Pass | |
 | | Click product image | Redirect to the product details page | Pass | |
 | | Click product name | Redirect to the product details page | Pass | |
-
 | Site Navigations - Logged Out User | | | | |
 | | Navigate to any login required URL | Redirect to login page, redirect back after login | Pass | |
-
 | Products | | | | |
 | | Click on product image | Redirect to clicked product details page | Pass | |
 | | Click on product title | Redirect to clicked product details page | Pass | |
 | | Click on sorting dropdown options | Sort products by selected criteria | Pass | |
-
-| Products - Admin Only| | | | |
-| | Click on an edit button | Redirect to edit product page for that product | Pass | |
-| | Click on a delete button | Trigger delete confirmation modal | Pass | |
-| | Delete confirmation modal - 'Delete' button | Delete the product | Pass  | |
-| | Delete confirmation modal - 'Cancel' button | Close the modal | Pass  | |
-
 | Product Details | | | | |
 | | Click on product image | Load full image | Pass  | |
 | | Click on 'Keep Shopping' button | Redirect to products page | Pass  | |
 | | Click on 'Add To Basket' button | Adds product to basket, basket message displayed |  Pass | |
 | | Click on Wishlist heart icon (logged in user) | Adds product to wishlist, succcess message displayed | Pass | |
 | | Click on Wishlist heart icon (logged out user) | Redirects to Sign Up page | Pass | |
-
+| Products - Admin Only| | | | |
+| | Click on an edit button | Redirect to edit product page for that product | Pass | |
+| | Click on a delete button | Trigger delete confirmation modal | Pass | |
+| | Delete confirmation modal - 'Delete' button | Delete the product | Pass  | |
+| | Delete confirmation modal - 'Cancel' button | Close the modal | Pass  | |
 | Product Details - Admin Only | | | | |
 | | Click on Edit button | Redirect to edit product page for that product | Pass | |
 | | Click on Delete button | Trigger delete confirmation modal |  Pass | |
 | | Delete confirmation modal - 'Delete' button | Delete the product | Pass | |
 | | Delete confirmation modal - 'Cancel' button | Close the modal | Pass | |
-
 | FAQ | | | | |
 | | Click on question | Dropdown with answer appears | Pass | |
 | | Click on open question | Dropdown with answer disappears | Pass  | |
 | | Click on Back Home button | Redirection to Home page | Pass | |
-
 | Contact | | | | |
 | | Email input | Required, accepts only email format | Pass | |
 | | Name input | Required |  Pass | |
@@ -414,7 +397,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Message input | Require | Pass | |
 | | Click on 'Send Message' button | Redirects to contact success page, success message displayed, message visible in Admin panel | Pass | |
 | | Click on 'Back Home' button on contact success page | Redirection to Home page |Pass | |
-
 | Add New Product - Admin Only | | | | |
 | | Sku | Not required, select from options | Pass | |
 | | Category Input | Not required, select from options | Pass | |
@@ -423,11 +405,9 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Price Input | Required, Numbers only | Pass | |
 | | Image URL | Not required | Pass | |
 | | Image | Not required | Pass | |
-
 | Edit Product - Admin Only | | | | |
 | | Click on 'Cancel' button | Redirect to Products page | Pass | |
 | | Click on 'Update Product' button | Save changes, redirect to product details page | Pass | |
-
 | Basket | | | | |
 | | Adjust quantity by using + or - buttons | Quantity figure adjusts | Pass |
 | | Click on 'Update' link after adjusting quantity | Update quantity of product in basket, subtotal and total change | Pass | |
@@ -436,7 +416,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | | Click on 'Secure Checkout' button | Redirect to Checkout page | Pass | |
 | | Click product image | Redirect to the product details page | Pass | |
 | | Click product name | Redirect to the product details page | Pass | |
-
 | Checkout | | | | |
 | | Full Name Input | Required | Pass | |
 | | Email Input | Required, autofill if saved | Pass | |

@@ -577,12 +577,14 @@ The checkout process ensures a secure and seamless transaction, guiding users th
 
     <summary> Screenshots </summary>
 
-  Checkout
-  ![Checkout Page 1](docs/images/features/checkout/checkout-1.png)
-  ![Checkout Page 2](docs/images/features/checkout/checkout-2.png)
+    Checkout
 
-  Order Confirmation
-  ![Order Confirmation Page](docs/images/features/checkout/checkout-order-confirmation.png)
+    ![Checkout Page 1](docs/images/features/checkout/checkout-1.png)
+    ![Checkout Page 2](docs/images/features/checkout/checkout-2.png)
+
+    Order Confirmation
+
+    ![Order Confirmation Page](docs/images/features/checkout/checkout-order-confirmation.png)
 
   </details>
 
@@ -715,18 +717,23 @@ The application provides comprehensive error handling for user authentication pr
 **Screenshots**:
 
 - **Error for Incorrect Password and/or Nonexistent Username on Login**:
+
 ![Error for Incorrect Password](docs/images/features/errors/error-sign-in-password-or-username-wrong.png)
 
 - **Error for Non-original Username on Sign Up**:
+
 ![Error for Non-original Username](docs/images/features/errors/error-signup-same-name.png)
 
 - **Error for Unmatching Passwords on Sign Up**:
+
 ![Error for Unmatching Passwords](docs/images/features/errors/error-signup-password-not-matching.png)
 
 - **Error for Too Short Password on Sign Up**:
+
 ![Error for Too Short Password](docs/images/features/errors/error-signup-password-too-short.png)
 
 - **Error for Invalid Email Address on Sign Up**:
+
 ![Error for Invalid Email](docs/images/features/errors/error-signup-invalid-email.png)
 
 </details>
@@ -962,6 +969,9 @@ As the platform evolves, additional features and improvements may be introduced 
 - Implementing a tagging system for recipes to improve discoverability.
 - Adding search functionality for recipes to allow users to find relevant content quickly.
 
+### **Add to Basket**
+- Include 'Add to Basket' icon on the product card in the Products page template so that a User could quickly add a product to their basket without clicking into Product Details.
+
 ---
   
 ## Project Management & Agile Methodologies
@@ -1127,7 +1137,7 @@ A privacy policy page was created and can be accessed by the link in the footer.
 
 The privacy policy was created using:
 
-[Privacy Policy Generator.](https://www.privacypolicygenerator.info/)
+[Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
 [Link to Privacy Policy](https://www.termsfeed.com/live/5582ef34-d31a-42e4-b04f-a198aef89f88)
 
@@ -1164,7 +1174,7 @@ The privacy policy was created using:
 - [Am I Responsive](https://ui.dev/amiresponsive) - Responsive screenshots and testing for multiple device views.
 - [Balsamiq](https://balsamiq.com/) - Wireframing tool used for planning the UI design.
 - [Canva](https://www.canva.com/) - Creating the site logo.
-- [ChatGPT](https://chatgpt.com/) - Used for debugging and formatting.
+- [ChatGPT](https://chatgpt.com/) - Used for debugging, formatting and creating tables for testing.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Developer tools for inspecting, debugging, and optimizing web applications.
 - [Code Insitute PEP8 Validator](https://pep8ci.herokuapp.com/#) - Python code validation tool.
 - [Coolors](https://coolors.co/) - Color palette generator for UI design.
@@ -1193,6 +1203,10 @@ The live deployed application can be found on [Heroku](https://pp5-ci-flour-and-
 ### **Setting Up a PostgreSQL Database**
 
 For deploying this project, we use **PostgreSQL**, a powerful, open-source relational database system. Follow these steps to create and connect your PostgreSQL database to your Heroku application.
+
+<details>
+
+<summary> Steps to Set up PostreSQL Database </summary>
 
 #### **Step 1: Create a PostgreSQL Database**
 If you don’t already have a PostgreSQL instance, you can set one up using a cloud database provider like **ElephantSQL**. Here’s how to create one with **ElephantSQL** (other providers may have similar steps):
@@ -1247,6 +1261,7 @@ Follow the prompts to set up login credentials.
 
 Your PostgreSQL database is now set up and fully connected to your Heroku app!
 
+
 ##### **Appendix: Code Institute PostgreSQL Database Setup**
 
 If you are a **Code Institute student**, you may use the Code Institute-hosted PostgreSQL database instead of setting up your own.
@@ -1269,9 +1284,16 @@ If you are a **Code Institute student**, you may use the Code Institute-hosted P
   ```
 8. Your database is now ready to use.
 
+</details>
+
+
 --- 
 
 ### AWS S3 Setup (Static Hosting)
+
+<details>
+
+<summary> AWS S3 steps </summary>
 
 #### **Step 1 - Create an S3 Bucket**
 1. Log in to your AWS account and navigate to the AWS dashboard.
@@ -1356,9 +1378,15 @@ On the 'Edit Access control list' page:
 
 Your AWS S3 bucket is now configured for **public static website hosting**.
 
+</details>
+
 ---
 
 ### AWS IAM Setup (Groups, Policies, and Users)
+
+<details>
+
+<summary> AWS IAM steps </summary>
 
 #### **Step 1 - Create a User Group**
 1. Search for **‘IAM’** in the AWS search bar.
@@ -1439,13 +1467,19 @@ Your AWS S3 bucket is now configured for **public static website hosting**.
 9. Open the `.csv` file in a text editor (e.g., Notepad or TextEdit). The values inside will be separated by commas.
 10. Use these values as your **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** in your **Heroku config vars** or `.env` file.
 
-Your AWS IAM setup is now complete!
+Your AWS IAM setup is now complete.
+
+</details>
 
 ---
 
 ### Stripe API
 
 This project uses [Stripe](https://stripe.com) to handle ecommerce payments.
+
+<details>
+
+<summary> Stripe steps </summary>
 
 ### **Step 1: Get Your API Keys**
 Once you've created a **Stripe account** and logged in, follow these steps to connect your project:
@@ -1483,10 +1517,16 @@ To ensure payments are properly recorded, you need to **set up Stripe Webhooks**
    STRIPE_WH_SECRET=<your-signing-secret>
    ```
 
+</details>
+
 ---
 
 ### Gmail API
 This project uses [Gmail](https://mail.google.com) to handle sending emails to users for account verification and purchase order confirmations.
+
+<details>
+
+<summary> Gmail steps </summary>
 
 Once you've created a Gmail (Google) account and logged-in, follow these series of steps to get your project connected.
 
@@ -1506,9 +1546,17 @@ Once you've created a Gmail (Google) account and logged-in, follow these series 
 	- `EMAIL_HOST_PASS` = user's 16-character API key
 	- `EMAIL_HOST_USER` = user's own personal Gmail email address
 
+</details>
+
+---
+
 
 ### **Heroku Deployment**
 This project is deployed on **Heroku**, a platform-as-a-service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+<details>
+
+<summary> Heroku steps </summary>
 
 #### **Step 1: Create a Heroku App**
 1. Log in to [Heroku](https://www.heroku.com/) and navigate to your **Heroku Dashboard**.
@@ -1588,12 +1636,18 @@ heroku run python3 manage.py createsuperuser
 2. Restart dynos to apply changes.
 3. Test the application by visiting your **Heroku app URL**.
 
-Your project is now successfully deployed on Heroku! 🚀
+Your project is now successfully deployed on Heroku.
+
+</details>
 
 ---
 
 ### Local Deployment
 This project can be cloned or forked in order to make a local copy on your own system.
+
+<details>
+
+<summary> Local Deployment steps </summary>
 
 For either method, you will need to install any applicable packages found within the *requirements.txt* file.
 
@@ -1634,7 +1688,7 @@ If you'd like to backup your database models, use the following command for each
 - `python3 manage.py dumpdata your-model > your-model.json`
 - *repeat this action for each model you wish to backup*
 
-### Forking the GitHub Repository
+#### Forking the GitHub Repository
 
   A copy of the original repository can be made through GitHub. Please follow the below steps to fork this repository.
 
@@ -1650,7 +1704,7 @@ If you'd like to backup your database models, use the following command for each
 
   -----
 
-### Cloning the GitHub Repository
+#### Cloning the GitHub Repository
 
   A local clone of this repository can be made on GitHub. Please follow the below steps.
 
@@ -1670,6 +1724,8 @@ If you'd like to backup your database models, use the following command for each
 
   </details> 
 
+</details>
+
 ---
 
 
@@ -1687,6 +1743,7 @@ If you'd like to backup your database models, use the following command for each
 | --- | --- | --- |
 |[Code Institute Boutique Ado walkthrough](https://codeinstitute.net/ie/full-stack-software-development-diploma/) | Entire site | Layout; profile, products, basket and checkout apps |
 |[Web Piano Academy README](https://github.dev/LewisMDillon/web-piano-academy/blob/main/README.md) | README | Deployment; E-Commerce Business Model |
+|[Web Piano Academy README](https://github.dev/LewisMDillon/web-piano-academy/blob/main/README.md) | TESTME | Structure |
 |[Web Piano Academy site](https://web-piano-academy-16cd779294ab.herokuapp.com) | Footer and Nav Menu | Layout; also used to double check code if mine was not working |
 |[Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)|Entire site|Responsivity|
 |[My PP4 project - My Cookbook](https://github.dev/EJFleet/pp4-my-cookbook-blog) | Error Pages | Structure and content |
