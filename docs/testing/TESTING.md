@@ -422,6 +422,118 @@ Defensive programming was manually tested with the below user acceptance testing
 
 ---
 
+## User Story Testing
+
+Throughout development, I kept my user stories in mind to ensure a smooth user experience. This document serves as a record of testing, confirming that each feature functions as expected.  
+
+I have thoroughly tested all user stories, verifying that navigation, product browsing, purchasing, authentication, and admin features work correctly. The table below tracks the results, with notes on any issues or improvements.  
+
+✅ **Pass** – The feature works as intended.  
+❌ **Fail** – The feature needs attention (details provided in Comments).  
+
+<details>
+
+<summary> User Story Testing Table </summary>
+
+### Navigation
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| Use a simple navigation menu to easily find content. | ✅ |  |
+| View a responsive navigation menu on any screen size. | ✅ |  |
+| See login-dependent navbar links to access relevant options. | ✅ |  |
+
+### Products
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| Browse a list of available products. | ✅ |  |
+| View details of a product before purchasing. | ✅ |  |
+| Filter products by category. | ✅ |  |
+| Search for products. | ✅ |  |
+| As a logged-in User, I can: | | |
+| Add products to a wishlist. | ✅ |  |
+
+### Shopping Basket
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| Add items to the basket for later purchase. | ✅ |  |
+| Remove items from the basket before checkout. | ✅ |  |
+| See a summary of the basket before purchasing. | ✅ |  |
+| View a running total of the basket. | ✅ |  |
+
+### Purchasing & Checkout
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| Securely enter payment and shipping details. | ✅ |  |
+| See a confirmation page after placing an order. | ✅ |  |
+| Receive an order confirmation email. | ✅ |  |
+
+### User Authentication
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| Create an account to save details for future purchases. | ✅ |  |
+| Log in and out securely. | ✅ |  |
+
+### User Profiles
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a logged-in User, I can: | | |
+| View past orders to track purchase history. | ✅ |  |
+| Update profile information. | ✅ |  |
+| View and manage wishlist. | ✅ |  |
+
+### About Page
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a User, I can: | | |
+| View the About page to understand the site's purpose and mission. | ✅ |  |
+
+### Support & FAQ
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+As a User, I can: | | |
+| Contact the site owner via a form. | ✅ |  |
+| See a confirmation message after submitting a query. | ✅ |  |
+| Read an FAQ section for common questions. | ✅ |  |
+
+### SEO & Marketing
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a Site Owner, I can: | | |
+| Add SEO-friendly meta descriptions. | ✅ |  |
+| Generate a sitemap for search engine indexing. | ✅ |  |
+| Implement a robots.txt file for search engine crawling. | ✅ |  |
+| Create a Facebook page for brand engagement. | ✅ |  |
+| Include social media links in the footer. | ✅ |  |
+| Provide a privacy policy. | ✅ |  |
+| Have a newsletter signup for marketing. | ✅ |  |
+
+### Product Management
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a Site Admin, I can: | | |
+| Add new products to expand inventory. | ✅ |  |
+| Update existing products to keep information accurate. | ✅ |  |
+| Delete outdated or discontinued products. | ✅ |  |
+
+### Admin Panel Management
+| User Story | Pass/Fail | Comments |
+|------------|----------|----------|
+| As a Site Admin, I can: | | |
+| Manage user accounts (update/remove users). | ✅ |  |
+| Manage orders and track sales. | ✅ |  |
+| View and respond to contact form messages. | ✅ |  |
+| Bulk manage products efficiently. | ✅ |  |
+
+
+</details>
+
+-------------
+
 ## Bug Fixes
 
 Bugs are detailed in the kanban board at [Flour & Ferment GitHub](https://github.com/users/EJFleet/projects/3/)
