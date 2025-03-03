@@ -163,8 +163,8 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 | ------- | ---------- | ------ |------|
 | iPhone SE | Product Detail page | Page looked cramped | Changed to col-11 rather than col-12, added mx-auto |
 | Nest Hub Max | All features | No issues | None needed |
-| iPad Mini | All features | No issues | None needed |
-| Asus Zenbook Fold | Scroll down | Can't see footer | This is a browser issue and not a responsivity issue |
+| iPad Mini | Product page and Product Detail page | Layout all wrong | Updated css and bootstrap for responsivity |
+| Asus Zenbook Fold | Product page and Product Detail page | Layout all wrong | Updated css and bootstrap for responsivity |
    
 <br>
 
@@ -175,7 +175,6 @@ Responsiveness testing was carried out using Google Dev Tools on the devices det
 | Samsung S9 | All features | No issues | None needed |
 | iPad Pro (2020) | All features |  No issues  | None needed |
 | HP 15S laptop  | All features | No issues | None needed |
-| iPad Pro 2021 |    All features      |    No issues    |  None needed |
 | Google Pixel 6 | All features | No issues | None needed |
 | Samsung S22 | All features | No issues | None needed |
 
