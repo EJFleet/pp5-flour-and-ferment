@@ -21,7 +21,6 @@
 6. [User Story Testing](#user-story-testing)
    
 7. [Bug Fixes](#bug-fixes)
-   - [Known Bugs & Fixes](#bugfixes)
 
 ---
 
@@ -563,6 +562,7 @@ Bugs are detailed in the kanban board at [Flour & Ferment GitHub](https://github
 | 401 errors for Stripe webhooks | Stopped using the Stripe CLI for testing as it was causing confusion by giving a different signing secret | Yes |
 | Hamburger icon disappeared from navbar | Added navbar-light back in, as the hamburger icon visibility is dependent on it. | Yes |
 | Sorting selector not displaying sorting choice correctly | Updated view and added a default sorting order of 'Name(A-Z)' | Yes |
+| 500 error when registering new user | Corrected formatting of AUTH_PASSWORD_VALIDATORS in settings.py | Yes |
 
 
 **There were no other known bugs at the time of submitting the project.**
